@@ -40,5 +40,6 @@ p.separator {
 img.resize {
   width: 38px;  
   position: absolute;
+  top: 0;
   left: 10%;
 }
