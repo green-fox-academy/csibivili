@@ -13,3 +13,7 @@ div[id="b325"]{
 div[class~="b326"]{
     border: 1px solid green;
 }
+
+div[class^="a"]{
+    font-weight: bold;
+}
