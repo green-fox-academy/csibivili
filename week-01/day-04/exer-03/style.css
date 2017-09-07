@@ -8,6 +8,8 @@ div {
   width: 350px;
   border: 20px solid rgb(66, 133, 244);
   margin: 10px;
+  font-size: 36px;
+  color: white;
 }
 
 div.small1 {
