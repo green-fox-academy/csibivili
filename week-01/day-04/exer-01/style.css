@@ -1,10 +1,11 @@
 div {
   background-color: rgb(14,145,161);
-  color: rgb(125,205,148);
-  border-color: rgb(0, 85, 102);
+  color: rgb(0,85,102);
+  border-color: rgb(125,205,148);
   border-style: solid;
-  border-width: 20px;
-  margin: 20px;
-  padding: 20px;
-  width: 300px;
+  border-width: 5px;
+  height: 143px;
+  margin: 10px;
+  padding: 5px 5px 0px 0px;
+  width: 357px;
 }
