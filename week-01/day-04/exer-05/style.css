@@ -8,4 +8,11 @@ h2 {
 
 ol {
   color: rgb(255,103,255);
+  text-decoration: underline;
+}
+
+ol :last-child {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
