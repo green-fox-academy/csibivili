@@ -14,5 +14,12 @@ div.bigbox {
 div {
   height: 130px;
   width: 350px;
+}
+
+div :nth-child(1) {
   background-color: green;
+}
+
+div :nth-child(2) {
+  background-color: pink;
 }
