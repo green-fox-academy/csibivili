@@ -1,0 +1,15 @@
+div[class~="big"]{
+    color: blue;
+}
+
+p[class~="big"]{
+    color: blue;
+}
+
+div[id="b325"]{
+    border: 1px solid green;
+}
+
+div[class~="b326"]{
+    border: 1px solid green;
+}
