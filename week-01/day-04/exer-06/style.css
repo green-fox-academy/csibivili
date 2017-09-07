@@ -2,6 +2,14 @@ div {
   width: 140px;
   height: 140px;
   border-radius: 70px;
-  background-color: black;
+  background-color: rgb(12,235,222);
   float: left;
+}
+
+div:first-of-type {
+  background-color: rgb(185,12,235);
+}
+
+div:last-of-type {
+  background-color: rgb(235,190,12);
 }
