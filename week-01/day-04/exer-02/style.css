@@ -8,14 +8,19 @@ div.bigbox {
   border-style: solid;
   border-width: 15px;
   border-color: rgb(66,133,244);
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  padding: 0;
 }
 
 div {
-  height: 130px;
+  height: 100px;
   width: 350px;
+  padding-top: 30px;
 }
 
-div :first-child {
+div :nth-child(1) {
   background-color: rgb(230,118,118);
 }
 
@@ -27,6 +32,6 @@ div :nth-child(3) {
   background-color: rgb(169,230,230);
 }
 
-div :last-child {
+div :nth-child(4) {
   background-color: rgb(118,146,228);
 }
