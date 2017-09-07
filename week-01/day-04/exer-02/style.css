@@ -16,10 +16,18 @@ div {
   width: 350px;
 }
 
-div :nth-child(1) {
+div :first-child {
   background-color: green;
 }
 
 div :nth-child(2) {
   background-color: pink;
+}
+
+div :nth-child(3) {
+  background-color: red;
+}
+
+div :last-child {
+  background-color: purple;
 }
