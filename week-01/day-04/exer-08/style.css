@@ -10,4 +10,13 @@ div {
     border: 1px solid blue;
     width: 500px;
     height: 50px;
+    margin: 10px;
+}
+
+div:last-of-type {
+    background-color: rebeccapurple;
+}
+
+p.nd {
+    background-color: red;
 }
