@@ -1,16 +1,17 @@
-div[class~="big"]{
+div[class$="g"]{
     color: blue;
 }
 
-p[class~="big"]{
+p{
     color: blue;
+    background-color: yellow;
 }
 
-div[id="b325"]{
+div[id^="b"]{
     border: 1px solid green;
 }
 
-div[class~="b326"]{
+div[class$="6"]{
     border: 1px solid green;
 }
 
