@@ -7,8 +7,7 @@ div.bigbox {
   width: 350px;
   border-style: solid;
   border-width: 15px;
-  background-color: black;
-  border-color: blue;
+  border-color: rgb(66,133,244);
 }
 
 div {
@@ -17,17 +16,17 @@ div {
 }
 
 div :first-child {
-  background-color: green;
+  background-color: rgb(230,118,118);
 }
 
 div :nth-child(2) {
-  background-color: pink;
+  background-color: rgb(242,240,98);
 }
 
 div :nth-child(3) {
-  background-color: red;
+  background-color: rgb(169,230,230);
 }
 
 div :last-child {
-  background-color: purple;
+  background-color: rgb(118,146,228);
 }
