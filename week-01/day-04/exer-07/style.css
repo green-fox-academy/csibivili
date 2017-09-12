@@ -1,0 +1,20 @@
+div[class$="g"]{
+    color: blue;
+}
+
+p{
+    color: blue;
+    background-color: yellow;
+}
+
+div[id^="b"]{
+    border: 1px solid green;
+}
+
+div[class$="6"]{
+    border: 1px solid green;
+}
+
+div[class^="a"]{
+    font-weight: bold;
+}
