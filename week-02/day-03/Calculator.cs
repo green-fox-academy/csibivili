@@ -30,40 +30,62 @@ namespace Calculator
 
             string what;
 
-            
             Console.WriteLine("Please type in the expression: (i.e.: + 3 3)");
             what = Console.ReadLine();
             string[] userinputs = what.Split(' ');
-
-            /*foreach (var userinput in userinputs)
-            {
-                Console.WriteLine(userinput);
-            }*/
-
-
-            string operation = userinputs[0];
-            int num1 = Int32.Parse(userinputs[1]);
-            int num2 = Int32.Parse(userinputs[2]);
-
-            Console.WriteLine(operation);
-
+            
+            float num1 = float.Parse(userinputs[1]);
+            float num2 = float.Parse(userinputs[2]);
+            
+            
             switch (userinputs[0])
             {
-                case "+":
-                case "-":
-                case "*":
-                case ":":
-                default:
+                case ("+"): 
+                    Add(num1, num2);
                     break;
-            }
-        
+                case "-":
+                    Subtract(num1, num2);
+                    break;
+                case "*":
+                    Multiply(num1, num2);
+                    break;
+                case "/":
+                    Divide(num1, num2);
+                    break;
+                case "%":
+                    Percentage(num1, num2);
+                    break;
+                default: Console.WriteLine("Could you check your input please?");
+                    break;
+            } 
+            
+
             Console.ReadLine();
         }    
 
-        public static void Add (int num1 , int num2)
+        public static void Add (float num1 , float num2)
         {
             Console.WriteLine(num1 + num2);
         }
 
+        public static void Subtract(float num1, float num2)
+        {
+            Console.WriteLine(num1 - num2);
+        }
+
+        public static void Multiply(float num1, float num2)
+        {
+            Console.WriteLine(num1 * num2);
+        }
+
+        public static void Divide(float num1, float num2)
+        {
+            Console.WriteLine(num1 / num2);
+        }
+
+        public static void Percentage(float num1, float num2)
+        {
+            Console.WriteLine((num1 / num2) * 100);
+        }
     }
 }
