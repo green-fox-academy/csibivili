@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Calculator
 {
@@ -35,22 +39,31 @@ namespace Calculator
             {
                 Console.WriteLine(userinput);
             }*/
+
+
+            string operation = userinputs[0];
             int num1 = Int32.Parse(userinputs[1]);
             int num2 = Int32.Parse(userinputs[2]);
 
-            Console.WriteLine(num1 + num2);
+            Console.WriteLine(operation);
 
+            switch (userinputs[0])
+            {
+                case "+":
+                case "-":
+                case "*":
+                case ":":
+                default:
+                    break;
+            }
+        
             Console.ReadLine();
         }    
 
-        /*public static void UserInput (string what, int n1 , int n2)
+        public static void Add (int num1 , int num2)
         {
-            what = Console.ReadLine();
-            Console.Write(" ");
-            n1 = Console.Read();
-            Console.Write(" ");
-            n2 = Console.Read();
-        }*/
+            Console.WriteLine(num1 + num2);
+        }
 
     }
 }
