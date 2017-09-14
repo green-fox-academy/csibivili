@@ -19,7 +19,7 @@ namespace GreenFox
             userinput = Console.ReadLine();
             double a = double.Parse(userinput);
             double b = 0.621371192 * a;
-            Console.WriteLine("I think {0.00}", a); // + " kilometers are " + "{0.00}", b + " in miles.");
+            Console.WriteLine( a + " kilometers are " +  b + " in miles.");
             Console.ReadLine();
         }
     }
