@@ -37,8 +37,20 @@ namespace GreenFox
                 string userInput = Console.ReadLine();
                 guess = int.Parse(userInput);
 
-                string less = (guess < number) ? "Your number is lower." : "Your number is higher.";
-                Console.WriteLine(less);
+                if (guess < number)
+                {
+                    Console.WriteLine("Your number is lower.");
+                }
+                else if (guess > number)
+                {
+                    Console.WriteLine("Your number is higher.");
+                }
+                else
+                {
+                    Console.WriteLine("You found the number 8.");
+                }
+                //string less = (guess < number) ? "Your number is lower." : "Your number is higher.";
+                //Console.WriteLine(less);
             }
             Console.ReadLine();
         }
