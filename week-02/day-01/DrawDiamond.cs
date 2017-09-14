@@ -45,7 +45,7 @@ namespace GreenFox
 
             for (int i = (triangleRow - 2); i >= 0; i = i -2)
             {
-                for (int k = i - 2; (k*2) <= (triangleRow + 2); k = k + 2)
+                for (int k = (i / 2 + 1); (k * 2) <= triangleRow; k++)
                 {
                     Console.Write(" ");
                 }
