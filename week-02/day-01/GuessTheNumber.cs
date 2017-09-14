@@ -19,18 +19,27 @@ namespace GreenFox
             // You found the number: 8
 
             int number = 8;
-            int guess;
+            int guess = 0;
 
-            do
+            /*do
             {
                 string userInput = Console.ReadLine();
-                int tmp = int.Parse(userInput);
+                guess = int.Parse(userInput);
 
                 string less = (tmp < number) ? "Your number is lower." : "Your number is higher.";
                 Console.WriteLine(less);
                
 
-            } while (guess == number);
+            } while (guess == number);*/
+
+            while (!(guess == number))
+            {
+                string userInput = Console.ReadLine();
+                guess = int.Parse(userInput);
+
+                string less = (guess < number) ? "Your number is lower." : "Your number is higher.";
+                Console.WriteLine(less);
+            }
             Console.ReadLine();
         }
     }
