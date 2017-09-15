@@ -14,17 +14,20 @@ namespace GreenFox
         //static List<Array> WordsInLetters = new List<Array>();
         static string word1 = "";
         static string word2 = "";
-        static char[] charArray1, charArray2;
-        static List<string> List1 = new List<string>();
-        static List<string> List2 = new List<string>();
+        //static char[] charArray1, charArray2, charArray3, charArray4;
+        static List<char> datalist1 = new List<char>();
+        static List<char> datalist2 = new List<char>();
+        //static List<string> List1 = new List<string>();
+        //static List<string> List2 = new List<string>();
 
         static void Main(string[] args)
         {
             Greetings("Hello!");
             LetterBreakDown(word1);
             LetterBreakDown(word2);
-            CreateList(charArray1);
-            CreateList(charArray2);
+            OrderLetters(datalist1);
+            OrderLetters(datalist2);
+            Anagram(List1, List2);
             Console.ReadLine();
         }
 
@@ -43,11 +46,11 @@ namespace GreenFox
         {
             if (word == word1)
             {
-                charArray1 = array[i].ToCharArray();
+                datalist1.AddRange(word1);
             }
             else
             {
-                charArray2 = array[i].ToCharArray();
+                datalist2.AddRange(word2);
             }
 
 
@@ -60,13 +63,14 @@ namespace GreenFox
             //}
         }
 
-        static void CreateList(char [] temp)
+        static void OrderLetters(List<char> datalist)
         {
-            if (temp == charArray1)
+            
+            if (temp == datalist1)
             {
-                for (int i = 0; i < charArray1.Length; i++)
+                for (int i = 0; i < datalist1.Length; i++)
                 {
-                    List1[i] = charArray1[i].ToString();
+                    shit = charArray1[i].ToString();
                 }
             }
             else
@@ -77,9 +81,16 @@ namespace GreenFox
                 }
             }
         }
-        static void Anagram(List<string> lists)
+        static void Anagram(List<string> lists1, List<string> lists2)
         {
-
+            if (lists1 == lists2)
+            {
+                Console.WriteLine("They are anagrams.");
+            }
+            else
+            {
+                Console.WriteLine("They are not anagrams.");
+            }
         }
     }
 }
