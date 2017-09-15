@@ -19,6 +19,7 @@ namespace GreenFox
         {
             Greetings("Hello!");
             Input(text);
+            // SHORTEST
             Anagram(WordsInLetters);
             Console.ReadLine();
         }
@@ -29,23 +30,9 @@ namespace GreenFox
             Console.WriteLine();
             Console.WriteLine("Please write here your words divided by one space: ");
             text = Console.ReadLine();
-            //array = text.Split(' ');
-            //charArray1 = array[0].ToCharArray();
-            //Array.Sort(charArray1);
-            //charArray2 = array[1].ToCharArray();
-            //Array.Sort(charArray2);
-            //shorter = (array[0].Length <= array[1].Length) ? array[0].Length : array[1].Length;
 
         }
-        /*
-        static void shortest (string value)
-        {
-            for (int i = 0; i < length; i++)
-            {
 
-            }
-        }
-        */
         static void Input(string word)
         {
             array = text.Split(' ');
@@ -66,6 +53,17 @@ namespace GreenFox
             Console.WriteLine(result);
            
         }
-       
+
+        /*
+        static void shortest (string value)
+        {
+            for (int i = 0; i < length; i++)
+            {
+
+            }
+        }
+        */
+
+
     }
 }
