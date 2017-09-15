@@ -14,20 +14,19 @@ namespace GreenFox
         //static List<Array> WordsInLetters = new List<Array>();
         static string word1 = "";
         static string word2 = "";
-        //static char[] charArray1, charArray2, charArray3, charArray4;
-        static List<char> datalist1 = new List<char>();
-        static List<char> datalist2 = new List<char>();
+        static char[] charArray1, charArray2;
+        //static List<char> datalist1 = new List<char>();
+        //static List<char> datalist2 = new List<char>();
         //static List<string> List1 = new List<string>();
         //static List<string> List2 = new List<string>();
+        static int shorter = 0;
 
         static void Main(string[] args)
         {
             Greetings("Hello!");
-            LetterBreakDown(word1);
-            LetterBreakDown(word2);
-            OrderLetters(datalist1);
-            OrderLetters(datalist2);
-            Anagram(List1, List2);
+            //LetterBreakDown(word1);
+            //LetterBreakDown(word2);
+            //Anagram(charArray1, charArray2);
             Console.ReadLine();
         }
 
@@ -39,58 +38,54 @@ namespace GreenFox
             string tmp = Console.ReadLine();
             array = tmp.Split(' ');
             word1 = array[0];
+            charArray1 = array[0].ToCharArray();
+            Array.Sort(charArray1);
             word2 = array[1];
-        }
+            charArray2 = array[1].ToCharArray();
+            Array.Sort(charArray2);
+            shorter = (word1.Length <= word2.Length) ? word1.Length : word2.Length;
+            bool result = false;
+            for (int i = 0; i < shorter; i++)
+            {
+                result = !(charArray1[i] == charArray2[i]) ? false : true;
+            }
+            Console.WriteLine(result);
 
+        }
+        /*
         static void LetterBreakDown(string word)
         {
             if (word == word1)
             {
-                datalist1.AddRange(word1);
+                
+                Array.Sort(charArray1);
             }
             else
             {
-                datalist2.AddRange(word2);
+                charArray2 = array[i].ToCharArray();
+                Array.Sort(charArray2);
             }
 
 
-            //char[] charArray1 = array[i].ToCharArray();
-            //char[] charArray2 = array[i].ToCharArray();
-
-            //for (int j = 0; j < array.Length; j++)
-            //{
-            //    WordsInLetters[j] = new int [2] { 1,2};
-            //}
         }
 
-        static void OrderLetters(List<char> datalist)
+        static void Anagram(char [] array1, char [] array2)
         {
-            
-            if (temp == datalist1)
+            bool result = false;
+            for (int i = 0; i < shorter; i++)
             {
-                for (int i = 0; i < datalist1.Length; i++)
-                {
-                    shit = charArray1[i].ToString();
-                }
+                result = !(array1[i] == array2[i]) ? false : true;
             }
-            else
+            Console.WriteLine(result);
+            foreach (var letters in array1)
             {
-                for (int i = 0; i < charArray1.Length; i++)
-                {
-                    List2[i] = charArray2[i].ToString();
-                }
+                Console.WriteLine(letters);
             }
-        }
-        static void Anagram(List<string> lists1, List<string> lists2)
-        {
-            if (lists1 == lists2)
+            foreach (var letters in array2)
             {
-                Console.WriteLine("They are anagrams.");
+                Console.WriteLine(letters);
             }
-            else
-            {
-                Console.WriteLine("They are not anagrams.");
-            }
-        }
+        }*/
+       
     }
 }
