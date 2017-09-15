@@ -12,9 +12,10 @@ namespace GreenFox
         static string[] array;
         static int i = 0;
         static List<Array> WordsInLetters = new List<Array>();
+        //static List<string> OrderedLetters = new List<string>();
         static string text = "";
         static int shortest = 3;
-        static char[] chars = new char[5] { 'm', 'i', 'v', 'a', 'n' };
+        //static char[] chars = new char[5] { 'm', 'i', 'v', 'a', 'n' };
 
 
         static void Main(string[] args)
@@ -41,14 +42,17 @@ namespace GreenFox
         {
             array = text.Split(' ');
             for (int i = 0; i < array.Length; i++)
-            {              
+            {
                 WordsInLetters.Add(array[i].ToCharArray());
                 Array.Sort(WordsInLetters[i]);
-                /*foreach (var letters in WordsInLetters[i])
+                
+                //char[] charArray = WordsInLetters[i];
+                //string word = new string (WordsInLetters[i]);
+
+                /*for (int j = 0; j < array[j].Length; j++)
                 {
-                    Console.WriteLine(letters);
+                    string tmp = new string(charArray[j]);
                 }*/
-                //string temp = new string(WordsInLetters[i]);
                 
 
             }
@@ -57,14 +61,14 @@ namespace GreenFox
         
         static void Anagram(List<Array> list)
         {
-            bool result = false;
+            /*bool result = false;
             for (int i = 0; i < WordsInLetters.Count; i++)
             {
                 for (int j = 0; j < i; j++)
                 {
-                    result = Array.IndexOf(WordsInLetters[j], j) == Array.IndexOf(WordsInLetters[j + 1], j) ? true : false;
+                    result = Array.  (WordsInLetters[j], j) == Array.IndexOf(WordsInLetters[j + 1], j) ? true : false;
                 }
-            }
+            }*/
 
 
             /*bool result = false;
