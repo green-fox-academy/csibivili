@@ -9,19 +9,22 @@ namespace GreenFox
     class Program
     {
 
-        //static string[] letters;
-        //static int NumberOfWords = 1;
         static string[] array;
-        //static int i = 0;
+        static int i = 0;
         //static List<Array> WordsInLetters = new List<Array>();
         static string word1 = "";
         static string word2 = "";
+        static char[] charArray1, charArray2;
+        static List<string> List1 = new List<string>();
+        static List<string> List2 = new List<string>();
 
         static void Main(string[] args)
         {
             Greetings("Hello!");
             LetterBreakDown(word1);
-
+            LetterBreakDown(word2);
+            CreateList(charArray1);
+            CreateList(charArray2);
             Console.ReadLine();
         }
 
@@ -32,18 +35,24 @@ namespace GreenFox
             Console.WriteLine("Please write here your words divided by one space: ");
             string tmp = Console.ReadLine();
             array = tmp.Split(' ');
-            //NumberOfWords = array.Length;
             word1 = array[0];
             word2 = array[1];
         }
 
         static void LetterBreakDown(string word)
         {
-            
+            if (word == word1)
+            {
+                charArray1 = array[i].ToCharArray();
+            }
+            else
+            {
+                charArray2 = array[i].ToCharArray();
+            }
 
-            char[] charArray1 = array[0].ToCharArray();
-            char[] charArray2 = array[1].ToCharArray();
 
+            //char[] charArray1 = array[i].ToCharArray();
+            //char[] charArray2 = array[i].ToCharArray();
 
             //for (int j = 0; j < array.Length; j++)
             //{
@@ -51,7 +60,24 @@ namespace GreenFox
             //}
         }
 
-        static void Anagram()
+        static void CreateList(char [] temp)
+        {
+            if (temp == charArray1)
+            {
+                for (int i = 0; i < charArray1.Length; i++)
+                {
+                    List1[i] = charArray1[i].ToString();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < charArray1.Length; i++)
+                {
+                    List2[i] = charArray2[i].ToString();
+                }
+            }
+        }
+        static void Anagram(List<string> lists)
         {
 
         }
