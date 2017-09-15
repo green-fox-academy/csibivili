@@ -19,14 +19,12 @@ namespace GreenFox
 
         static void Main(string[] args)
         {
-            //Greetings("Hello!");
-            //string temp = new string(chars);
-            //Console.WriteLine(temp);
-            //Input(text);
+            Greetings("Hello!");
+            Input(text);
             //bool fuck = (string.Join("", WordsInLetters[0]) == string.Join("", WordsInLetters[1]));
             //Console.WriteLine(fuck);
             // SHORTEST
-            //Anagram(WordsInLetters);
+            Anagram(WordsInLetters);
             Console.ReadLine();
         }
 
@@ -51,6 +49,8 @@ namespace GreenFox
                     Console.WriteLine(letters);
                 }*/
                 //string temp = new string(WordsInLetters[i]);
+                
+
             }
 
         }
@@ -58,12 +58,22 @@ namespace GreenFox
         static void Anagram(List<Array> list)
         {
             bool result = false;
+            for (int i = 0; i < WordsInLetters.Count; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    result = Array.IndexOf(WordsInLetters[j], j) == Array.IndexOf(WordsInLetters[j + 1], j) ? true : false;
+                }
+            }
+
+
+            /*bool result = false;
             for (int i = 0; i < (WordsInLetters.Count - 1); i++)
             {
 
-                //string temp = new string (WordsInLetters[i]);
-                //result = (string.Join("", WordsInLetters[i]) == string.Join("", WordsInLetters[i+1]));
-            }
+                //string word1 = new string(WordsInLetters[i], 0, CharArray.Count());
+                //result = word1 == word2 ? true : false;
+            }*/
             Console.WriteLine(result);
            
         }
