@@ -42,10 +42,10 @@ namespace GreenFox
             {              
                 WordsInLetters.Add(array[i].ToCharArray());
                 Array.Sort(WordsInLetters[i]);
-                foreach (var letters in WordsInLetters[i])
+                /*foreach (var letters in WordsInLetters[i])
                 {
                     Console.WriteLine(letters);
-                }
+                }*/
             }
 
         }
@@ -53,9 +53,9 @@ namespace GreenFox
         static void Anagram(List<Array> list)
         {
             bool result = false;
-            for (int i = (WordsInLetters.Count - 1); i > 0; i--)
+            for (int i = 0; i < (WordsInLetters.Count - 1); i++)
             {
-                result = !(string.Join("", WordsInLetters[i]) == string.Join("", WordsInLetters[i-1]));
+                result = (string.Join("", WordsInLetters[i]) == string.Join("", WordsInLetters[i+1]));
             }
             Console.WriteLine(result);
            
