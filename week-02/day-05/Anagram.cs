@@ -26,7 +26,7 @@ namespace GreenFox
             Greetings("Hello!");
             //LetterBreakDown(word1);
             //LetterBreakDown(word2);
-            //Anagram(charArray1, charArray2);
+            Anagram(charArray1, charArray2);
             Console.ReadLine();
         }
 
@@ -44,12 +44,12 @@ namespace GreenFox
             charArray2 = array[1].ToCharArray();
             Array.Sort(charArray2);
             shorter = (word1.Length <= word2.Length) ? word1.Length : word2.Length;
-            bool result = false;
+            /*bool result = false;
             for (int i = 0; i < shorter; i++)
             {
                 result = !(charArray1[i] == charArray2[i]) ? false : true;
             }
-            Console.WriteLine(result);
+            Console.WriteLine(result);*/
 
         }
         /*
@@ -68,7 +68,7 @@ namespace GreenFox
 
 
         }
-
+        */
         static void Anagram(char [] array1, char [] array2)
         {
             bool result = false;
@@ -77,15 +77,8 @@ namespace GreenFox
                 result = !(array1[i] == array2[i]) ? false : true;
             }
             Console.WriteLine(result);
-            foreach (var letters in array1)
-            {
-                Console.WriteLine(letters);
-            }
-            foreach (var letters in array2)
-            {
-                Console.WriteLine(letters);
-            }
-        }*/
+           
+        }
        
     }
 }
