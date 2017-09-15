@@ -13,14 +13,15 @@ namespace GreenFox
         static int i = 0;
         static List<Array> WordsInLetters = new List<Array>();
         static string text = "";
-        static int shortest = 4;
+        static int shortest = 3;
 
         static void Main(string[] args)
         {
             Greetings("Hello!");
             Input(text);
+            Console.WriteLine(WordsInLetters[0].Equals(WordsInLetters[1]));
             // SHORTEST
-            Anagram(WordsInLetters);
+            //Anagram(WordsInLetters);
             Console.ReadLine();
         }
 
@@ -38,17 +39,18 @@ namespace GreenFox
             array = text.Split(' ');
             for (int i = 0; i < array.Length; i++)
             {              
-                WordsInLetters[i] = array[i].ToCharArray();
+                WordsInLetters.Add(array[i].ToCharArray());
                 Array.Sort(WordsInLetters[i]);
             }
+
         }
         
         static void Anagram(List<Array> list)
         {
             bool result = false;
-            for (int i = 0; i < shortest; i++)
+            for (int i = shortest; i > 1; i--)
             {
-                result = !(WordsInLetters[i] == WordsInLetters[i+1]) ? false : true;
+                result = WordsInLetters[i].Equals(WordsInLetters[i - 1]);
             }
             Console.WriteLine(result);
            
