@@ -33,10 +33,7 @@ namespace NameFromEmail
                 File.WriteAllLines(file2, lines);
                 successful = true;
             }
-            catch (Exception)
-            {
-                successful = false;
-            }
+            catch (Exception) {successful = false;}
             return successful;
         }
     }
