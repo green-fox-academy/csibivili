@@ -25,6 +25,7 @@ namespace NameFromEmail
             }
             return charachters;
         }
+
         static string FixText(List<string> charachters)
         {
             string text = "";
