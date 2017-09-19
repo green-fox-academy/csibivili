@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+main {
+    width: 28rem;
+    height: 30rem;
+    background-color: green;
+    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+div {
+    padding: 0.5rem;
+    background-color: red;
+}
+
+div.column {
+    width: 13rem;
+    height: 10rem;
+    float: left;
+}
+
+div.footer {
+    clear: left;
+    width: 27rem;
+    height: 10rem;
+}
