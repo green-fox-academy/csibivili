@@ -24,22 +24,10 @@ namespace ColoredBox
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             // draw a box that has different colored lines on each edge.
-            //int x, y, w, y;
             int x = 10;
             int y = 60;
-            var colors = new List<string>() { "Red", "Green", "Blue", "Yellow" };
 
-            //var point1 = new Point(x, x);
-            //var point2 = new Point(y, x);
-            //var point3 = new Point(y, y);
-            //var point4 = new Point(x, y);
-
-            //foxDraw.DrawLine(point1, point2);
-            //foxDraw.DrawLine(point2, point3);
-            //foxDraw.DrawLine(point3, point4);
-            //foxDraw.DrawLine(point4, point1);
-
-            DrawSquare(CreatePoints(x, y), colors);
+            DrawSquare(CreatePoints(x, y));
 
         }
 
@@ -53,14 +41,25 @@ namespace ColoredBox
             return points;
         }
 
-        public void DrawSquare (List<Point> points, List<string> colors)
+        public void DrawSquare (List<Point> points) 
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             for (int i = 1; i < points.Count; i++)
             {
-                foxDraw.DrawLine(points[i-1], points[i]);
+                foxDraw.StrokeColor(RandomColor());
+                foxDraw.DrawLine(points[i], points[i-1]);
             }
+            foxDraw.StrokeColor(RandomColor());
+            foxDraw.DrawLine(points[points.Count-1], points[0]);
+        }
+
+        public Color RandomColor()
+        {
+            Random randonGen = new Random();
+            Color randomColor = Color.FromArgb(255, Convert.ToByte(randonGen.Next(255)), 
+                Convert.ToByte(randonGen.Next(255)), Convert.ToByte(randonGen.Next(255)));
+            return randomColor;
         }
 
     }
