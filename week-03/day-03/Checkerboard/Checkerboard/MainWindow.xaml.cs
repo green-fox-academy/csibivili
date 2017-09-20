@@ -27,7 +27,7 @@ namespace Checkerboard
 
             int x, y;
 
-            for (y = 0; y < 8 * 70; y = y + 75)
+            for (y = 0; y < 8 * 70; y = y + 70)
             {
                 for (x = 0; x < 8 * 70; x = x + 140)
                 {
@@ -41,7 +41,7 @@ namespace Checkerboard
                     foxDraw.StrokeColor(Colors.White);
                     DrawSquare(foxDraw, x, y);
                 }
-                y = y + 75;
+                y = y + 70;
                 for (x = 0; x < 8 * 70; x = x + 140)
                 {
                     foxDraw.FillColor(Colors.White);
