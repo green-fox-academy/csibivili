@@ -43,8 +43,8 @@ namespace CenterBoxFunction
         }
         public Color RandomColor()
         {
-            Color randomColor = Color.FromArgb(Convert.ToByte(randonGen.Next(255)), Convert.ToByte(randonGen.Next(255)),
-                Convert.ToByte(randonGen.Next(255)), Convert.ToByte(randonGen.Next(255)));
+            Color randomColor = Color.FromArgb(Convert.ToByte(randonGen.Next(150,255)), Convert.ToByte(randonGen.Next(150,255)),
+                Convert.ToByte(randonGen.Next(150,255)), Convert.ToByte(randonGen.Next(150,255)));
             return randomColor;
         }
     }
