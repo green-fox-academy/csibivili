@@ -26,8 +26,18 @@ namespace Middle_lines
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
+
             //  draw a red horizontal line to the canvas' middle.
             //  draw a green vertical line to the canvas' middle.
+
+            var startPoint = new Point(0,canvas.Height/2);
+            var endPoint = new Point(canvas.Width, canvas.Height / 2);
+
+            foxDraw.StrokeColor(Colors.Red);
+            foxDraw.DrawLine(startPoint,endPoint);
+
+
+
         }
     }
 }
