@@ -35,6 +35,7 @@ namespace FourRectangles
         public void RandomRectangle (FoxDraw foxDraw)
         {
                 foxDraw.FillColor(RandomColor());
+                foxDraw.StrokeColor(RandomColor());
                 foxDraw.DrawRectangle(RandomPositionX(), RandomPositionY(), RandomSizeX(), RandomSizeY());
           
         }
