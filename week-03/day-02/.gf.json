@@ -1,0 +1,24 @@
+{
+  "exercises": {
+    "CopyFile.cs": "",
+    "CountLines.cs": "",
+    "DivideByZero.cs": "",
+    "Doubled.cs": "",
+    "EncodedLines.cs": "",
+    "Lottery.cs": "",
+    "PrintEachLine.cs": "",
+    "ReversedLines.cs": "",
+    "ReversedOrder.cs": "",
+    "WriteMultipleLines.cs": "",
+    "WriteSingleLine.cs": "",
+    "duplicated-chars.txt": "",
+    "encoded-lines.txt": "",
+    "otos.csv": "",
+    "reversed-lines.txt": "",
+    "reversed-order.txt": ""
+  },
+  "lang": "cs",
+  "repo": "teaching-materials",
+  "workshop-path": "workshop/file-manipulations",
+  "workshop-url": "https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/file-manipulations/cs.md"
+}

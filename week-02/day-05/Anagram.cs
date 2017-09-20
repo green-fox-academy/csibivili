@@ -45,8 +45,22 @@ namespace GreenFox
             {
                 WordsInLetters.Add(array[i].ToCharArray());
                 Array.Sort(WordsInLetters[i]);
+<<<<<<< HEAD
                 char[] charArray = WordsInLetters[i];
                 string word = new string(WordsInLetters[i]);
+=======
+                string word = new string(WordsInLetters[i]);
+
+                //char[] charArray = WordsInLetters[i];
+
+
+                /*for (int j = 0; j < array[j].Length; j++)
+                {
+                    string tmp = new string(charArray[j]);
+                }*/
+
+
+>>>>>>> 1e03948b80886fe6330484b41670fad13164364c
             }
 
         }
