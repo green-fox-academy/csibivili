@@ -28,7 +28,6 @@ namespace ColoredBox
             int y = 60;
 
             DrawSquare(CreatePoints(x, y));
-
         }
 
         public List<Point> CreatePoints (int x, int y)
@@ -54,12 +53,13 @@ namespace ColoredBox
             foxDraw.DrawLine(points[points.Count-1], points[0]);
         }
 
+        public readonly Random randonGen = new Random();
+
         public Color RandomColor()
         {
-            Random randonGen = new Random();
             Color randomColor = Color.FromArgb(255, Convert.ToByte(randonGen.Next(255)), 
                 Convert.ToByte(randonGen.Next(255)), Convert.ToByte(randonGen.Next(255)));
-            return randomColor;
+            return randomColor;           
         }
 
     }
