@@ -8,7 +8,7 @@ namespace Bunny2
 {
     class Program
     {
-        static int ears = 0;
+        static int ears = 2;
 
         static void Main(string[] args)
         {
@@ -16,30 +16,30 @@ namespace Bunny2
             // (1, 3, ..) have the normal 2 ears. The even bunnies (2, 4, ..) we'll say
             // have 3 ears, because they each have a raised foot. Recursively return the
             // number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).
-            Console.WriteLine(EarsCounter(2));
+            Console.WriteLine(EarsCounter(5));
             Console.ReadLine();
         }
 
-        static int EarsCounter (int lines)
+        static int EarsCounter(int lines)
         {
-            if (lines != 0)
+            if (lines == 1)
+            {
+                return ears;
+            }
+            else
             {
                 if (lines % 2 == 0)
                 {
                     ears = ears + 3;
-                    return ears + EarsCounter(lines- 2);
+                    return EarsCounter(lines - 1);
                 }
                 else
                 {
                     ears = ears + 2;
-                    return ears + EarsCounter(lines - 2);
+                    return EarsCounter(lines - 1);
                 }
-            }
-            else
-            {
-                return 2;
-            }
 
+            }
         }
     }
 }
