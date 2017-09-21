@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exer11", "Exer11\Exer11.csproj", "{C3F4803F-D9EE-4DA3-AF82-33F8779935B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3F4803F-D9EE-4DA3-AF82-33F8779935B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F4803F-D9EE-4DA3-AF82-33F8779935B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F4803F-D9EE-4DA3-AF82-33F8779935B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F4803F-D9EE-4DA3-AF82-33F8779935B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD55FD68-11D6-4B78-96E4-1C868F078936}
+	EndGlobalSection
+EndGlobal
