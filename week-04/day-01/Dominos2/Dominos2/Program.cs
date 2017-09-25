@@ -8,6 +8,7 @@ namespace Domino
 {
     public class Dominoes
     {
+        
         public static void Main(string[] args)
         {
             var dominoes = InitializeDominoes();
@@ -16,8 +17,33 @@ namespace Domino
             // Create a function to write the dominous to the console in the following format
             // eg: [2, 4], [4, 3], [3, 5] ...
 
-            int[] temp = dominoes[0].GetValues();
-            Console.WriteLine(temp[1]);
+            var listOfNumberPairs = new List<string>();
+            var finailList = new List<string>();
+
+            for (int i = 0; i < dominoes.Count; i++)
+            {
+                listOfNumberPairs.Add("[" + dominoes[i].GetValues()[0].ToString() + ", " + dominoes[i].GetValues()[1].ToString() + "]");
+            }
+
+            finailList.Add(listOfNumberPairs[0]);
+
+            int j = 0;
+
+            for (int i = j; i < listOfNumberPairs.Count; i++)
+            {
+                if (listOfNumberPairs[j][4] == listOfNumberPairs[i][1])
+                {
+                    finailList.Add(listOfNumberPairs[i]);
+                    j = i;
+                    i = 0;
+                }
+            }
+         
+            foreach (var domino in finailList)
+            {
+                Console.Write(domino);
+            }
+
             Console.ReadLine();
         }
 
