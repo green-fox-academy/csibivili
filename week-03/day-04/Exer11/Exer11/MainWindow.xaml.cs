@@ -16,45 +16,39 @@ using GreenFox;
 
 namespace Exer11
 {
-
-
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
-        public Rectangle Square = new Rectangle();
-        public readonly Random randonGen = new Random();
-        public int yPosition = 600;
-        public int xPosition = 600;
         public MainWindow()
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            DrawSquare(foxDraw, Size(200), Size(200), Size(200));
+            foxDraw.BackgroundColor(Colors.Yellow);
+            DrawLines(foxDraw, 0, 0, 600, 600, 6);
         }
 
-
-        public int Size(int value)
+        static void DrawLines(FoxDraw foxDraw, double x, double y, double endx, double endy, int depth)
         {
-            
-            if (value > 10)
+            foxDraw.StrokeColor(Colors.Black);
+            foxDraw.DrawLine(x + (endx - x) / 3, y, x + (endx - x) / 3, endy);
+            foxDraw.DrawLine(x + (endx - x) / 3 * 2, y, x + (endx - x) / 3 * 2, endy);
+            foxDraw.DrawLine(x, y + (endy - y) / 3, endx, y + (endy - y) / 3);
+            foxDraw.DrawLine(x, y + (endy - y) / 3 * 2, endx, y + (endy - y) / 3 * 2);
+
+            depth--;
+
+            if (depth > 0)
             {
-                return value /= 3;
-            }
-            else
-            {
-                return value;
+                DrawLines(foxDraw, x + (endx - x) / 3, y, x + (endx - x) / 1.5, y + (endy - y) / 3, depth);
+                DrawLines(foxDraw, x + (endx - x) / 3, y + (endy - y) / 3 * 2, x + (endx - x) / 3 * 2, endy, depth);
+                DrawLines(foxDraw, x + (endx - x) / 3 * 2, y + (endy - y) / 3, endx, y + (endy - y) / 3 * 2, depth);
+                DrawLines(foxDraw, x, y + (endy - y) / 3, x + (endx - x) / 3, y + (endy - y) / 3 * 2, depth);
+                return;
             }
         }
 
-        public void DrawSquare(FoxDraw foxDraw, int x, int y, int size)
-        {
-            foxDraw.DrawRectangle(x, y, size, size);
-        }
 
-        public Color RandomColor()
-        {
-            Color randomColor = Color.FromArgb(Convert.ToByte(randonGen.Next(255)), Convert.ToByte(randonGen.Next(255)),
-                Convert.ToByte(randonGen.Next(255)), Convert.ToByte(randonGen.Next(255)));
-            return randomColor;
-        }
     }
 }
