@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace garden_app
 {
-    public class Flower : Plant
+    public class Tree : Plant
     {
-        public Flower (int color, double waterAmount)
+        public Tree (int color, double waterAmount)
         {
             base.color = COLORS[color];
             base.waterAmount = waterAmount;
-            base.waterAbsorb = 0.75;
+            base.waterAbsorb = 0.4;
         }
     }
 }
