@@ -12,18 +12,24 @@ namespace garden_app
         {
             var garden = new Garden("kertecske");
 
-            var flower1 = new Flower(0, 4);
-            var flower2 = new Flower(1, 4);
-            var tree1 = new Tree (2,4);
-            var tree2 = new Tree(3,4);
+            var flower1 = new Flower(0,0);
+            var flower2 = new Flower(1,0);
+            var tree1 = new Tree (2,0);
+            var tree2 = new Tree(3,0);
 
             garden.AddPlant(flower1);
             garden.AddPlant(flower2);
             garden.AddPlant(tree1);
             garden.AddPlant(tree2);
 
-            flower2.Watering(10.5);
 
+            garden.Print();
+            garden.Watering(40);
+            garden.Print();
+            garden.Watering(70);
+            garden.Print();
+
+            Console.ReadLine();
 
         }
     }

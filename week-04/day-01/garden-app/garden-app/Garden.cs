@@ -18,7 +18,7 @@ namespace garden_app
 
         public void AddPlant (Plant plant)
         {
-            plants.Add(new Plant());
+            plants.Add(plant);
         }
 
         public void Watering (int value)
@@ -27,7 +27,18 @@ namespace garden_app
             for (int i = 0; i < plants.Count; i++)
             {
                 plants[i].Watering(eachPlant);
+
             }
+            Console.WriteLine("Watering with {0}",value);
+        }
+
+        public void Print ()
+        {
+            foreach (Plant plant in plants)
+            {
+                Console.WriteLine(plant.GetPlantInfo());
+            }
+            Console.WriteLine();
         }
     } 
 }

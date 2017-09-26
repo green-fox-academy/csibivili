@@ -12,7 +12,16 @@ namespace garden_app
         {
             base.color = COLORS[color];
             base.waterAmount = waterAmount;
-            base.waterAbsorb = 0.4;
+            waterAbsorb = 0.4;
+            NeedsWater();
+        }
+
+        public void NeedsWater()
+        {
+            if (waterAmount < 10)
+            {
+                needsWater = true;
+            }
         }
     }
 }
