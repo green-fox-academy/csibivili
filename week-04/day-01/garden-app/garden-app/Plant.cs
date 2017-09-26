@@ -13,8 +13,7 @@ namespace garden_app
         public bool needsWater;
         public string color;
         public double waterAbsorb;
-
-        protected double waterAmount;
+        public double waterAmount;
 
         public void Watering (double water)
         {
