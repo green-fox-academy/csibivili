@@ -10,7 +10,7 @@ namespace garden_app
     {
         protected static readonly string[] COLORS = new string[] { "blue", "orange", "purple", "yellow" };
 
-        public bool needsWater;
+        public bool needsWater = true;
         public string color;
         public double waterAbsorb;
         public double waterAmount;
