@@ -8,9 +8,7 @@ namespace garden_app
 {
     public class Flower : Plant
     {
-        //private new double waterAmount;
-
-        public Flower (int color, double waterAmount)
+        public Flower (int color)
         {
             base.color = COLORS[color];
             base.waterAmount = waterAmount;

@@ -12,10 +12,10 @@ namespace garden_app
         {
             var garden = new Garden("kertecske");
 
-            var flower1 = new Flower(0,0);
-            var flower2 = new Flower(1,0);
-            var tree1 = new Tree (2,0);
-            var tree2 = new Tree(3,0);
+            var flower1 = new Flower(3);
+            var flower2 = new Flower(0);
+            var tree1 = new Tree (2);
+            var tree2 = new Tree(1);
 
             garden.AddPlant(flower1);
             garden.AddPlant(flower2);

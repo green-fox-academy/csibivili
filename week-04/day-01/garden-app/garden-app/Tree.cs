@@ -8,7 +8,7 @@ namespace garden_app
 {
     public class Tree : Plant
     {
-        public Tree (int color, double waterAmount)
+        public Tree (int color)
         {
             base.color = COLORS[color];
             base.waterAmount = waterAmount;

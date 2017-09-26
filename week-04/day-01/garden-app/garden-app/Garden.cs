@@ -27,14 +27,7 @@ namespace garden_app
             for (int i = 0; i < plants.Count; i++)
             {
                 plants[i].Watering(eachPlant);
-                if (plants[i].waterAbsorb == 0.75 & plants[i].waterAmount >= 5)
-                {
-                    plants[i].needsWater = false;
-                }
-                if (plants[i].waterAbsorb == 0.4 & plants[i].waterAmount >= 10)
-                {
-                    plants[i].needsWater = false;
-                }
+                plants[i].DontNeedWater();
             }
             Console.WriteLine("Watering with {0}",value);
         }

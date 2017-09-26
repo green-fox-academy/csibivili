@@ -27,5 +27,16 @@ namespace garden_app
             return String.Format("The {0} {1} {2}", color, type, water);
         }
 
+        public void DontNeedWater ()
+        {
+            if (waterAbsorb == 0.75 & waterAmount >= 5)
+            {
+                needsWater = false;
+            }
+            if (waterAbsorb == 0.4 & waterAmount >= 10)
+            {
+                needsWater = false;
+            }
+        }
     }
 }
