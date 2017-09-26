@@ -21,6 +21,10 @@ namespace garden_app
             garden.AddPlant(flower2);
             garden.AddPlant(tree1);
             garden.AddPlant(tree2);
+
+            flower2.Watering(10.5);
+
+
         }
     }
 }

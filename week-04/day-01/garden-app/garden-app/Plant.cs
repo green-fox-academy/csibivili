@@ -14,5 +14,10 @@ namespace garden_app
         protected double waterAmount;
         protected double waterAbsorb;
 
+        public void Watering (double water)
+        {
+            waterAmount += waterAbsorb * water;
+        }
+
     }
 }

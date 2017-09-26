@@ -20,5 +20,14 @@ namespace garden_app
         {
             plants.Add(new Plant());
         }
-    }
+
+        public void Watering (int value)
+        {
+            double eachPlant = value / plants.Count;
+            for (int i = 0; i < plants.Count; i++)
+            {
+                plants[i].Watering(eachPlant);
+            }
+        }
+    } 
 }
