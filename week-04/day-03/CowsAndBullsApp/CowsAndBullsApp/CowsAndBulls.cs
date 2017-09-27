@@ -10,7 +10,26 @@ namespace CowsAndBullsApp
     {
         public string CAB(int input)
         {
-            return "cowcowcowcow";
+            string result = input.ToString();
+            char[] digits = result.ToCharArray();
+            //var textDigits = new List<string>();
+            result = String.Empty;
+
+            foreach (var digit in digits)
+            {
+                if (digit == '1')
+                {
+                    result += "cow";
+                }
+                else
+                {
+                    result += digit.ToString();
+                }
+                
+            }
+
+
+            return result;
         }
     }
 }
