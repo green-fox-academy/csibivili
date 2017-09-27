@@ -33,7 +33,7 @@ namespace CowsAndBullsApp
 
         static int RandomNumber ()
         {
-            return 1111;
+            return 1234;
         }
 
         static string Match(int input)
@@ -42,7 +42,12 @@ namespace CowsAndBullsApp
             {
                 return String.Format("{0}{0}{0}{0}", COWBULL[0]);
             }
-            return String.Empty;
+            return NotMatch(input);
+        }
+
+        static string NotMatch(int input)
+        {
+            return input.ToString();
         }
     }
 }

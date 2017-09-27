@@ -14,10 +14,19 @@ namespace CowsAndBullsAppTest
         CowsAndBulls cowsAndBulls = new CowsAndBulls();
 
         [Test]
-        public void TestCABWhen1111()
+        public void TestCABWhen1234()
         {
-            int input = 1111;
+            int input = 1234;
             string output = "cowcowcowcow";
+
+            Assert.AreEqual(output, cowsAndBulls.CAB(input));
+        }
+
+        [Test]
+        public void TestCABWhen5678()
+        {
+            int input = 5678;
+            string output = "5678";
 
             Assert.AreEqual(output, cowsAndBulls.CAB(input));
         }
