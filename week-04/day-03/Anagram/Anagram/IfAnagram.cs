@@ -11,9 +11,13 @@ namespace Anagram
         public bool IfAnagrams(string input1, string input2)
         {
             bool result;
+            //input1 = "roast beef";
             char[] charArray1 = input1.ToCharArray();
+            char charToRemove = ' ';
+            charArray1 = charArray1.Where(val => val != charToRemove).ToArray();
             Array.Sort(charArray1);
             char[] charArray2 = input2.ToCharArray();
+            charArray2 = charArray2.Where(val => val != charToRemove).ToArray();
             Array.Sort(charArray2);
             result = charArray1.SequenceEqual(charArray2);
             return result;

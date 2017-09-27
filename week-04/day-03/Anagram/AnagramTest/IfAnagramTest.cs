@@ -44,7 +44,7 @@ namespace AnagramTest
         }
 
         [Test]
-        public void TestIfAnagramWhenAnagrams ()
+        public void TestIfAnagramWhenTwoInputsAreAnagramsSameNumberOfChars ()
         {
             string input1 = "rail safety";
             string input2 = "fairy tales";
@@ -52,6 +52,16 @@ namespace AnagramTest
 
             Assert.AreEqual(output, anagram.IfAnagrams(input1, input2));
         }
-        
+
+        [Test]
+        public void TestIfAnagramWhenTwoInputsAreAnagramsDifferentNumberOfChars()
+        {
+            string input1 = "roast beef";
+            string input2 = "eat for bse";
+            bool output = true;
+
+            Assert.AreEqual(output, anagram.IfAnagrams(input1, input2));
+        }
+
     }
 }
