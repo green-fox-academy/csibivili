@@ -8,9 +8,15 @@ namespace CountLetters
 {
     public class DictionaryFromWord
     {
-        public Dictionary<int,char> DictFromWord(string input)
+        public Dictionary<char,int> DictFromWord(string input)
         {
-            Dictionary<int, char> dictionary = new Dictionary<int, char>();
+            char[] charArray1 = input.ToCharArray();
+            Dictionary<char, int> dictionary = new Dictionary<char, int>();
+
+            for (int i = 0; i < charArray1.Length; i++)
+            {
+                dictionary.Add(charArray1[i], 1);
+            }
             return dictionary;
         }
     }
