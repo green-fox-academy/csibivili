@@ -17,9 +17,9 @@ namespace SumTest
         public void TestSumNumbersWhenNumberOfInputs1OutputEqualToInput ()
         {
             var input = new List<int> { 1 };
-            var output = input;
+            var output = input[0];
 
-            Assert.AreEqual(output, sum.SumOfNumbers());
+            Assert.AreEqual(output, sum.SumOfNumbers(input));
         }
     }
 }

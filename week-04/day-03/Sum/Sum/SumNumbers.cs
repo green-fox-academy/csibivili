@@ -8,9 +8,9 @@ namespace Sum
 {
     public class SumNumbers
     {
-        public int SumOfNumbers()
+        public int SumOfNumbers(List<int> listOfNumbers)
         {
-            return 0;
+            return listOfNumbers[0];
         }
     }
 }
