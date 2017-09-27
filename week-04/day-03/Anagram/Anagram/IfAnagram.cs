@@ -8,10 +8,10 @@ namespace Anagram
 {
     public class IfAnagram
     {
-        public bool IfAnagrams(string input)
+        public bool IfAnagrams(string input1, string input2)
         {
             bool result;
-            return result = input == String.Empty;
+            return result = input1 == input2;
         }
     }
 }

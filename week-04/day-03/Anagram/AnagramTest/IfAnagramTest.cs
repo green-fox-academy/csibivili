@@ -16,10 +16,13 @@ namespace AnagramTest
         [Test]
         public void TestIfAnagramWhenEmptyStrings ()
         {
-            string input = String.Empty;
-            bool output = true;
+            string input1 = String.Empty;
+            string input2 = String.Empty;
+            bool output = input1 == input2;
 
-            Assert.AreEqual(output, anagram.IfAnagrams(input));
+            Assert.AreEqual(output, anagram.IfAnagrams(input1,input2));
         }
+
+        
     }
 }
