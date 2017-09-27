@@ -34,5 +34,17 @@ namespace CountLettersTest
 
             Assert.AreEqual(output, dictionary.DictFromWord(input));
         }
+
+        [Test]
+        public void TestDictFromWordWhenStringHasNotOnlyUniqLetters()
+        {
+            string input = "bomb";
+            Dictionary<char, int> output = new Dictionary<char, int>();
+            output.Add('b', 2);
+            output.Add('o', 1);
+            output.Add('m', 1);
+
+            Assert.AreEqual(output, dictionary.DictFromWord(input));
+        }
     }
 }
