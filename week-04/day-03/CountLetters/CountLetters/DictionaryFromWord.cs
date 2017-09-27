@@ -20,14 +20,14 @@ namespace CountLetters
             return dictionary;
         }
 
-        public char[] UniqChar (string input)
+        static char[] UniqChar (string input)
         {
             input = input.ToLower();
             char[] charArray = input.ToCharArray();
             return charArray.Distinct().ToArray();           
         }
 
-        public int[] Occurance (string input, char[] uniqCharArray)
+        static int[] Occurance (string input, char[] uniqCharArray)
         {
             int[] occurance = new int[uniqCharArray.Length];
             for (int i = 0; i < occurance.Length; i++)
