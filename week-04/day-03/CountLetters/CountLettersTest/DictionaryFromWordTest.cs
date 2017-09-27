@@ -71,5 +71,21 @@ namespace CountLettersTest
 
             Assert.AreEqual(output, dictionary.DictFromWord(input));
         }
+
+        [Test]
+        public void TestDictFromWordWhenStringHasRepeatingLettersUpperLowerCaseNumbersSpecialChars()
+        {
+            string input = "99 Lb%%%?! ?";
+            Dictionary<char, int> output = new Dictionary<char, int>();
+            output.Add('9', 2);
+            output.Add(' ', 2);
+            output.Add('l', 1);
+            output.Add('b', 1);
+            output.Add('%', 3);
+            output.Add('?', 2);
+            output.Add('!', 1);
+
+            Assert.AreEqual(output, dictionary.DictFromWord(input));
+        }
     }
 }
