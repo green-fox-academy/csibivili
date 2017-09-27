@@ -11,7 +11,12 @@ namespace Anagram
         public bool IfAnagrams(string input1, string input2)
         {
             bool result;
-            return result = input1 == input2;
+            char[] charArray1 = input1.ToCharArray();
+            Array.Sort(charArray1);
+            char[] charArray2 = input2.ToCharArray();
+            Array.Sort(charArray2);
+            result = charArray1.SequenceEqual(charArray2);
+            return result;
         }
     }
 }
