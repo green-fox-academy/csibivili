@@ -30,5 +30,23 @@ namespace SumTest
 
             Assert.AreEqual(output, sum.SumOfNumbers(input));
         }
+
+        [Test]
+        public void TestSumNumbersWhenNumberOfInputs0()
+        {
+            var input = new List<int>();
+            int output = 0;
+
+            Assert.AreEqual(output, sum.SumOfNumbers(input));
+        }
+
+        [Test]
+        public void TestSumNumbersWhenNullInput()
+        {
+            var input = new List<int> {};
+            int output = 0;
+
+            Assert.AreEqual(output, sum.SumOfNumbers(input));
+        }
     }
 }
