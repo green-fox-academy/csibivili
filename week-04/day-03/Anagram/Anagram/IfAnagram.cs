@@ -11,7 +11,8 @@ namespace Anagram
         public bool IfAnagrams(string input1, string input2)
         {
             bool result;
-            //input1 = "roast beef";
+            input1 = input1.ToLower();
+            input2 = input2.ToLower();
             char[] charArray1 = input1.ToCharArray();
             char charToRemove = ' ';
             charArray1 = charArray1.Where(val => val != charToRemove).ToArray();

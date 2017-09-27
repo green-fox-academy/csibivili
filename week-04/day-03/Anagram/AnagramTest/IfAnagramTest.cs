@@ -63,5 +63,15 @@ namespace AnagramTest
             Assert.AreEqual(output, anagram.IfAnagrams(input1, input2));
         }
 
+        [Test]
+        public void TestIfAnagramWhenTwoInputsAreAnagramsDifferentNumberOfCharsUpperLowerCases()
+        {
+            string input1 = "William Shakespeare";
+            string input2 = "I am a weakish speller";
+            bool output = true;
+
+            Assert.AreEqual(output, anagram.IfAnagrams(input1, input2));
+        }
+
     }
 }
