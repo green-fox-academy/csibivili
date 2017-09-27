@@ -10,23 +10,30 @@ namespace CountLetters
     {
         public Dictionary<char,int> DictFromWord(string input)
         {
+            Dictionary<char, int> dictionary = new Dictionary<char, int>();
+
+            for (int i = 0; i < UniqChar(input).Length; i++)
+            {
+                dictionary.Add(UniqChar(input)[i], Occurance(input,UniqChar(input))[i]);
+            }
+
+            return dictionary;
+        }
+
+        public char[] UniqChar (string input)
+        {
             char[] charArray = input.ToCharArray();
-            char[] uniqCharArray = charArray.Distinct().ToArray();
+            return charArray.Distinct().ToArray();           
+        }
 
+        public int[] Occurance (string input, char[] uniqCharArray)
+        {
             int[] occurance = new int[uniqCharArray.Length];
-
             for (int i = 0; i < occurance.Length; i++)
             {
                 occurance[i] = input.Count(x => x == uniqCharArray[i]);
             }
-
-            Dictionary<char, int> dictionary = new Dictionary<char, int>();
-
-            for (int i = 0; i < uniqCharArray.Length; i++)
-            {
-                dictionary.Add(uniqCharArray[i], occurance[i]);
-            }
-            return dictionary;
+            return occurance;
         }
     }
 }
