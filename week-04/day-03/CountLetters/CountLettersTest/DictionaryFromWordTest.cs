@@ -46,5 +46,18 @@ namespace CountLettersTest
 
             Assert.AreEqual(output, dictionary.DictFromWord(input));
         }
+
+        [Test]
+        public void TestDictFromWordWhenStringHasRepeatingLettersUpperLowerCase()
+        {
+            string input = "StevE";
+            Dictionary<char, int> output = new Dictionary<char, int>();
+            output.Add('s', 1);
+            output.Add('t', 1);
+            output.Add('e', 2);
+            output.Add('v', 1);
+
+            Assert.AreEqual(output, dictionary.DictFromWord(input));
+        }
     }
 }

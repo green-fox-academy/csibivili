@@ -22,6 +22,7 @@ namespace CountLetters
 
         public char[] UniqChar (string input)
         {
+            input = input.ToLower();
             char[] charArray = input.ToCharArray();
             return charArray.Distinct().ToArray();           
         }
@@ -31,7 +32,7 @@ namespace CountLetters
             int[] occurance = new int[uniqCharArray.Length];
             for (int i = 0; i < occurance.Length; i++)
             {
-                occurance[i] = input.Count(x => x == uniqCharArray[i]);
+                occurance[i] = input.ToLower().Count(x => x == uniqCharArray[i]);
             }
             return occurance;
         }
