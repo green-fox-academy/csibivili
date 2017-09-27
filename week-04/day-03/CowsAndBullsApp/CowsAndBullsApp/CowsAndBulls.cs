@@ -47,6 +47,10 @@ namespace CowsAndBullsApp
 
         static string NotMatch(int input)
         {
+            if (input.ToString().Contains("1") == true)
+            {
+                return String.Format("{0}678", COWBULL[0]);
+            }
             return input.ToString();
         }
     }
