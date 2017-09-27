@@ -10,7 +10,7 @@ namespace Sum
     {
         public int SumOfNumbers(List<int> listOfNumbers)
         {
-            return listOfNumbers[0];
+            return listOfNumbers.Sum();
         }
     }
 }

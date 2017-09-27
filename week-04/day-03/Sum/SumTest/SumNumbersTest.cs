@@ -21,5 +21,14 @@ namespace SumTest
 
             Assert.AreEqual(output, sum.SumOfNumbers(input));
         }
+
+        [Test]
+        public void TestSumNumbersWhenNumberOfInputsMoreThan1()
+        {
+            var input = new List<int> { 1,2 ,3};
+            int output = input.Sum();
+
+            Assert.AreEqual(output, sum.SumOfNumbers(input));
+        }
     }
 }
