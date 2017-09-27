@@ -12,11 +12,12 @@ namespace AnagramTest
     public class IfAnagramTest
     {
         IfAnagram anagram = new IfAnagram();
+
         [Test]
         public void TestIfAnagramWhenEmptyStrings ()
         {
             string input = String.Empty;
-            string output = String.Empty;
+            bool output = true;
 
             Assert.AreEqual(output, anagram.IfAnagrams(input));
         }
