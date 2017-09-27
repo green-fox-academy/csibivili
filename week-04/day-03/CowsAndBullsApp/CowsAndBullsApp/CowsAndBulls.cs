@@ -11,6 +11,8 @@ namespace CowsAndBullsApp
         static readonly Random RANDOM = new Random();
         static readonly string[] COWBULL = new string[] { "cow", "bull" };
 
+        public List<char> Digits = new List<char>();
+
         public string CAB(int input)
         {
             //string result = input.ToString();
@@ -36,7 +38,7 @@ namespace CowsAndBullsApp
             return 1234;
         }
 
-        static string Match(int input)
+        public string Match(int input)
         {
             if (input == RandomNumber())
             {
@@ -45,13 +47,30 @@ namespace CowsAndBullsApp
             return NotMatch(input);
         }
 
-        static string NotMatch(int input)
+        public string NotMatch(int input)
         {
-            if (input.ToString().Contains("1") == true)
+            Breakdown(input);
+            for (int i = 0; i < Digits.Count; i++)
             {
-                return String.Format("{0}678", COWBULL[0]);
+                if (RandomNumber().ToString().Contains(Digits[i]))
+                {
+
+                    return String.Format("{0}678", COWBULL[0]);
+                }
             }
             return input.ToString();
+        }
+
+        public List<char> Breakdown (int input)
+        {
+            string textInput = input.ToString();
+            char[] digits = textInput.ToCharArray();
+
+            foreach (var digit in digits)
+            {
+                Digits.Add(digit);
+            }
+            return Digits;
         }
     }
 }

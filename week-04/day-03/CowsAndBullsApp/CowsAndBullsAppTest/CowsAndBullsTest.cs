@@ -39,5 +39,14 @@ namespace CowsAndBullsAppTest
 
             Assert.AreEqual(output, cowsAndBulls.CAB(input));
         }
+
+        [Test]
+        public void TestCABWhen5278()
+        {
+            int input = 5278;
+            string output = "5cow78";
+
+            Assert.AreEqual(output, cowsAndBulls.CAB(input));
+        }
     }
 }
