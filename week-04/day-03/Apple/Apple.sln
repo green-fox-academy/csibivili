@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apple", "Apple\Apple.csproj", "{1CF74E2E-0D4A-464E-9130-EE0C33414BD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppleTest", "AppleTest\AppleTest.csproj", "{A444D4E8-8FE6-4EB4-818E-CDC14126591D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CF74E2E-0D4A-464E-9130-EE0C33414BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF74E2E-0D4A-464E-9130-EE0C33414BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF74E2E-0D4A-464E-9130-EE0C33414BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF74E2E-0D4A-464E-9130-EE0C33414BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A444D4E8-8FE6-4EB4-818E-CDC14126591D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A444D4E8-8FE6-4EB4-818E-CDC14126591D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A444D4E8-8FE6-4EB4-818E-CDC14126591D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A444D4E8-8FE6-4EB4-818E-CDC14126591D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09DC195A-0A17-4BFB-9E2D-BCB0786697BD}
+	EndGlobalSection
+EndGlobal
