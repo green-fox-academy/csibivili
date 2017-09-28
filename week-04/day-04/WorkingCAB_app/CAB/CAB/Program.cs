@@ -14,23 +14,30 @@ namespace CAB
             CowsAndBulls cowsAndBulls = new CowsAndBulls();
 
             cowsAndBulls.RandomNumber();
-            int input = 0;//int.Parse(Console.ReadLine());
-
-            //while (cowsAndBulls.CAB(input).Equals("cowcowcowcow")) ;
-            //{
-            //    Console.WriteLine(cowsAndBulls.CAB(input));
-            //    input = int.Parse(Console.ReadLine());
-            //}
+            int input = 0;
 
             do
             {
-                input = int.Parse(Console.ReadLine());
-                Console.WriteLine(cowsAndBulls.CAB(input));
-            } while (!cowsAndBulls.CAB(input).Equals("cowcowcowcow"));
-    
-            Console.WriteLine(cowsAndBulls.CAB(input));
-
-            Console.ReadLine();
+                bool ifNumber = int.TryParse(Console.ReadLine(),out input);
+                if (ifNumber)
+                {
+                    if (1000 <= input && input <=9999)
+                    {
+                        Console.WriteLine(cowsAndBulls.NotMatch(input));
+                    }
+                    else
+                    {
+                        Console.WriteLine("This number is out of range. You lost!");
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("This is not a number. You lost!");
+                    break;
+                }
+            } while (!cowsAndBulls.NotMatch(input).Equals("CowCowCowCow"));
+            Console.WriteLine("YOU WON!!!");
         }
     }
 }

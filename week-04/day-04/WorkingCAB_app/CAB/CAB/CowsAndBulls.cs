@@ -8,7 +8,7 @@ namespace CAB
 {
     class CowsAndBulls
     {       
-        static readonly string[] COWBULL = new string[] { "cow", "bull" };
+        static readonly string[] COWBULL = new string[] { "Cow", "Bull" };
 
         public int guessNumber;
 
@@ -16,17 +16,6 @@ namespace CAB
         {
             Random RANDOM = new Random();
             return guessNumber = RANDOM.Next(1000, 10000);
-        }
-
-        public string CAB(int input)
-        {
-            //RandomNumber(); //replace RandomNumber() with guessNumber           
-            if (input == guessNumber)
-            {
-                return String.Format("{0}{0}{0}{0}", COWBULL[0]);
-            }
-            //need to deal with crazy inputs
-            return NotMatch(input);
         }
 
         public string NotMatch(int input) // REFACTOR!!!
@@ -40,14 +29,11 @@ namespace CAB
                 }
                 else
                 {
-                    for (int j = 0; j < Breakdown(input).Count; j++)
+                    if (Breakdown(guessNumber).Contains(Breakdown(input)[i]))
                     {
-                        if (Breakdown(guessNumber)[j] == Breakdown(input)[i])
-                        {
-                            result += COWBULL[1];
-                        }
+                        result += COWBULL[1];
                     }
-                    if (!Breakdown(guessNumber).Contains(Breakdown(input)[i]))
+                    else
                     {
                         result += Breakdown(input)[i];
                     }

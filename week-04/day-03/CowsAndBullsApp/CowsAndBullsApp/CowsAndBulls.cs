@@ -11,26 +11,25 @@ namespace CowsAndBullsApp
         static readonly Random RANDOM = new Random();
         static readonly string[] COWBULL = new string[] { "cow", "bull" };
 
-        //public string CAB(int input)
-        //{
-        //    return Match(input);
-        //}
+        public int guessNumber;
 
         static int RandomNumber ()
         {
-            return 1234;
+            return 1234; //RANDOM.Next(1000,10000)
         }
 
         public string CAB(int input)
         {
+            //guessNumber = RandomNumber(); --replace RandomNumber() with guessNumber           
             if (input == RandomNumber())
             {
                 return String.Format("{0}{0}{0}{0}", COWBULL[0]);
             }
+            //need to deal with crazy inputs
             return NotMatch(input);
         }
 
-        public string NotMatch(int input)
+        public string NotMatch(int input) // REFACTOR!!!
         {
             string result = String.Empty;
             for (int i = 0; i < Breakdown(input).Count; i++)
@@ -56,6 +55,17 @@ namespace CowsAndBullsApp
             }
             return result;
         }
+
+        //public string Cow (string input)
+        //{
+
+        //    return "";
+        //}
+
+        //public string Bull (string input)
+        //{
+        //    return "";
+        //}
 
         public List<string> Breakdown (int input)
         {
