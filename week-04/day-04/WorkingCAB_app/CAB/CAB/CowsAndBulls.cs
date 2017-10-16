@@ -10,12 +10,12 @@ namespace CAB
     {       
         static readonly string[] COWBULL = new string[] { "Cow", "Bull" };
 
-        public int guessNumber;
+        public int randomNumber;
 
         public int RandomNumber()
         {
             Random RANDOM = new Random();
-            return guessNumber = RANDOM.Next(1000, 10000);
+            return randomNumber = RANDOM.Next(1000, 10000);
         }
 
         public string NotMatch(int input) // REFACTOR!!!
@@ -23,13 +23,13 @@ namespace CAB
             string result = String.Empty;
             for (int i = 0; i < Breakdown(input).Count; i++)
             {
-                if (Breakdown(guessNumber)[i] == Breakdown(input)[i])
+                if (Breakdown(randomNumber)[i] == Breakdown(input)[i])
                 {
                     result += COWBULL[0];
                 }
                 else
                 {
-                    if (Breakdown(guessNumber).Contains(Breakdown(input)[i]))
+                    if (Breakdown(randomNumber).Contains(Breakdown(input)[i]))
                     {
                         result += COWBULL[1];
                     }

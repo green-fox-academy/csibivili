@@ -16,6 +16,8 @@ namespace CAB
             cowsAndBulls.RandomNumber();
             int input = 0;
 
+            Console.WriteLine("Can you find out the number? If you think so please write a 4 digit number.");
+
             do
             {
                 bool ifNumber = int.TryParse(Console.ReadLine(),out input);
@@ -38,6 +40,7 @@ namespace CAB
                 }
             } while (!cowsAndBulls.NotMatch(input).Equals("CowCowCowCow"));
             Console.WriteLine("YOU WON!!!");
+            Console.ReadLine();
         }
     }
 }
