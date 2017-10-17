@@ -16,7 +16,7 @@ namespace Domino
             Domino otherDomino = obj as Domino;
             if (otherDomino != null)
             {
-                return this.GetValues()[0].CompareTo(otherDomino.GetValues()[1]);
+                return this.GetValues()[0].CompareTo(otherDomino.GetValues()[0]);
             }
             else
             {
