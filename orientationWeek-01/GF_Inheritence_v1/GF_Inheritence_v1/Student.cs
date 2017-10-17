@@ -5,19 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace GF_Inheritence_v1
+namespace GF_Inheritence
 {
     public class Student : ICloneable   
     {
 
-        public string Name { get; set; }
-        public string Gender { get; set; }
-        public string PreviousOrganization { get; set; }
-        public int Age { get; set; }
+        public string Name;
+        public string Gender;
+        public string PreviousOrganization;
+        public int Age;
 
-        public void GetGoal()
+        public Student(string name, string gender, int age, string previousOrganization)
         {
-            Console.WriteLine("Be a junior developer or business analyst or devops or...");
+            Name = name;
+            Gender = gender;
+            Age = age;
+            PreviousOrganization = previousOrganization;
+        }
+        public void Introduce()
+        {
+            Console.WriteLine("{0} {1} {2} {3}",Name, Age, Gender, PreviousOrganization);
         }
 
         public object Clone()
