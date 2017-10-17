@@ -14,6 +14,7 @@ namespace GF_Inheritence_v1
             var goku = new Mentor("Goku", 25, 1, 2);
             var mentor = new Mentor();
             var gohan = new Student("Gohan",6,1,"Earth");
+            Student gohanTheClone = gohan.Clone();
             var student = new Student();
             var satan = new Sponsor("Piccolo", 5000, 1, "Namek");
             var sponsor = new Sponsor();
@@ -21,6 +22,7 @@ namespace GF_Inheritence_v1
             person.Introduce();
             gohan.SkipDays(3);
             gohan.Introduce();
+            gohanTheClone.Introduce();
             goku.Introduce();
             mentor.Introduce();
             satan.Hire();

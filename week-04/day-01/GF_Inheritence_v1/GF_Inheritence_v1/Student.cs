@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GF_Inheritence_v1
 {
-    public class Student : Person
+    public class Student : Person   
     {
         private string previousOrganization = "The School of Life";
         private int skippedDays;
@@ -19,7 +20,7 @@ namespace GF_Inheritence_v1
             this.previousOrganization = previousOrganization;
         }
 
-        public Student ()
+        public Student()
         {
 
         }
@@ -29,16 +30,19 @@ namespace GF_Inheritence_v1
             Console.WriteLine("Be a junior developer or business analyst or devops or...");
         }
 
-        public new void Introduce ()
+        public new void Introduce()
         {
-            Console.WriteLine("Hi, I'm {0}, {1} age old {2} from {3} who skipped {4} day(s) from the course already.",name,age,gender,previousOrganization,skippedDays);
+            Console.WriteLine("Hi, I'm {0}, {1} age old {2} from {3} who skipped {4} day(s) from the course already.", name, age, gender, previousOrganization, skippedDays);
         }
 
-        public void SkipDays (int value)
+        public void SkipDays(int value)
         {
             skippedDays += value;
         }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
-
-
 }

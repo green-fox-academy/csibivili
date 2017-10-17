@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GF_Inheritence_v1
 {
-    public class Person
+    public class Person : ICloneable
     {
         protected static readonly string[] GENDER = new string[] { "female", "male" };
 
@@ -34,6 +34,11 @@ namespace GF_Inheritence_v1
         public void GetGoal ()
         {
             Console.WriteLine("My goal is: Live for the moment!");
+        }
+
+        object ICloneable.Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }

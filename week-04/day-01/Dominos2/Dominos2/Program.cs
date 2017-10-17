@@ -18,31 +18,34 @@ namespace Domino
             // eg: [2, 4], [4, 3], [3, 5] ...
 
             var listOfNumberPairs = new List<string>();
-            var finailList = new List<string>();
+            //var finailList = new List<string>();
+
+            dominoes.Sort();
 
             for (int i = 0; i < dominoes.Count; i++)
             {
                 listOfNumberPairs.Add("[" + dominoes[i].GetValues()[0].ToString() + ", " + dominoes[i].GetValues()[1].ToString() + "]");
             }
 
-            finailList.Add(listOfNumberPairs[0]);
+            //finailList.Add(listOfNumberPairs[0]);
 
-            int j = 0;
+            //int j = 0;
 
-            for (int i = j; i < listOfNumberPairs.Count; i++)
-            {
-                if (listOfNumberPairs[j][4] == listOfNumberPairs[i][1])
-                {
-                    finailList.Add(listOfNumberPairs[i]);
-                    j = i;
-                    i = 0;
-                }
-            }
+            //for (int i = j; i < listOfNumberPairs.Count; i++)
+            //{
+            //    if (listOfNumberPairs[j][4] == listOfNumberPairs[i][1])
+            //    {
+            //        finailList.Add(listOfNumberPairs[i]);
+            //        j = i;
+            //        i = 0;
+            //    }
+            //}
          
-            foreach (var domino in finailList)
+            foreach (var domino in listOfNumberPairs)
             {
                 Console.Write(domino);
             }
+
 
             Console.ReadLine();
         }
@@ -50,12 +53,14 @@ namespace Domino
         public static List<Domino> InitializeDominoes()
         {
             var dominoes = new List<Domino>();
+            dominoes.Add(new Domino(8, 9));
             dominoes.Add(new Domino(5, 2));
             dominoes.Add(new Domino(4, 6));
             dominoes.Add(new Domino(1, 5));
             dominoes.Add(new Domino(6, 7));
             dominoes.Add(new Domino(2, 4));
             dominoes.Add(new Domino(7, 1));
+            dominoes.Add(new Domino(1, 8));
             return dominoes;
         }
     }
