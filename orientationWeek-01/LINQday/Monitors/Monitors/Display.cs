@@ -15,10 +15,10 @@ namespace Monitors
 
         public Display()
         {
-            Width = Size / DiagonalRatio(RatioOfSides(Ratio, Size)) * RatioOfSides(Ratio, Size)[0];
-            Height = Size / DiagonalRatio(RatioOfSides(Ratio, Size)) * RatioOfSides(Ratio, Size)[1];
-            Area = Width * Height;
-            PricePerArea = Price / Area;
+            //Width = Size / DiagonalRatio(RatioOfSides(Ratio, Size)) * RatioOfSides(Ratio, Size)[0];
+            //Height = Size / DiagonalRatio(RatioOfSides(Ratio, Size)) * RatioOfSides(Ratio, Size)[1];
+            //Area = Width * Height;
+            //PricePerArea = Price / Area;
         }
 
         public static double[] RatioOfSides(string ratio, double size)

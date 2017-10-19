@@ -9,10 +9,9 @@ namespace Monitors
 {
     public class FileOperations
     {
-        public static List<string> GetDataInLines(string filePath)
+        public static string[] GetDataInLines(string filePath)
         {
-            var lines = File.ReadAllLines(filePath).ToList();
-            return lines;
+            return File.ReadAllText(filePath).Split('\n');
         }
     }
 }
