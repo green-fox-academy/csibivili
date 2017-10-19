@@ -17,7 +17,7 @@ namespace TwentyPlusOneApp
             Cards = FillDeck();
         }
 
-        public List<Card> FillDeck()
+        private List<Card> FillDeck()
         {
             string[] suits = EnumConverter(Enum.GetValues(typeof(Card.Suit)));
             string[] ranks = EnumConverter(Enum.GetValues(typeof(Card.Rank)));
@@ -30,16 +30,16 @@ namespace TwentyPlusOneApp
             return deck;
         }
 
-        public static List<Card> ShuffleDeck(List<Card> deck)
+        public static List<Card> ShuffleDeck(List<Card> cards)
         {
-            for (int i = deck.Count - 1; i > 0; i--)
+            for (int i = cards.Count - 1; i > 0; i--)
             {
                 int n = RANDOM.Next(i + 1);
-                Card tmp = deck[n];
-                deck[n] = deck[i];
-                deck[i] = tmp;
+                Card tmp = cards[n];
+                cards[n] = cards[i];
+                cards[i] = tmp;
             }
-            return deck;
+            return cards;
         }
 
         public string[] EnumConverter(Array array)
@@ -49,17 +49,23 @@ namespace TwentyPlusOneApp
 
         public static Card PullFirst(Deck deck)
         {
-            return deck.Cards[0];
+            Card pulled = deck.Cards[0];
+            deck.Cards.Remove(pulled);
+            return pulled;
         }
 
         public static Card PullLast(Deck deck)
         {
-            return deck.Cards[deck.Cards.Count()-1];
+            Card pulled = deck.Cards[deck.Cards.Count() - 1];
+            deck.Cards.Remove(pulled);
+            return pulled;
         }
 
-        public static object PullRandom(Deck deck)
+        public static Card PullRandom(Deck deck)
         {
-            return deck.Cards[RANDOM.Next(52)];
+            Card pulled = deck.Cards[RANDOM.Next(52)];
+            deck.Cards.Remove(pulled);
+            return pulled;
         }
     }
 }
