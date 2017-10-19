@@ -15,27 +15,10 @@ namespace TwentyPlusOneApp
             Cards = FillDeck();
         }
 
-        public List<Card> AddCard()
-        {
-            Card card = new Card(
-                Card.Suit.spades,
-                Card.Rank.Ace,
-                Card.Color.black);
-
-            List<Card> cards = new List<Card>();
-
-            cards.Add(card);
-
-            return cards;
-        }
-
         public List<Card> FillDeck()
         {
-            string[] suits = Enum.GetValues(typeof(Card.Suit)).
-                OfType<object>().Select(o => o.ToString()).ToArray();
-
-            string[] ranks = Enum.GetValues(typeof(Card.Rank)).
-                OfType<object>().Select(o => o.ToString()).ToArray();
+            string[] suits = EnumConverter(Enum.GetValues(typeof(Card.Suit)));
+            string[] ranks = EnumConverter(Enum.GetValues(typeof(Card.Rank)));
 
             var query =
                 (from suit in suits
@@ -43,6 +26,16 @@ namespace TwentyPlusOneApp
                 select new Card(rank, suit)).ToList<Card>();
 
             return query;
+        }
+
+        public List<Card> ShuffleDeck(List<Card> deck)
+        {
+            return;
+        }
+
+        public string[] EnumConverter(Array array)
+        {
+            return array.OfType<object>().Select(o => o.ToString()).ToArray();
         }
     }
 }

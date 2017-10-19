@@ -47,16 +47,16 @@ namespace TwentyPlusOneApp
             }
             else
             {
-                throw new ArgumentException("");
+                throw new ArgumentException("Are you sure that is a card?");
             }
         }
 
         public enum Suit
         {
             spades,
+            hearts,
             clubs,
             diamonds,
-            hearts, 
         }
 
         public enum Rank
