@@ -10,11 +10,23 @@ namespace TwentyPlusOneApp
     {
         public string CardSuit, CardRank, CardColor;
 
-        public Card(Suit suit, Rank rank, Color color)
+        public Card(Suit suit, Rank rank)
         {
             CardSuit = suit.ToString();
             CardRank = rank.ToString();
-            CardColor = color.ToString();
+            CardColor = AutoColor(suit);
+        }
+
+        public string AutoColor(Suit suit)
+        {
+            if (suit == Suit.spades || suit == Suit.clubs)
+            {
+                return Color.black.ToString();
+            }
+            else
+            {
+                return Color.red.ToString();
+            }
         }
 
         public int CompareTo(object obj)
@@ -34,10 +46,10 @@ namespace TwentyPlusOneApp
 
         public enum Suit
         {
+            spades,
             clubs,
             diamonds,
-            hearts,
-            spades
+            hearts, 
         }
 
         public enum Rank

@@ -18,9 +18,8 @@ namespace TwentyPlusOneApp
         public List<Card> AddCard()
         {
             Card card = new Card(
-                Card.Suit.spades, 
-                Card.Rank.Ace, 
-                Card.Color.black);
+                Card.Suit.spades,
+                Card.Rank.Ace);
 
             List<Card> cards = new List<Card>();
 

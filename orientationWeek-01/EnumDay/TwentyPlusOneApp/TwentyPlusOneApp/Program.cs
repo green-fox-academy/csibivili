@@ -12,7 +12,7 @@ namespace TwentyPlusOneApp
         {
             Deck deck = new Deck();
 
-            Card card = new Card(Card.Suit.spades, Card.Rank.Ace, Card.Color.black);
+            Card card = new Card(Card.Suit.spades, Card.Rank.Ace);
 
             Console.WriteLine(deck.Cards[0].CompareTo(card));
 
