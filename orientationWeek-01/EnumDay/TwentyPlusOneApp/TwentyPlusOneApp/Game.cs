@@ -9,11 +9,11 @@ namespace TwentyPlusOneApp
     public class Game
     {
         public List<Card> Hand;
-        public Deck Deck;
+        public Deck Cards;
 
         public Game()
         {
-            Deck = new Deck();
+            Cards = new Deck();
             Hand = new List<Card>();
         }
 
@@ -21,7 +21,7 @@ namespace TwentyPlusOneApp
         {
             for (int i = 0; i < howMuch; i++)
             {
-                Hand.Add(Deck.PullRandom(Deck));
+                Hand.Add(Deck.PullRandom(Cards));
             }
         }
 
