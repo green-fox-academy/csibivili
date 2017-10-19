@@ -56,5 +56,10 @@ namespace TwentyPlusOneApp
         {
             return deck.Cards[deck.Cards.Count()-1];
         }
+
+        public static object PullRandom(Deck deck)
+        {
+            return deck.Cards[RANDOM.Next(52)];
+        }
     }
 }

@@ -83,5 +83,15 @@ namespace TwentyPlusOneAppTest
 
             Assert.AreEqual(0, deck.Cards[51].CompareTo(Deck.PullLast(deck)));
         }
+
+        [Test]
+        public void PullRandomCard()
+        {
+            Card card = new Card(Card.Suit.Spades,
+                Card.Rank.Two, Card.Color.black);
+            Deck deck = new Deck();
+
+            Assert.AreNotEqual(0, deck.Cards[0].CompareTo(Deck.PullRandom(deck)));
+        }
     }
 }
