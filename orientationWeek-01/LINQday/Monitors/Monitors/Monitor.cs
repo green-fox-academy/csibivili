@@ -19,7 +19,7 @@ namespace Monitors
             Price = double.Parse(tmp[4]);
         }
 
-        public static void FillList(List<Monitor> monitors)
+        public void FillList(List<Monitor> monitors)
         {
             foreach (var features in FileOperations.GetDataInLines("monitors.txt"))
             {

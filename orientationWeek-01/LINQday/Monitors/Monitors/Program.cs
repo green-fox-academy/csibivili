@@ -11,7 +11,7 @@ namespace Monitors
         static void Main(string[] args)
         {
             var monitors = new List<Monitor>();
-            Monitor.FillList(monitors);
+            monitors.FillList(monitors);
 
             foreach (var monitor in monitors)
             {
