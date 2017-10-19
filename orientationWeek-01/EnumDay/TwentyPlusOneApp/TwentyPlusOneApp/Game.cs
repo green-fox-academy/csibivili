@@ -24,5 +24,10 @@ namespace TwentyPlusOneApp
                 Hand.Add(Deck.PullRandom(Deck));
             }
         }
+
+        public int ValueOfCards(List<Card> cards)
+        {
+            return 0;
+        }
     }
 }
