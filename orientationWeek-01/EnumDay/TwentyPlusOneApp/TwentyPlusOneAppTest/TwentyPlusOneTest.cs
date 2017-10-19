@@ -20,7 +20,8 @@ namespace TwentyPlusOneAppTest
         [Test]
         public void DeckContainsTwoOfSpadesByDefault()
         {
-            Card card = new Card(Card.Suit.Spades, Card.Rank.Two, Card.Color.black);
+            Card card = new Card(Card.Suit.Spades, 
+                Card.Rank.Two, Card.Color.black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[0].CompareTo(card));
@@ -30,9 +31,12 @@ namespace TwentyPlusOneAppTest
         [Test]
         public void DeckContainsMultipleSpadesByDefault()
         {
-            Card card1 = new Card(Card.Suit.Spades, Card.Rank.Two, Card.Color.black);
-            Card card2 = new Card(Card.Suit.Spades, Card.Rank.Three, Card.Color.black);
-            Card card3 = new Card(Card.Suit.Spades, Card.Rank.Four, Card.Color.black);
+            Card card1 = new Card(Card.Suit.Spades, 
+                Card.Rank.Two, Card.Color.black);
+            Card card2 = new Card(Card.Suit.Spades, 
+                Card.Rank.Three, Card.Color.black);
+            Card card3 = new Card(Card.Suit.Spades, 
+                Card.Rank.Four, Card.Color.black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[0].CompareTo(card1)
@@ -58,6 +62,26 @@ namespace TwentyPlusOneAppTest
             List<Card> deck3 = Deck.ShuffleDeck(deck2.Cards);
 
             Assert.AreNotEqual(0, deck.Cards[0].CompareTo(deck3[0]));
+        }
+
+        [Test]
+        public void PullFirstCard()
+        {
+            Card card = new Card(Card.Suit.Spades, 
+                Card.Rank.Two, Card.Color.black);
+            Deck deck = new Deck();
+
+            Assert.AreEqual(0, deck.Cards[0].CompareTo(Deck.PullFirst(deck)));
+        }
+
+        [Test]
+        public void PullLastCard()
+        {
+            Card card = new Card(Card.Suit.Spades,
+                Card.Rank.Two, Card.Color.black);
+            Deck deck = new Deck();
+
+            Assert.AreEqual(0, deck.Cards[51].CompareTo(Deck.PullLast(deck)));
         }
     }
 }

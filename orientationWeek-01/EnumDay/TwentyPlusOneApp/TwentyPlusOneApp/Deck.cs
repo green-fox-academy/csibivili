@@ -46,5 +46,15 @@ namespace TwentyPlusOneApp
         {
             return array.OfType<object>().Select(o => o.ToString()).ToArray();
         }
+
+        public static Card PullFirst(Deck deck)
+        {
+            return deck.Cards[0];
+        }
+
+        public static Card PullLast(Deck deck)
+        {
+            return deck.Cards[deck.Cards.Count()-1];
+        }
     }
 }
