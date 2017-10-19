@@ -18,9 +18,9 @@ namespace TwentyPlusOneAppTest
         }
 
         [Test]
-        public void DeckContainsAceOfSpadesByDefault()
+        public void DeckContainsTwoOfSpadesByDefault()
         {
-            Card card = new Card(Card.Suit.spades, Card.Rank.Ace);
+            Card card = new Card(Card.Suit.spades, Card.Rank.two, Card.Color.black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[0].CompareTo(card));
@@ -30,14 +30,14 @@ namespace TwentyPlusOneAppTest
         [Test]
         public void DeckContainsMultipleSpadesByDefault()
         {
-            Card card1 = new Card(Card.Suit.spades, Card.Rank.Ace);
-            Card card2 = new Card(Card.Suit.spades, Card.Rank.King);
-            Card card3 = new Card(Card.Suit.spades, Card.Rank.Queen);
+            Card card1 = new Card(Card.Suit.spades, Card.Rank.two, Card.Color.black);
+            Card card2 = new Card(Card.Suit.spades, Card.Rank.three, Card.Color.black);
+            Card card3 = new Card(Card.Suit.spades, Card.Rank.four, Card.Color.black);
             Deck deck = new Deck();
 
-            Assert.AreEqual(true, deck.Cards.Contains(card1) 
-                && deck.Cards.Contains(card2) 
-                && deck.Cards.Contains(card3));
+            Assert.AreEqual(0, deck.Cards[0].CompareTo(card1)
+                + deck.Cards[1].CompareTo(card2)
+                + deck.Cards[2].CompareTo(card3));
         }
     }
 }

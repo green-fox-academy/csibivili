@@ -10,16 +10,23 @@ namespace TwentyPlusOneApp
     {
         public string CardSuit, CardRank, CardColor;
 
-        public Card(Suit suit, Rank rank)
+        public Card(Suit suit, Rank rank, Color color)
         {
             CardSuit = suit.ToString();
             CardRank = rank.ToString();
+            CardColor = color.ToString();
+        }
+
+        public Card(string rank, string suit)
+        {
+            CardRank = rank;
+            CardSuit = suit;
             CardColor = AutoColor(suit);
         }
 
-        public string AutoColor(Suit suit)
+        public string AutoColor(string suit)
         {
-            if (suit == Suit.spades || suit == Suit.clubs)
+            if (suit == Suit.spades.ToString() || suit == Suit.clubs.ToString())
             {
                 return Color.black.ToString();
             }
