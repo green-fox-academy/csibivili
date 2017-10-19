@@ -8,6 +8,8 @@ namespace TwentyPlusOneApp
 {
     public class Deck
     {
+        static readonly Random RANDOM = new Random();
+
         public List<Card> Cards; 
 
         public Deck()
@@ -20,17 +22,24 @@ namespace TwentyPlusOneApp
             string[] suits = EnumConverter(Enum.GetValues(typeof(Card.Suit)));
             string[] ranks = EnumConverter(Enum.GetValues(typeof(Card.Rank)));
 
-            var query =
+            var deck =
                 (from suit in suits
                 from rank in ranks
                 select new Card(rank, suit)).ToList<Card>();
 
-            return query;
+            return deck;
         }
 
-        public List<Card> ShuffleDeck(List<Card> deck)
+        public static List<Card> ShuffleDeck(List<Card> deck)
         {
-            return;
+            for (int i = deck.Count - 1; i > 0; i--)
+            {
+                int n = RANDOM.Next(i + 1);
+                Card tmp = deck[n];
+                deck[n] = deck[i];
+                deck[i] = tmp;
+            }
+            return deck;
         }
 
         public string[] EnumConverter(Array array)

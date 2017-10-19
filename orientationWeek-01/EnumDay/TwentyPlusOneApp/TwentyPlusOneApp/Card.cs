@@ -26,7 +26,7 @@ namespace TwentyPlusOneApp
 
         public string AutoColor(string suit)
         {
-            if (suit == Suit.spades.ToString() || suit == Suit.clubs.ToString())
+            if (suit == Suit.Spades.ToString() || suit == Suit.Clubs.ToString())
             {
                 return Color.black.ToString();
             }
@@ -51,29 +51,34 @@ namespace TwentyPlusOneApp
             }
         }
 
+        public string GetInfo()
+        {
+            return String.Format("{0} of {1}", CardRank, CardSuit);
+        }
+
         public enum Suit
         {
-            spades,
-            hearts,
-            clubs,
-            diamonds,
+            Spades,
+            Hearts,
+            Clubs,
+            Diamonds,
         }
 
         public enum Rank
         {
-            two = 2,
-            three = 3,
-            four = 4,
-            five = 5,
-            six = 6,
-            seven = 7,
-            eight = 8,
-            nine = 9,
-            ten = 10,
-            Jack = 10,
-            Queen = 10,
-            King = 10,
-            Ace = 11 // it can be 1 as well!
+            Two,
+            Three,
+            Four,
+            Five,
+            Six,
+            Seven,
+            Eight,
+            Nine,
+            Ten,
+            Jack,
+            Queen,
+            King,
+            Ace
         }
 
         public enum Color
