@@ -93,5 +93,31 @@ namespace TwentyPlusOneAppTest
 
             Assert.AreNotEqual(0, deck.Cards[0].CompareTo(Deck.PullRandom(deck)));
         }
+
+        [Test]
+        public void NumberOfHand()
+        {
+            Game game = new Game();
+
+            game.Deal(2);
+
+            int numberOfCards = game.Hand.Count();
+
+            Assert.AreEqual(2, numberOfCards);
+        }
+
+        [Test]
+        public void NumberOfRemainingCards()
+        {
+            Game game = new Game();
+
+            int numberOfCards = game.Deck.Cards.Count();
+
+            game.Deal(2);
+
+            int numberOfRemainingCards = game.Deck.Cards.Count();
+
+            Assert.AreEqual(2, numberOfCards - numberOfRemainingCards);
+        }
     }
 }

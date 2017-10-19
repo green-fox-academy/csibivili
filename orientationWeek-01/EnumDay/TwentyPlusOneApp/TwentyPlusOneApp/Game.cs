@@ -9,18 +9,19 @@ namespace TwentyPlusOneApp
     public class Game
     {
         public List<Card> Hand;
-        public Deck deck;
+        public Deck Deck;
 
         public Game()
         {
-            deck = new Deck();
+            Deck = new Deck();
+            Hand = new List<Card>();
         }
 
         public void Deal(int howMuch)
         {
             for (int i = 0; i < howMuch; i++)
             {
-                Hand.Add(Deck.PullRandom(deck));
+                Hand.Add(Deck.PullRandom(Deck));
             }
         }
     }
