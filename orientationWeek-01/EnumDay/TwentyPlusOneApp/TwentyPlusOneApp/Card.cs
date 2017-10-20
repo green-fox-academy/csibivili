@@ -26,17 +26,44 @@ namespace TwentyPlusOneApp
 
         public int CompareTo(object obj)
         {
-            Card otherCard = obj as Card;
-            if (otherCard != null)
+            if (obj != null)
             {
-                return  this.CardSuit.CompareTo(otherCard.CardSuit) +
-                        this.CardRank.CompareTo(otherCard.CardRank) +
-                        this.CardColor.CompareTo(otherCard.CardColor);
+                return  SameSuit(obj) + SameColor(obj) + SameRank(obj);
             }
             else
             {
                 throw new ArgumentException("Are you sure that is a card?");
             }
+        }
+
+        public int SameSuit(object obj)
+        {
+            Card otherCard = obj as Card;
+            if (otherCard != null)
+            {
+                return this.CardSuit.CompareTo(otherCard.CardSuit);
+            }
+            return 1;
+        }
+
+        public int SameRank(object obj)
+        {
+            Card otherCard = obj as Card;
+            if (otherCard != null)
+            {
+                return this.CardRank.CompareTo(otherCard.CardRank);
+            }
+            return 1;
+        }
+
+        public int SameColor(object obj)
+        {
+            Card otherCard = obj as Card;
+            if (otherCard != null)
+            {
+                return this.CardColor.CompareTo(otherCard.CardColor);
+            }
+            return 1;
         }
 
         public string GetInfo()
