@@ -8,21 +8,21 @@ namespace TwentyPlusOneApp
 {
     public class Game : IRules
     {
-        static Dictionary<Card.Rank, int> VALUE_OF_CARDS = new Dictionary<Card.Rank, int>()
+        static Dictionary<string, int> VALUE_OF_CARDS = new Dictionary<string, int>()
         {
-            {Card.Rank.Two, 2 },
-            {Card.Rank.Three , 3 },
-            {Card.Rank.Four, 4 },
-            {Card.Rank.Five, 5 },
-            {Card.Rank.Six, 6 },
-            {Card.Rank.Seven, 7 },
-            {Card.Rank.Eight, 8 },
-            {Card.Rank.Nine, 9 },
-            {Card.Rank.Ten, 10 },
-            {Card.Rank.Jack, 10 },
-            {Card.Rank.Queen, 10 },
-            {Card.Rank.King, 10 },
-            {Card.Rank.Ace, 11 },
+            {Card.Rank.Two.ToString(), 2 },
+            {Card.Rank.Three.ToString(), 3 },
+            {Card.Rank.Four.ToString(), 4 },
+            {Card.Rank.Five.ToString(), 5 },
+            {Card.Rank.Six.ToString(), 6 },
+            {Card.Rank.Seven.ToString(), 7 },
+            {Card.Rank.Eight.ToString(), 8 },
+            {Card.Rank.Nine.ToString(), 9 },
+            {Card.Rank.Ten.ToString(), 10 },
+            {Card.Rank.Jack.ToString(), 10 },
+            {Card.Rank.Queen.ToString(), 10 },
+            {Card.Rank.King.ToString(), 10 },
+            {Card.Rank.Ace.ToString(), 11 },
         };
 
         public List<Player> Players;
@@ -53,6 +53,11 @@ namespace TwentyPlusOneApp
         public int ValueOfHand(List<Card> hand)
         {
             return 0;
+        }
+
+        public int ValueOfCard(Card card)
+        {
+            return VALUE_OF_CARDS[card.CardRank];
         }
     }
 }
