@@ -52,7 +52,8 @@ namespace TwentyPlusOneApp
 
         public int ValueOfHand(List<Card> hand)
         {
-            return 0;
+            var sum = hand.Sum(x => ValueOfCard(x));
+            return sum;
         }
 
         public int ValueOfCard(Card card)

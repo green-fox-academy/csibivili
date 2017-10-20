@@ -71,17 +71,17 @@ namespace TwentyPlusOneAppTest
                 Card.Rank.Two, Card.Color.black);
             Deck deck = new Deck();
 
-            Assert.AreEqual(0, deck.Cards[0].CompareTo(Deck.PullFirst(deck.Cards)));
+            Assert.AreEqual(0, card.CompareTo(Deck.PullFirst(deck.Cards)));
         }
 
         [Test]
         public void PullLastCard()
         {
-            Card card = new Card(Card.Suit.Spades,
-                Card.Rank.Two, Card.Color.black);
+            Card card = new Card(Card.Suit.Diamonds,
+                Card.Rank.Ace, Card.Color.red);
             Deck deck = new Deck();
 
-            Assert.AreEqual(0, deck.Cards[deck.Cards.Count() - 1].
+            Assert.AreEqual(0, card.
                 CompareTo(Deck.PullLast(deck.Cards)));
         }
 
@@ -92,7 +92,7 @@ namespace TwentyPlusOneAppTest
                 Card.Rank.Two, Card.Color.black);
             Deck deck = new Deck();
 
-            Assert.AreNotEqual(0, deck.Cards[0].
+            Assert.AreNotEqual(0, card.
                 CompareTo(Deck.PullRandom(deck.Cards)));
         }
 
@@ -127,8 +127,12 @@ namespace TwentyPlusOneAppTest
         {
             Card card1 = new Card(Card.Suit.Spades,
                 Card.Rank.Two, Card.Color.black);
-            Card card2 = new Card(Card.Suit.Spades,
+            Card card2 = new Card(Card.Suit.Clubs,
                 Card.Rank.Three, Card.Color.black);
+            Card card3 = new Card(Card.Suit.Hearts,
+                Card.Rank.Ace, Card.Color.red);
+            Card card4 = new Card(Card.Suit.Diamonds,
+                Card.Rank.Jack, Card.Color.black);
 
             Game game = new Game(1);
 
@@ -137,6 +141,10 @@ namespace TwentyPlusOneAppTest
 
             Assert.AreEqual(5, game.ValueOfHand(game.Players[0].Hand));
 
+            game.Players[1].Hand.Add(card3);
+            game.Players[1].Hand.Add(card4);
+
+            Assert.AreEqual(21, game.ValueOfHand(game.Players[1].Hand));
         }
     }
 }
