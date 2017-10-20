@@ -8,6 +8,23 @@ namespace TwentyPlusOneApp
 {
     public class Game : IRules
     {
+        static Dictionary<Card.Rank, int> VALUE_OF_CARDS = new Dictionary<Card.Rank, int>()
+        {
+            {Card.Rank.Two, 2 },
+            {Card.Rank.Three , 3 },
+            {Card.Rank.Four, 4 },
+            {Card.Rank.Five, 5 },
+            {Card.Rank.Six, 6 },
+            {Card.Rank.Seven, 7 },
+            {Card.Rank.Eight, 8 },
+            {Card.Rank.Nine, 9 },
+            {Card.Rank.Ten, 10 },
+            {Card.Rank.Jack, 10 },
+            {Card.Rank.Queen, 10 },
+            {Card.Rank.King, 10 },
+            {Card.Rank.Ace, 11 },
+        };
+
         public List<Player> Players;
         public Deck Cards;
 
@@ -31,6 +48,11 @@ namespace TwentyPlusOneApp
                     Players[j].Hand.Add(Deck.PullRandom(Cards.Cards));
                 }
             }
+        }
+
+        public int ValueOfHand(List<Card> hand)
+        {
+            return 0;
         }
     }
 }

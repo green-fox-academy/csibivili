@@ -15,11 +15,6 @@ namespace TwentyPlusOneApp
             Hand = new List<Card>();
         }
 
-        public int ValueOfCards(List<Card> cards)
-        {
-            return 0;
-        }
-
         public void Pull()
         {
         }
