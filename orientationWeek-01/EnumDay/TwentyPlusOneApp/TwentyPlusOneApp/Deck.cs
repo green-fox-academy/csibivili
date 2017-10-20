@@ -23,11 +23,10 @@ namespace TwentyPlusOneApp
             string[] ranks = EnumConverter(Enum.GetValues(typeof(Card.Rank)));
             string[] colors = EnumConverter(Enum.GetValues(typeof(Card.Color)));
 
-            var deck =
-                (from color in colors
-                 from suit in suits
-                from rank in ranks
-                select new Card(rank, suit, color)).ToList<Card>();
+            var deck = (from color in colors
+                        from suit in suits
+                        from rank in ranks
+                        select new Card(rank, suit, color)).ToList<Card>();
 
             return deck;
         }

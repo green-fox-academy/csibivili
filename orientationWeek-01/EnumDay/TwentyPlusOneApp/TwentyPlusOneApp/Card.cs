@@ -24,26 +24,14 @@ namespace TwentyPlusOneApp
             CardColor = color;
         }
 
-        public string AutoColor(string suit)
-        {
-            if (suit == Suit.Spades.ToString() || suit == Suit.Clubs.ToString())
-            {
-                return Color.black.ToString();
-            }
-            else
-            {
-                return Color.red.ToString();
-            }
-        }
-
         public int CompareTo(object obj)
         {
             Card otherCard = obj as Card;
             if (otherCard != null)
             {
-                return this.CardSuit.CompareTo(otherCard.CardSuit) +
-                    this.CardRank.CompareTo(otherCard.CardRank) +
-                    this.CardColor.CompareTo(otherCard.CardColor);
+                return  this.CardSuit.CompareTo(otherCard.CardSuit) +
+                        this.CardRank.CompareTo(otherCard.CardRank) +
+                        this.CardColor.CompareTo(otherCard.CardColor);
             }
             else
             {
