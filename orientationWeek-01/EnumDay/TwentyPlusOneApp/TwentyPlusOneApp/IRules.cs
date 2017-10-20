@@ -9,5 +9,6 @@ namespace TwentyPlusOneApp
     public interface IRules
     {
         void Deal(Game game, int HowMuch);
+        int ValueOfHand(List<Card> hand);
     }
 }
