@@ -52,14 +52,12 @@ namespace TwentyPlusOneApp
 
         public int ValueOfHand(List<Card> hand)
         {
-            Card card = new Card(Card.Suit.Spades,
-                Card.Rank.Ace, Card.Color.black);
             var sum = hand.Sum(x => ValueOfCard(x));
             if (sum > 21)
             {
                 foreach (var item in hand)
                 {
-                    if (0 == item.SameSuit(card))
+                    if (item.CardRank == Card.Rank.Ace.ToString())
                     {
                         return sum - 10;
                     }

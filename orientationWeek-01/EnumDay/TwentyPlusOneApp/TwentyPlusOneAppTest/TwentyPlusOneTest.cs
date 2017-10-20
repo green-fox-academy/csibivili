@@ -158,7 +158,7 @@ namespace TwentyPlusOneAppTest
         }
 
         [Test]
-        public void ValueOfHandIfAceIsZero()
+        public void ValueOfHandIfAceIsOne()
         {
             Card card1 = new Card(Card.Suit.Spades,
                 Card.Rank.Eight, Card.Color.black);
@@ -175,7 +175,49 @@ namespace TwentyPlusOneAppTest
             game.Players[0].Hand.Add(card3);
 
             Assert.AreEqual(12, game.ValueOfHand(game.Players[0].Hand));
+        }
 
+        [Test]
+        public void ValueOfHandIfTwoAcesIsOne()
+        {
+            Card card1 = new Card(Card.Suit.Spades,
+                Card.Rank.Eight, Card.Color.black);
+            Card card2 = new Card(Card.Suit.Clubs,
+                Card.Rank.Three, Card.Color.black);
+            Card card3 = new Card(Card.Suit.Hearts,
+                Card.Rank.Ace, Card.Color.red);
+            Card card4 = new Card(Card.Suit.Diamonds,
+                Card.Rank.Ace, Card.Color.red);
+            Deck deck = new Deck();
+
+            Game game = new Game(1);
+
+            game.Players[0].Hand.Add(card1);
+            game.Players[0].Hand.Add(card2);
+            game.Players[0].Hand.Add(card3);
+            game.Players[0].Hand.Add(card4);
+
+            Assert.AreEqual(13, game.ValueOfHand(game.Players[0].Hand));
+        }
+
+        [Test]
+        public void ValueOfHandIfTwoMuch()
+        {
+            Card card1 = new Card(Card.Suit.Spades,
+                Card.Rank.Eight, Card.Color.black);
+            Card card2 = new Card(Card.Suit.Clubs,
+                Card.Rank.Three, Card.Color.black);
+            Card card3 = new Card(Card.Suit.Hearts,
+                Card.Rank.Ace, Card.Color.red);
+            Deck deck = new Deck();
+
+            Game game = new Game(1);
+
+            game.Players[0].Hand.Add(card1);
+            game.Players[0].Hand.Add(card2);
+            game.Players[0].Hand.Add(card3);
+
+            Assert.AreEqual(12, game.ValueOfHand(game.Players[0].Hand));
         }
     }
 }
