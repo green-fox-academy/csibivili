@@ -53,15 +53,9 @@ namespace TwentyPlusOneApp
         public int ValueOfHand(List<Card> hand)
         {
             var sum = hand.Sum(x => ValueOfCard(x));
-            if (sum > 21)
+            if (sum > 21 && HowManyAces(hand) > 0)
             {
-                foreach (var item in hand)
-                {
-                    if (item.CardRank == Card.Rank.Ace.ToString())
-                    {
-                        return sum - 10;
-                    }
-                }
+                return sum - HowManyAces(hand) * 10;
             }
             return sum;
         }
@@ -69,6 +63,12 @@ namespace TwentyPlusOneApp
         public int ValueOfCard(Card card)
         {
             return VALUE_OF_CARDS[card.CardRank];
+        }
+
+        public int HowManyAces(List<Card> cards)
+        {
+            var numberOfAces = cards.Where(x => ValueOfCard(x) == 11).Count();
+            return numberOfAces;
         }
     }
 }
