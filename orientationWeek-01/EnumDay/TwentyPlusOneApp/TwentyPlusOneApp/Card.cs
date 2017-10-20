@@ -30,10 +30,7 @@ namespace TwentyPlusOneApp
             {
                 return  SameSuit(obj) + SameColor(obj) + SameRank(obj);
             }
-            else
-            {
-                throw new ArgumentException("Are you sure that is a card?");
-            }
+            return 1;
         }
 
         public int SameSuit(object obj)

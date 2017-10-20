@@ -51,12 +51,12 @@ namespace TwentyPlusOneApp
         }
 
         public int ValueOfHand(List<Card> hand)
-        {
-            var sum = hand.Sum(x => ValueOfCard(x));
-            if (sum > 21 && HowManyAces(hand) > 0)
+        {            
+            if (HowManyAces(hand) > 0)
             {
-                return sum - HowManyAces(hand) * 10;
+                return BestResult(hand);
             }
+            var sum = hand.Sum(x => ValueOfCard(x));
             return sum;
         }
 
@@ -67,8 +67,25 @@ namespace TwentyPlusOneApp
 
         public int HowManyAces(List<Card> cards)
         {
-            var numberOfAces = cards.Where(x => ValueOfCard(x) == 11).Count();
-            return numberOfAces;
+            return cards.Where(x => ValueOfCard(x) == 11).Count();
+        }
+
+        public int BestResult(List<Card> hand)
+        {
+            // generate all the possible results and choose the best
+            // these are just thoughts if it is not clear
+
+            var possibleResults = new List<int>();
+            var sum = hand.Sum(x => ValueOfCard(x));
+            possibleResults.Add(sum);
+            if (HowManyAces(hand) > 0)
+            {
+                possibleResults.Add(sum - 10);
+                possibleResults.Add(sum - 20);
+                possibleResults.Add(sum - 30);
+            }
+            
+            return possibleResults.Max();
         }
     }
 }

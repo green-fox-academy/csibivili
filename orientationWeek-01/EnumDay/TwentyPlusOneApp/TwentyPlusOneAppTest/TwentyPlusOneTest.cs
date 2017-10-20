@@ -219,5 +219,25 @@ namespace TwentyPlusOneAppTest
 
             Assert.AreEqual(12, game.ValueOfHand(game.Players[0].Hand));
         }
+
+        [Test]
+        public void ValueOfHandIfItContainsTwoAcesWithTwoDiffValues()
+        {
+            Card card1 = new Card(Card.Suit.Spades,
+                Card.Rank.Nine, Card.Color.black);
+            Card card3 = new Card(Card.Suit.Hearts,
+                Card.Rank.Ace, Card.Color.red);
+            Card card4 = new Card(Card.Suit.Diamonds,
+                Card.Rank.Ace, Card.Color.red);
+            Deck deck = new Deck();
+
+            Game game = new Game(1);
+
+            game.Players[0].Hand.Add(card1);
+            game.Players[0].Hand.Add(card3);
+            game.Players[0].Hand.Add(card4);
+
+            Assert.AreEqual(21, game.ValueOfHand(game.Players[0].Hand));
+        }
     }
 }
