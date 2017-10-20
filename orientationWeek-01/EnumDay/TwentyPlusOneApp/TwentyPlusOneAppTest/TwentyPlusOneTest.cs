@@ -121,5 +121,22 @@ namespace TwentyPlusOneAppTest
 
             Assert.AreEqual(8, numberOfCards - numberOfRemainingCards);
         }
+
+        [Test]
+        public void ValueOfHand()
+        {
+            Card card1 = new Card(Card.Suit.Spades,
+                Card.Rank.Two, Card.Color.black);
+            Card card2 = new Card(Card.Suit.Spades,
+                Card.Rank.Three, Card.Color.black);
+
+            Game game = new Game(1);
+
+            game.Players[0].Hand.Add(card1);
+            game.Players[0].Hand.Add(card2);
+
+            Assert.AreEqual(5, game.ValueOfHand(game.Players[0].Hand));
+
+        }
     }
 }
