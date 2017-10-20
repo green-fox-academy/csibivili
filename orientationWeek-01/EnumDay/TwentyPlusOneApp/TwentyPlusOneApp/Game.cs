@@ -8,26 +8,29 @@ namespace TwentyPlusOneApp
 {
     public class Game
     {
-        public List<Card> Hand;
+        public List<Player> Players;
         public Deck Cards;
 
-        public Game()
+        public Game(int numberOfEnemies)
         {
             Cards = new Deck();
-            Hand = new List<Card>();
-        }
-
-        public void Deal(int howMuch)
-        {
-            for (int i = 0; i < howMuch; i++)
+            Players = new List<Player>();
+            Players.Add(new User());
+            for (int i = 0; i < numberOfEnemies; i++)
             {
-                Hand.Add(Deck.PullRandom(Cards));
+                Players.Add(new Enemy());
             }
         }
 
-        public int ValueOfCards(List<Card> cards)
+        public void Deal(Game game, int howMuch)
         {
-            return 0;
+            for (int j = 0; j < game.Players.Count(); j++)
+            {
+                for (int i = 0; i < howMuch; i++)
+                {
+                    Players[j].Hand.Add(Deck.PullRandom(Cards));
+                }
+            }
         }
     }
 }

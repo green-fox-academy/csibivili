@@ -81,7 +81,8 @@ namespace TwentyPlusOneAppTest
                 Card.Rank.Two, Card.Color.black);
             Deck deck = new Deck();
 
-            Assert.AreEqual(0, deck.Cards[103].CompareTo(Deck.PullLast(deck)));
+            Assert.AreEqual(0, deck.Cards[deck.Cards.Count() - 1].
+                CompareTo(Deck.PullLast(deck)));
         }
 
         [Test]
@@ -91,17 +92,18 @@ namespace TwentyPlusOneAppTest
                 Card.Rank.Two, Card.Color.black);
             Deck deck = new Deck();
 
-            Assert.AreNotEqual(0, deck.Cards[0].CompareTo(Deck.PullRandom(deck)));
+            Assert.AreNotEqual(0, deck.Cards[0].
+                CompareTo(Deck.PullRandom(deck)));
         }
 
         [Test]
         public void NumberOfHand()
         {
-            Game game = new Game();
+            Game game = new Game(2);
 
-            game.Deal(2);
+            game.Deal(game, 2);
 
-            int numberOfCards = game.Hand.Count();
+            int numberOfCards = game.Players[0].Hand.Count();
 
             Assert.AreEqual(2, numberOfCards);
         }
@@ -109,15 +111,15 @@ namespace TwentyPlusOneAppTest
         [Test]
         public void NumberOfRemainingCards()
         {
-            Game game = new Game();
+            Game game = new Game(3);
 
             int numberOfCards = game.Cards.Cards.Count();
 
-            game.Deal(2);
+            game.Deal(game, 2);
 
             int numberOfRemainingCards = game.Cards.Cards.Count();
 
-            Assert.AreEqual(2, numberOfCards - numberOfRemainingCards);
+            Assert.AreEqual(8, numberOfCards - numberOfRemainingCards);
         }
     }
 }
