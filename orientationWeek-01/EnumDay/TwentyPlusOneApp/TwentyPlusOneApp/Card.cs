@@ -17,11 +17,11 @@ namespace TwentyPlusOneApp
             CardColor = color.ToString();
         }
 
-        public Card(string rank, string suit)
+        public Card(string rank, string suit, string color)
         {
             CardRank = rank;
             CardSuit = suit;
-            CardColor = AutoColor(suit);
+            CardColor = color;
         }
 
         public string AutoColor(string suit)
@@ -83,8 +83,8 @@ namespace TwentyPlusOneApp
 
         public enum Color
         {
-            red,
-            black
+            black,
+            red
         }
     }
 }
