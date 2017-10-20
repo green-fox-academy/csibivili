@@ -48,24 +48,24 @@ namespace TwentyPlusOneApp
             return array.OfType<object>().Select(o => o.ToString()).ToArray();
         }
 
-        public static Card PullFirst(Deck deck)
+        public static Card PullFirst(List<Card> cards)
         {
-            Card pulled = deck.Cards[0];
-            deck.Cards.Remove(pulled);
+            Card pulled = cards[0];
+            cards.Remove(pulled);
             return pulled;
         }
 
-        public static Card PullLast(Deck deck)
+        public static Card PullLast(List<Card> cards)
         {
-            Card pulled = deck.Cards[deck.Cards.Count() - 1];
-            deck.Cards.Remove(pulled);
+            Card pulled = cards[cards.Count() - 1];
+            cards.Remove(pulled);
             return pulled;
         }
 
-        public static Card PullRandom(Deck deck)
+        public static Card PullRandom(List<Card> cards)
         {
-            Card pulled = deck.Cards[RANDOM.Next(deck.Cards.Count())];
-            deck.Cards.Remove(pulled);
+            Card pulled = cards[RANDOM.Next(cards.Count())];
+            cards.Remove(pulled);
             return pulled;
         }
     }

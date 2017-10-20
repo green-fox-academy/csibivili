@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwentyPlusOneApp
 {
-    public class Game
+    public class Game : IRules
     {
         public List<Player> Players;
         public Deck Cards;
@@ -28,7 +28,7 @@ namespace TwentyPlusOneApp
             {
                 for (int i = 0; i < howMuch; i++)
                 {
-                    Players[j].Hand.Add(Deck.PullRandom(Cards));
+                    Players[j].Hand.Add(Deck.PullRandom(Cards.Cards));
                 }
             }
         }

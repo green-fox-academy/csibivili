@@ -71,7 +71,7 @@ namespace TwentyPlusOneAppTest
                 Card.Rank.Two, Card.Color.black);
             Deck deck = new Deck();
 
-            Assert.AreEqual(0, deck.Cards[0].CompareTo(Deck.PullFirst(deck)));
+            Assert.AreEqual(0, deck.Cards[0].CompareTo(Deck.PullFirst(deck.Cards)));
         }
 
         [Test]
@@ -82,7 +82,7 @@ namespace TwentyPlusOneAppTest
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[deck.Cards.Count() - 1].
-                CompareTo(Deck.PullLast(deck)));
+                CompareTo(Deck.PullLast(deck.Cards)));
         }
 
         [Test]
@@ -93,7 +93,7 @@ namespace TwentyPlusOneAppTest
             Deck deck = new Deck();
 
             Assert.AreNotEqual(0, deck.Cards[0].
-                CompareTo(Deck.PullRandom(deck)));
+                CompareTo(Deck.PullRandom(deck.Cards)));
         }
 
         [Test]
