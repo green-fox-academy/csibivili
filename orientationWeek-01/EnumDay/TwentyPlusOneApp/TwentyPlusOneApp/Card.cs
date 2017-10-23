@@ -8,7 +8,6 @@ namespace TwentyPlusOneApp
 { 
     public class Card : IComparable
     {
-        //public string CardSuit, CardRank, CardColor;
         public Suit CardSuit;
         public Rank CardRank;
         public Color CardColor;
@@ -19,13 +18,6 @@ namespace TwentyPlusOneApp
             CardRank = rank;
             CardColor = color;
         }
-
-        //public Card(string rank, string suit, string color)
-        //{
-        //    CardRank = rank;
-        //    CardSuit = suit;
-        //    CardColor = color;
-        //}
 
         public int CompareTo(object obj)
         {

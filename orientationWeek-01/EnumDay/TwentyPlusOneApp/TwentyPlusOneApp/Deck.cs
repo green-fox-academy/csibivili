@@ -39,7 +39,7 @@ namespace TwentyPlusOneApp
             return cards;
         }
 
-        public List<Card> CardsSort(List<Card> cards)
+        public static List<Card> CardsSort(List<Card> cards)
         {
             return (from card in cards
                     orderby card.CardRank descending
