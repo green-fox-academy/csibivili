@@ -101,7 +101,7 @@ namespace TwentyPlusOneAppTest
         {
             Game game = new Game(2);
 
-            game.Deal(game, 2);
+            game.Deal(2);
 
             int numberOfCards = game.Players[0].Hand.Count();
 
@@ -115,7 +115,7 @@ namespace TwentyPlusOneAppTest
 
             int numberOfCards = game.Cards.Cards.Count();
 
-            game.Deal(game, 2);
+            game.Deal(2);
 
             int numberOfRemainingCards = game.Cards.Cards.Count();
 
@@ -281,6 +281,15 @@ namespace TwentyPlusOneAppTest
             game.Players[0].Hand.Add(card5);
 
             Assert.AreEqual(13, game.ValueOfHand(game.Players[0].Hand));
+        }
+
+        [Test]
+        public void Points()
+        {
+            Game game = new Game(2);
+
+            Assert.AreEqual(game.ValueOfHand(game.Players[0].Hand), game.Players[0].Points);
+            Assert.AreEqual(game.ValueOfHand(game.Players[1].Hand), game.Players[1].Points);
         }
     }
 }

@@ -28,27 +28,33 @@ namespace TwentyPlusOneApp
         public List<Player> Players;
         public Deck Cards;
 
-        public Game(int numberOfEnemies)
+        public Game(int numberOfOpponents)
         {
             Cards = new Deck();
             Players = new List<Player>();
             Players.Add(new User());
-            for (int i = 0; i < numberOfEnemies; i++)
+            for (int i = 0; i < numberOfOpponents; i++)
             {
-                Players.Add(new Enemy());
+                Players.Add(new Opponent());
             }
         }
 
-        public void Deal(Game game, int howMuch)
+        public void Deal(/*Game game,*/ int howMuch)
         {
-            for (int j = 0; j < game.Players.Count(); j++)
+            for (int j = 0; j < Players.Count(); j++)
             {
                 for (int i = 0; i < howMuch; i++)
                 {
                     Players[j].Hand.Add(Deck.PullRandom(Cards.Cards));
                 }
+                Players[j].Points = ValueOfHand(Players[j].Hand);
             }
         }
+
+        public void CountPoints(Player player)
+        {
+            player.Points = ValueOfHand(player.Hand);
+        } 
 
         public int ValueOfHand(List<Card> hand)
         {
