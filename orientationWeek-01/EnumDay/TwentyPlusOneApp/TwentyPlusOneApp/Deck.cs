@@ -42,7 +42,7 @@ namespace TwentyPlusOneApp
         public static List<Card> RankSort(List<Card> cards)
         {
             return (from card in cards
-                    orderby card.CardRank descending
+                    orderby card.CardRank
                     select card).ToList();
         }
 

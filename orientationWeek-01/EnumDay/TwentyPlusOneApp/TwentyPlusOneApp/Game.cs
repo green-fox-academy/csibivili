@@ -8,21 +8,21 @@ namespace TwentyPlusOneApp
 {
     public class Game
     {
-        static Dictionary<Card.Rank, int[]> VALUE_OF_CARDS = new Dictionary<Card.Rank, int[]>()
+        static Dictionary<Card.Rank, int> VALUE_OF_CARDS = new Dictionary<Card.Rank, int>()
         {
-            {Card.Rank.Two, new int[] { 2 } },
-            {Card.Rank.Three, new int[] { 3 } },
-            {Card.Rank.Four, new int[] { 4 } },
-            {Card.Rank.Five, new int[] { 5 } },
-            {Card.Rank.Six, new int[] { 6 } },
-            {Card.Rank.Seven, new int[] { 7 } },
-            {Card.Rank.Eight, new int[] { 8 } },
-            {Card.Rank.Nine, new int[] { 9 } },
-            {Card.Rank.Ten, new int[] { 10 } },
-            {Card.Rank.Jack, new int[] { 10 } },
-            {Card.Rank.Queen, new int[] { 10 } },
-            {Card.Rank.King, new int[] { 10 } },
-            {Card.Rank.Ace, new int[] { 11 , 1 } },
+            {Card.Rank.Two, 2 },
+            {Card.Rank.Three, 3 },
+            {Card.Rank.Four, 4 },
+            {Card.Rank.Five, 5 },
+            {Card.Rank.Six, 6 },
+            {Card.Rank.Seven, 7 },
+            {Card.Rank.Eight, 8 },
+            {Card.Rank.Nine, 9 },
+            {Card.Rank.Ten, 10 },
+            {Card.Rank.Jack, 10 },
+            {Card.Rank.Queen, 10 },
+            {Card.Rank.King, 10 },
+            {Card.Rank.Ace, 1 },
         };
 
         public List<Player> Players;
@@ -50,50 +50,32 @@ namespace TwentyPlusOneApp
             }
         }
 
-
-
-        public IEnumerable<int[]> ValueOfHand(List<Card> hand)
-        {            
-            var sum = hand.Select(x => ValueOfCard(x));
-            return sum;
+        public int ValueOfHand(List<Card> hand)
+        {
+            if (HowManyAces(hand) > 0 && ValueOfCards(hand) + 10 <= 21)
+            {
+                return ValueOfCards(hand) + 10;
+            }
+            else
+            {
+                return ValueOfCards(hand);
+            }
         }
 
-        public int[] ValueOfCard(Card card)
+        public int ValueOfCard(Card card)
         {
             return VALUE_OF_CARDS[card.CardRank];
         }
 
         public int HowManyAces(List<Card> cards)
         {
-            return cards.Where(x => ValueOfCard(x)[0] == 11).Count();
+            return cards.Where(x => ValueOfCard(x) == 11).Count();
         }
 
-        public int BestResult(List<Card> hand)
+        public int ValueOfCards(List<Card> hand)
         {
-            // generate all the possible results and choose the best
-            // these are just thoughts if it is not clear
-
-            var possibleResults = new List<int>();
-            var sum = hand.Sum(x => ValueOfCard(x)[0]);
-            possibleResults.Add(sum);
-            if (HowManyAces(hand) > 0)
-            {
-                possibleResults.Add(sum - 10);
-                possibleResults.Add(sum - 20);
-                possibleResults.Add(sum - 30);
-            }
-            
-            return possibleResults.Max();
-        }
-
-        public List<string> PossibleVariations()
-        {
-            List<string> numbers = new List<string> { "0", "1" };
-            var result =
-                        (from n1 in numbers
-                        from n2 in numbers
-                        select n1 + n2).ToList();
-            return result;
+            var sum = hand.Sum(x => ValueOfCard(x));
+            return sum;
         }
     }
 }
