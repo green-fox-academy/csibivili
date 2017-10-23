@@ -39,7 +39,7 @@ namespace TwentyPlusOneApp
             }
         }
 
-        public void Deal(/*Game game,*/ int howMuch)
+        public void Deal(int howMuch)
         {
             for (int j = 0; j < Players.Count(); j++)
             {
@@ -49,6 +49,13 @@ namespace TwentyPlusOneApp
                 }
                 Players[j].Points = ValueOfHand(Players[j].Hand);
             }
+        }
+
+        public List<Player> RankPlayers()
+        {
+            return Players.OrderByDescending(x => x.Points)
+                .ThenBy(x => x.Hand.Count())
+                .Where(x => x.Points <= 21).ToList();
         }
 
         public void CountPoints(Player player)
@@ -75,13 +82,13 @@ namespace TwentyPlusOneApp
 
         public int HowManyAces(List<Card> cards)
         {
-            return cards.Where(x => ValueOfCard(x) == 1).Count();
+            return cards.Where(x => 
+                x.CardRank == Card.Rank.Ace).Count();
         }
 
         public int ValueOfCards(List<Card> hand)
         {
-            var sum = hand.Sum(x => ValueOfCard(x));
-            return sum;
+            return hand.Sum(x => ValueOfCard(x));
         }
     }
 }

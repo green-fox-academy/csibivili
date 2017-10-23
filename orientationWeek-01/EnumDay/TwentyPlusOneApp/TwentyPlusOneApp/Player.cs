@@ -17,8 +17,9 @@ namespace TwentyPlusOneApp
             Points = 0;
         }
 
-        public void Pull()
+        public void Pull(Deck deck)
         {
+            this.Hand.Add(Deck.PullRandom(deck.Cards));
         }
     }
 }
