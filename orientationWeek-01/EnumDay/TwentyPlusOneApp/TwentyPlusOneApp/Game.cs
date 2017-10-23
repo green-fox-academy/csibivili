@@ -69,7 +69,7 @@ namespace TwentyPlusOneApp
 
         public int HowManyAces(List<Card> cards)
         {
-            return cards.Where(x => ValueOfCard(x) == 11).Count();
+            return cards.Where(x => ValueOfCard(x) == 1).Count();
         }
 
         public int ValueOfCards(List<Card> hand)
