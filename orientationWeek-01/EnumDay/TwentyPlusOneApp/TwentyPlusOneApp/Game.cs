@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace TwentyPlusOneApp
 {
-    public class Game : IRules
+    public class Game
     {
-        static Dictionary<string, int[]> VALUE_OF_CARDS = new Dictionary<string, int[]>()
+        static Dictionary<Card.Rank, int[]> VALUE_OF_CARDS = new Dictionary<Card.Rank, int[]>()
         {
-            {Card.Rank.Two.ToString(), new int[] { 2 } },
-            {Card.Rank.Three.ToString(), new int[] { 3 } },
-            {Card.Rank.Four.ToString(), new int[] { 4 } },
-            {Card.Rank.Five.ToString(), new int[] { 5 } },
-            {Card.Rank.Six.ToString(), new int[] { 6 } },
-            {Card.Rank.Seven.ToString(), new int[] { 7 } },
-            {Card.Rank.Eight.ToString(), new int[] { 8 } },
-            {Card.Rank.Nine.ToString(), new int[] { 9 } },
-            {Card.Rank.Ten.ToString(), new int[] { 10 } },
-            {Card.Rank.Jack.ToString(), new int[] { 10 } },
-            {Card.Rank.Queen.ToString(), new int[] { 10 } },
-            {Card.Rank.King.ToString(), new int[] { 10 } },
-            {Card.Rank.Ace.ToString(), new int[] { 11 , 1 } },
+            {Card.Rank.Two, new int[] { 2 } },
+            {Card.Rank.Three, new int[] { 3 } },
+            {Card.Rank.Four, new int[] { 4 } },
+            {Card.Rank.Five, new int[] { 5 } },
+            {Card.Rank.Six, new int[] { 6 } },
+            {Card.Rank.Seven, new int[] { 7 } },
+            {Card.Rank.Eight, new int[] { 8 } },
+            {Card.Rank.Nine, new int[] { 9 } },
+            {Card.Rank.Ten, new int[] { 10 } },
+            {Card.Rank.Jack, new int[] { 10 } },
+            {Card.Rank.Queen, new int[] { 10 } },
+            {Card.Rank.King, new int[] { 10 } },
+            {Card.Rank.Ace, new int[] { 11 , 1 } },
         };
 
         public List<Player> Players;
@@ -50,13 +50,11 @@ namespace TwentyPlusOneApp
             }
         }
 
-        public int ValueOfHand(List<Card> hand)
+
+
+        public IEnumerable<int[]> ValueOfHand(List<Card> hand)
         {            
-            if (HowManyAces(hand) > 0)
-            {
-                return BestResult(hand);
-            }
-            var sum = hand.Sum(x => ValueOfCard(x)[0]);
+            var sum = hand.Select(x => ValueOfCard(x));
             return sum;
         }
 

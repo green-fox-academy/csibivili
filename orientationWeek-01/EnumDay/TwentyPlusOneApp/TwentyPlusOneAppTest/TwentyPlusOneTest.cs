@@ -21,7 +21,7 @@ namespace TwentyPlusOneAppTest
         public void DeckContainsTwoOfSpadesByDefault()
         {
             Card card = new Card(Card.Suit.Spades, 
-                Card.Rank.Two, Card.Color.black);
+                Card.Rank.Two, Card.Color.Black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[0].CompareTo(card));
@@ -32,11 +32,11 @@ namespace TwentyPlusOneAppTest
         public void DeckContainsMultipleSpadesByDefault()
         {
             Card card1 = new Card(Card.Suit.Spades, 
-                Card.Rank.Two, Card.Color.black);
+                Card.Rank.Two, Card.Color.Black);
             Card card2 = new Card(Card.Suit.Spades, 
-                Card.Rank.Three, Card.Color.black);
+                Card.Rank.Three, Card.Color.Black);
             Card card3 = new Card(Card.Suit.Spades, 
-                Card.Rank.Four, Card.Color.black);
+                Card.Rank.Four, Card.Color.Black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[0].CompareTo(card1)
@@ -68,7 +68,7 @@ namespace TwentyPlusOneAppTest
         public void PullFirstCard()
         {
             Card card = new Card(Card.Suit.Spades, 
-                Card.Rank.Two, Card.Color.black);
+                Card.Rank.Two, Card.Color.Black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, card.CompareTo(Deck.PullFirst(deck.Cards)));
@@ -78,7 +78,7 @@ namespace TwentyPlusOneAppTest
         public void PullLastCard()
         {
             Card card = new Card(Card.Suit.Diamonds,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, card.
@@ -89,7 +89,7 @@ namespace TwentyPlusOneAppTest
         public void PullRandomCard()
         {
             Card card = new Card(Card.Suit.Spades,
-                Card.Rank.Two, Card.Color.black);
+                Card.Rank.Two, Card.Color.Black);
             Deck deck = new Deck();
 
             Assert.AreNotEqual(0, card.
@@ -126,13 +126,13 @@ namespace TwentyPlusOneAppTest
         public void ValueOfHand()
         {
             Card card1 = new Card(Card.Suit.Spades,
-                Card.Rank.Two, Card.Color.black);
+                Card.Rank.Two, Card.Color.Black);
             Card card2 = new Card(Card.Suit.Clubs,
-                Card.Rank.Three, Card.Color.black);
+                Card.Rank.Three, Card.Color.Black);
             Card card3 = new Card(Card.Suit.Hearts,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Card card4 = new Card(Card.Suit.Diamonds,
-                Card.Rank.Jack, Card.Color.black);
+                Card.Rank.Jack, Card.Color.Black);
 
             Game game = new Game(1);
 
@@ -151,7 +151,7 @@ namespace TwentyPlusOneAppTest
         public void SameSuit()
         {
             Card card = new Card(Card.Suit.Spades,
-                Card.Rank.Two, Card.Color.black);
+                Card.Rank.Two, Card.Color.Black);
             Deck deck = new Deck();
 
             Assert.AreEqual(0, deck.Cards[0].SameSuit(card));
@@ -161,11 +161,12 @@ namespace TwentyPlusOneAppTest
         public void ValueOfHandIfAceIsOne()
         {
             Card card1 = new Card(Card.Suit.Spades,
-                Card.Rank.Eight, Card.Color.black);
+                Card.Rank.Eight, Card.Color.Black);
             Card card2 = new Card(Card.Suit.Clubs,
-                Card.Rank.Three, Card.Color.black);
+                Card.Rank.Three, Card.Color.Black);
             Card card3 = new Card(Card.Suit.Hearts,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
+
             Deck deck = new Deck();
 
             Game game = new Game(1);
@@ -181,13 +182,13 @@ namespace TwentyPlusOneAppTest
         public void ValueOfHandIfTwoAcesIsOne()
         {
             Card card1 = new Card(Card.Suit.Spades,
-                Card.Rank.Eight, Card.Color.black);
+                Card.Rank.Eight, Card.Color.Black);
             Card card2 = new Card(Card.Suit.Clubs,
-                Card.Rank.Three, Card.Color.black);
+                Card.Rank.Three, Card.Color.Black);
             Card card3 = new Card(Card.Suit.Hearts,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Card card4 = new Card(Card.Suit.Diamonds,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Deck deck = new Deck();
 
             Game game = new Game(1);
@@ -204,11 +205,11 @@ namespace TwentyPlusOneAppTest
         public void ValueOfHandIfTwoMuch()
         {
             Card card1 = new Card(Card.Suit.Spades,
-                Card.Rank.Eight, Card.Color.black);
+                Card.Rank.Eight, Card.Color.Black);
             Card card2 = new Card(Card.Suit.Clubs,
-                Card.Rank.Three, Card.Color.black);
+                Card.Rank.Three, Card.Color.Black);
             Card card3 = new Card(Card.Suit.Hearts,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Deck deck = new Deck();
 
             Game game = new Game(1);
@@ -224,11 +225,11 @@ namespace TwentyPlusOneAppTest
         public void ValueOfHandIfItContainsTwoAcesWithTwoDiffValues()
         {
             Card card1 = new Card(Card.Suit.Spades,
-                Card.Rank.Nine, Card.Color.black);
+                Card.Rank.Nine, Card.Color.Black);
             Card card3 = new Card(Card.Suit.Hearts,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Card card4 = new Card(Card.Suit.Diamonds,
-                Card.Rank.Ace, Card.Color.red);
+                Card.Rank.Ace, Card.Color.Red);
             Deck deck = new Deck();
 
             Game game = new Game(1);
@@ -238,6 +239,24 @@ namespace TwentyPlusOneAppTest
             game.Players[0].Hand.Add(card4);
 
             Assert.AreEqual(21, game.ValueOfHand(game.Players[0].Hand));
+        }
+
+        [Test]
+        public void SortingHand()
+        {
+            Card card1 = new Card(Card.Suit.Spades,
+                Card.Rank.Nine, Card.Color.Black);
+            Card card3 = new Card(Card.Suit.Hearts,
+                Card.Rank.Ace, Card.Color.Red);
+
+            Game game = new Game(1);
+
+            game.Players[0].Hand.Add(card1);
+            game.Players[0].Hand.Add(card3);
+
+            game.Cards.CardsSort(game.Players[0].Hand);
+
+            Assert.AreEqual(0, card3.CompareTo(game.Players[0].Hand[0]));
         }
     }
 }

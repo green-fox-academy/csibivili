@@ -19,14 +19,10 @@ namespace TwentyPlusOneApp
 
         private List<Card> FillDeck()
         {
-            string[] suits = EnumConverter(Enum.GetValues(typeof(Card.Suit)));
-            string[] ranks = EnumConverter(Enum.GetValues(typeof(Card.Rank)));
-            string[] colors = EnumConverter(Enum.GetValues(typeof(Card.Color)));
-
-            var deck = (from color in colors
-                        from suit in suits
-                        from rank in ranks
-                        select new Card(rank, suit, color)).ToList<Card>();
+            var deck = (from color in (Card.Color[])Enum.GetValues(typeof(Card.Color))
+                        from suit in (Card.Suit[])Enum.GetValues(typeof(Card.Suit))
+                        from rank in (Card.Rank[])Enum.GetValues(typeof(Card.Rank))
+                        select new Card(suit, rank, color)).ToList<Card>();
 
             return deck;
         }
@@ -43,9 +39,11 @@ namespace TwentyPlusOneApp
             return cards;
         }
 
-        public string[] EnumConverter(Array array)
+        public List<Card> CardsSort(List<Card> cards)
         {
-            return array.OfType<object>().Select(o => o.ToString()).ToArray();
+            return (from card in cards
+                    orderby card.CardRank descending
+                    select card).ToList();
         }
 
         public static Card PullFirst(List<Card> cards)
