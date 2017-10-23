@@ -8,21 +8,21 @@ namespace TwentyPlusOneApp
 {
     public class Game : IRules
     {
-        static Dictionary<string, int> VALUE_OF_CARDS = new Dictionary<string, int>()
+        static Dictionary<string, int[]> VALUE_OF_CARDS = new Dictionary<string, int[]>()
         {
-            {Card.Rank.Two.ToString(), 2 },
-            {Card.Rank.Three.ToString(), 3 },
-            {Card.Rank.Four.ToString(), 4 },
-            {Card.Rank.Five.ToString(), 5 },
-            {Card.Rank.Six.ToString(), 6 },
-            {Card.Rank.Seven.ToString(), 7 },
-            {Card.Rank.Eight.ToString(), 8 },
-            {Card.Rank.Nine.ToString(), 9 },
-            {Card.Rank.Ten.ToString(), 10 },
-            {Card.Rank.Jack.ToString(), 10 },
-            {Card.Rank.Queen.ToString(), 10 },
-            {Card.Rank.King.ToString(), 10 },
-            {Card.Rank.Ace.ToString(), 11 },
+            {Card.Rank.Two.ToString(), new int[] { 2 } },
+            {Card.Rank.Three.ToString(), new int[] { 3 } },
+            {Card.Rank.Four.ToString(), new int[] { 4 } },
+            {Card.Rank.Five.ToString(), new int[] { 5 } },
+            {Card.Rank.Six.ToString(), new int[] { 6 } },
+            {Card.Rank.Seven.ToString(), new int[] { 7 } },
+            {Card.Rank.Eight.ToString(), new int[] { 8 } },
+            {Card.Rank.Nine.ToString(), new int[] { 9 } },
+            {Card.Rank.Ten.ToString(), new int[] { 10 } },
+            {Card.Rank.Jack.ToString(), new int[] { 10 } },
+            {Card.Rank.Queen.ToString(), new int[] { 10 } },
+            {Card.Rank.King.ToString(), new int[] { 10 } },
+            {Card.Rank.Ace.ToString(), new int[] { 11 , 1 } },
         };
 
         public List<Player> Players;
@@ -56,18 +56,18 @@ namespace TwentyPlusOneApp
             {
                 return BestResult(hand);
             }
-            var sum = hand.Sum(x => ValueOfCard(x));
+            var sum = hand.Sum(x => ValueOfCard(x)[0]);
             return sum;
         }
 
-        public int ValueOfCard(Card card)
+        public int[] ValueOfCard(Card card)
         {
             return VALUE_OF_CARDS[card.CardRank];
         }
 
         public int HowManyAces(List<Card> cards)
         {
-            return cards.Where(x => ValueOfCard(x) == 11).Count();
+            return cards.Where(x => ValueOfCard(x)[0] == 11).Count();
         }
 
         public int BestResult(List<Card> hand)
@@ -76,7 +76,7 @@ namespace TwentyPlusOneApp
             // these are just thoughts if it is not clear
 
             var possibleResults = new List<int>();
-            var sum = hand.Sum(x => ValueOfCard(x));
+            var sum = hand.Sum(x => ValueOfCard(x)[0]);
             possibleResults.Add(sum);
             if (HowManyAces(hand) > 0)
             {
@@ -86,6 +86,16 @@ namespace TwentyPlusOneApp
             }
             
             return possibleResults.Max();
+        }
+
+        public List<string> PossibleVariations()
+        {
+            List<string> numbers = new List<string> { "0", "1" };
+            var result =
+                        (from n1 in numbers
+                        from n2 in numbers
+                        select n1 + n2).ToList();
+            return result;
         }
     }
 }
