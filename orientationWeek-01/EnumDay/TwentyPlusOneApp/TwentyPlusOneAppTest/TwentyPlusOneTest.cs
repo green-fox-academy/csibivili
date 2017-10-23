@@ -256,5 +256,31 @@ namespace TwentyPlusOneAppTest
 
             Assert.AreEqual(0, card1.CompareTo(Deck.RankSort(game.Players[0].Hand)[0]));
         }
+
+        [Test]
+        public void ValueOfHandIfItContainsThreeAcesWithTwoDiffValues()
+        {
+            Card card1 = new Card(Card.Suit.Spades,
+                Card.Rank.Ace, Card.Color.Black);
+            Card card3 = new Card(Card.Suit.Hearts,
+                Card.Rank.Ace, Card.Color.Red);
+            Card card4 = new Card(Card.Suit.Diamonds,
+                Card.Rank.Ace, Card.Color.Red);
+            Card card5 = new Card(Card.Suit.Diamonds,
+                Card.Rank.King, Card.Color.Red);
+            Deck deck = new Deck();
+
+            Game game = new Game(1);
+
+            game.Players[0].Hand.Add(card1);
+            game.Players[0].Hand.Add(card3);
+            game.Players[0].Hand.Add(card4);
+
+            Assert.AreEqual(13, game.ValueOfHand(game.Players[0].Hand));
+
+            game.Players[0].Hand.Add(card5);
+
+            Assert.AreEqual(13, game.ValueOfHand(game.Players[0].Hand));
+        }
     }
 }
