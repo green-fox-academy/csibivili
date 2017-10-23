@@ -254,7 +254,7 @@ namespace TwentyPlusOneAppTest
             game.Players[0].Hand.Add(card1);
             game.Players[0].Hand.Add(card3);
 
-            Assert.AreEqual(0, card3.CompareTo(Deck.CardsSort(game.Players[0].Hand)[0]));
+            Assert.AreEqual(0, card3.CompareTo(Deck.RankSort(game.Players[0].Hand)[0]));
         }
     }
 }
