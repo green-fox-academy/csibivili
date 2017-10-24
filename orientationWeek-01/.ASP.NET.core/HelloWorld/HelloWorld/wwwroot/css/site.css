@@ -1,43 +1,18 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿p {
+    color: red;
+    background-color:aqua;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+blink marquee {
+    color: expression("rgb(" + Math.floor(Math.random() * 255) + 
+        "," + Math.floor(Math.random() * 255) + "," + 
+        Math.floor(Math.random() * 255) + ")");
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+element {
+    --main-bg-color: brown;
 }
 
-/* styles for validation helpers */
-.field-validation-error {
-    color: #b94a48;
+element {
+    background-color: var(--main-bg-color);
 }
-
-.field-validation-valid {
-    display: none;
-}
-
-input.input-validation-error {
-    border: 1px solid #b94a48;
-}
-
-input[type="checkbox"].input-validation-error {
-    border: 0 none;
-}
-
-.validation-summary-errors {
-    color: #b94a48;
-}
-
-.validation-summary-valid {
-    display: none;
-}
-
