@@ -9,14 +9,17 @@ namespace TwentyPlusOneApp
     public class Player
     {
         public List<Card> Hand;
+        public int Points;
 
         public Player()
         {
             Hand = new List<Card>();
+            Points = 0;
         }
 
-        public void Pull()
+        public void Pull(Deck deck)
         {
+            this.Hand.Add(Deck.PullRandom(deck.Cards));
         }
     }
 }

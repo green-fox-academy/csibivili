@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwentyPlusOneApp
 {
-    public class Enemy : Player
+    public class Opponent : Player
     {
     }
 }

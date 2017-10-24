@@ -8,19 +8,14 @@ namespace TwentyPlusOneApp
 { 
     public class Card : IComparable
     {
-        public string CardSuit, CardRank, CardColor;
+        public Suit CardSuit;
+        public Rank CardRank;
+        public Color CardColor;
 
         public Card(Suit suit, Rank rank, Color color)
         {
-            CardSuit = suit.ToString();
-            CardRank = rank.ToString();
-            CardColor = color.ToString();
-        }
-
-        public Card(string rank, string suit, string color)
-        {
-            CardRank = rank;
             CardSuit = suit;
+            CardRank = rank;
             CardColor = color;
         }
 
@@ -95,8 +90,8 @@ namespace TwentyPlusOneApp
 
         public enum Color
         {
-            black,
-            red
+            Black,
+            Red
         }
     }
 }

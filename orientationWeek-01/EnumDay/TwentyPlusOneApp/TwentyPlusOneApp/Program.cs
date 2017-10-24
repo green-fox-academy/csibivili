@@ -10,6 +10,12 @@ namespace TwentyPlusOneApp
     {
         static void Main(string[] args)
         {
+            Game game = new Game(1);
+            game.Deal(2);
+            foreach (var card in game.Players[0].Hand)
+            {
+                Console.WriteLine(card.GetInfo());
+            }
             Console.ReadLine();
         }
     }
