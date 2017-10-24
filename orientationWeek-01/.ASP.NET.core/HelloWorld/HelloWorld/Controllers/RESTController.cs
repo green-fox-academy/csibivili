@@ -21,13 +21,13 @@ namespace HelloWorld.Controllers
         }
 
         [Route("greeting")]
-        public JsonResult Greeting(string name)
+        public ContentResult Greeting(string name)
         {
             Startup.numberOfApiCalls++;
 
-            string result = "Hello, " + name;
+            string result = String.Format("Hello, {0}! This site was loaded {1} times since last server start.", name, Startup.numberOfApiCalls);
 
-            return new JsonResult(new Greeting { ID = Startup.numberOfApiCalls, Content = result });
+            return Content(result);
         }
     }
 }
