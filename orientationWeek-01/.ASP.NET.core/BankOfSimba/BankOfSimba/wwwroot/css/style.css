@@ -1,8 +1,17 @@
-﻿div {
-    width:150px;
+﻿.king, .slave {
+    width:18%;
     float:left;
     text-align:right;
-    background-color: black;
+    background-color: saddlebrown;
+    border: 2px solid gold;
+    font-family: Calibri;
+    font-size: 18px;
+}
+
+.row {
+    width: 100%;
+    float: none;
+    /*height: 50px;*/
 }
 
 .king {
