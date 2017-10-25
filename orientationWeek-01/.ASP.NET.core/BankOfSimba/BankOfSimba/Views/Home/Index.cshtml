@@ -6,6 +6,7 @@
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    @{Model.Fill(); }
     @{foreach (var animal in Model.bankAccount)
         {
             var king = animal.isKing ? "King" : "Slave";
