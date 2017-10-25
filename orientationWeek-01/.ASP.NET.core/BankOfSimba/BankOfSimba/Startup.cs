@@ -13,6 +13,7 @@ namespace BankOfSimba
 {
     public class Startup
     {
+        public static HomeViewModel homeViewModel = new HomeViewModel();
 
         public void ConfigureServices(IServiceCollection services)
         {
