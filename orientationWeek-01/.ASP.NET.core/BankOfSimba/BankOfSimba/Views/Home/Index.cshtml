@@ -10,11 +10,8 @@
         {
             var king = animal.isKing ? "King" : "Slave";
             var number = @Model.bankAccount.IndexOf(animal) + 1;
-            var goodguy = "Good guy";
-            if (animal.Name == "Zordon")
-            {
-                goodguy = "Bad guy";
-            }
+            var goodguy = animal.isGood ? "Good guy" : "Bad Guy";
+
             <div class="row">
                 <div class="@king">@number</div>
                 <div class="@king">@animal.Name</div>

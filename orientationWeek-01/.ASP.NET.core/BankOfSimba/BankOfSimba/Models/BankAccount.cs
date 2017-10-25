@@ -6,6 +6,7 @@
         public double Balance { get; set; }
         public TypeOfAnimal AnimalType { get; set; }
         public bool isKing { get; set; } = false;
+        public bool isGood { get; set; } = true;
     }
 
     public enum TypeOfAnimal

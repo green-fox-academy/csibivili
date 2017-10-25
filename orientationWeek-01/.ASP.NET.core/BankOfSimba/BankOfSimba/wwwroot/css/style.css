@@ -11,11 +11,10 @@
 .row {
     width: 100%;
     float: none;
-    /*height: 50px;*/
 }
 
 .king {
-    animation: random 5s infinite;
+    animation: random 1s infinite;
 }
 
 .slave {
