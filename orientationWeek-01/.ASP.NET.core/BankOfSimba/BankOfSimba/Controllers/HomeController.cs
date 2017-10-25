@@ -10,20 +10,18 @@ namespace BankOfSimba.Controllers
 
         public IActionResult Index(string name)
         {
-            //var homeViewModel = new HomeViewModel();
-
-            for (int i = 0; i < Startup.homeViewModel.bankAccount.Count(); i++)
+            for (int i = 0; i < Program.homeViewModel.bankAccount.Count(); i++)
             {
-                if (name == Startup.homeViewModel.bankAccount[i].Name)
+                if (name == Program.homeViewModel.bankAccount[i].Name)
                 {
                     if (name == "Mufasa")
                     {
-                        Startup.homeViewModel.bankAccount[i].Balance += 90;
+                        Program.homeViewModel.bankAccount[i].Balance += 90;
                     }
-                    Startup.homeViewModel.bankAccount[i].Balance += 10;
+                    Program.homeViewModel.bankAccount[i].Balance += 10;
                 }
             }
-            return View(Startup.homeViewModel);
+            return View(Program.homeViewModel);
         }
     }
 }
