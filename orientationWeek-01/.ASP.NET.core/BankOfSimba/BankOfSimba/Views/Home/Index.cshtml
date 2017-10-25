@@ -21,13 +21,16 @@
             </div>
         }
     }
+    <form class="form" action="/" method="post">
+        <input type="text" name="Name" value="" />
+        <input type="text" name="Balance" value="" />
+        <div>
+            <input type="radio" name="AnimalType" value="Parrot" checked> Parrot
+            <input type="radio" name="AnimalType" value="Lion"> Lion
+            <input type="radio" name="AnimalType" value="Monkey"> Monkey
+        </div>
+        <button type="submit" value="Submit">Submit</button>
 
-    <div class="form">
-        <p>Whose account must be increased?</p>
-        <form action="/" method="post">
-            <input type="text" name="Name" value="" />
-            <button type="submit" value="Submit">Submit</button>
-        </form>
-    </div>
+    </form>
 </body>
 </html>
