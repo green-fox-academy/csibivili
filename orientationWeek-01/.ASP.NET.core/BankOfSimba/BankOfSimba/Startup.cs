@@ -19,6 +19,8 @@ namespace BankOfSimba
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseStaticFiles();
+
             loggerFactory.AddConsole();
 
             if (env.IsDevelopment())

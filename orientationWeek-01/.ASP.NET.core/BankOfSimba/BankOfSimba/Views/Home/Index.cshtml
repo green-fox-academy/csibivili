@@ -3,8 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Simba</title>
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <p>@Model.simba.Name = "Simba"</p>
+    @{foreach (var animal in Model.bankAccount)
+        {
+            <div>@{var number = @Model.bankAccount.IndexOf(animal) + 1;}@number</div>
+            <div>@animal.Name</div>
+            <div>@animal.Balance.ToString("#,##0.00 Zebra")</div><br />
+        }
+    }
 </body>
 </html>

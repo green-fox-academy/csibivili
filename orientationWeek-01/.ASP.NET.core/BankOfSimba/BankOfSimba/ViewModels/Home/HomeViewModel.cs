@@ -1,9 +1,14 @@
 ﻿using BankOfSimba.Models;
+using System.Collections.Generic;
 
 namespace BankOfSimba.ViewModels.Home
 {
     public class HomeViewModel
     {
-        public BankAccount simba { get; set; } = new BankAccount();
+        public List<BankAccount> bankAccount;
+        public HomeViewModel()
+        {
+            bankAccount = new List<BankAccount>();
+        }
     }
 }
