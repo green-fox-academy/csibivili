@@ -5,6 +5,7 @@ namespace BankOfSimba.ViewModels.Home
 {
     public class HomeViewModel
     {
+
         public List<BankAccount> bankAccount;
         public HomeViewModel()
         {

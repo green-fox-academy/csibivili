@@ -13,7 +13,7 @@ namespace BankOfSimba.Controllers
             homeViewModel.bankAccount.Add(new Models.BankAccount
                 { Name = "Simba", Balance = 2000.00, AnimalType = Models.TypeOfAnimal.Lion });
             homeViewModel.bankAccount.Add(new Models.BankAccount
-                { Name = "Mufasa", Balance = 3000000.00, AnimalType = Models.TypeOfAnimal.Lion });
+                { Name = "Mufasa", Balance = 3000000.00, AnimalType = Models.TypeOfAnimal.Lion, isKing=true});
             homeViewModel.bankAccount.Add(new Models.BankAccount
                 { Name = "Rafiki", Balance = 20.00, AnimalType = Models.TypeOfAnimal.Monkey });
             homeViewModel.bankAccount.Add(new Models.BankAccount

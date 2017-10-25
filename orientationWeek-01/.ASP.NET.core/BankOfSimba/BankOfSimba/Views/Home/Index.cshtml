@@ -8,9 +8,12 @@
 <body>
     @{foreach (var animal in Model.bankAccount)
         {
-            <div>@{var number = @Model.bankAccount.IndexOf(animal) + 1;}@number</div>
-            <div>@animal.Name</div>
-            <div>@animal.Balance.ToString("#,##0.00 Zebra")</div><br />
+            var king = animal.isKing ? "King" : "Slave";
+            var number = @Model.bankAccount.IndexOf(animal) + 1;
+            <div class="@king">@number</div>
+            <div class="@king">@animal.Name</div>
+            <div class="@king">@animal.Balance.ToString("#,##0.00 Zebra")</div>                
+            <div class="@king">@king</div><br />
         }
     }
 </body>

@@ -5,6 +5,7 @@
         public string Name { get; set; }
         public double Balance { get; set; }
         public TypeOfAnimal AnimalType { get; set; }
+        public bool isKing { get; set; } = false;
     }
 
     public enum TypeOfAnimal
