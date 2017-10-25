@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using BankOfSimba.ViewModels.Home;
 
 namespace BankOfSimba
 {
     public class Startup
     {
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();

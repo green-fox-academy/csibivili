@@ -7,6 +7,9 @@
     font-family: Calibri;
     font-size: 18px;
 }
+.form {
+    width: 500px;
+}
 
 .row {
     width: 100%;
