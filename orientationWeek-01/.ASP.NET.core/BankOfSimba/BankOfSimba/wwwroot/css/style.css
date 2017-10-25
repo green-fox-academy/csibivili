@@ -15,9 +15,31 @@
 }
 
 .king {
-    color: gold;
+    animation: random 5s infinite;
 }
 
 .slave {
     color: silver;
+}
+
+@keyframes random {
+    15% {
+        color: red;
+    }
+
+    30% {
+        color: yellow;
+    }
+
+    45% {
+        color: green;
+    }
+
+    60% {
+        color: blue;
+    }
+
+    75% {
+        color: white;
+    }
 }
