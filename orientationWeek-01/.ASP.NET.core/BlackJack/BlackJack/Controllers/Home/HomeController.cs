@@ -23,7 +23,7 @@ namespace BlackJack.Controllers.Home
         }
 
         [HttpGet]
-        public IActionResult Index(/*Deck deck, User user, Opponent dealer*/)
+        public IActionResult Index()
         {
             dealer.Deal(deck);
             user.Deal(deck);
