@@ -1,9 +1,10 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model BlackJack.Model.Deck
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Black Jack</title>
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <p>Test</p>
+    <p>@Model.Cards[0].GetInfo()</p>
 </body>
 </html>

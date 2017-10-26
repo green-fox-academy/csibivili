@@ -16,9 +16,10 @@ namespace BlackJack.Controllers.Home
             this.deck = deck;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(Deck deck)
         {
-            return View();
+            return View(deck);
         }
     }
 }
