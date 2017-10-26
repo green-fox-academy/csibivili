@@ -1,9 +1,9 @@
-﻿@model Anagramm.Model.Word
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
-    @Model.InputWord
+    @ViewData["result"]
+    <a href="/index.cshtml">back</a>
 </body>
 </html>

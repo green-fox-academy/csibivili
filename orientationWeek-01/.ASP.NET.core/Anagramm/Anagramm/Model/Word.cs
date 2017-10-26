@@ -9,9 +9,9 @@ namespace Anagramm.Model
     {
         public string InputWord { get; set; }
 
-        public bool Compare(Word word1, Word word2)
+        public bool Compare(Word word)
         {
-            return Converter(word1).Equals(Converter(word2));
+            return InputWord.Equals(Converter(word));
         }
 
         public string Converter(Word word)

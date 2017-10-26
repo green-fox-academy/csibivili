@@ -32,7 +32,8 @@ namespace Anagramm.Controllers.Home
         [Route("result")]
         public IActionResult Result(Word word)
         {
-            return View(word);
+            ViewData.Add("result",wordsList[1].Compare(word));
+            return View();
         }
     }
 }
