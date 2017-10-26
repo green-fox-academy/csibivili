@@ -10,16 +10,26 @@ namespace BlackJack.Controllers.Home
     public class HomeController : Controller
     {
         Deck deck;
+        User user;
+        Opponent dealer;
+        List<Player> players;
 
-        public HomeController(Deck deck)
+        public HomeController(Deck deck, User user, Opponent dealer, List<Player> players)
         {
             this.deck = deck;
+            this.user = user;
+            this.dealer = dealer;
+            this.players = players;
         }
 
         [HttpGet]
-        public IActionResult Index(Deck deck)
+        public IActionResult Index(/*Deck deck, User user, Opponent dealer*/)
         {
-            return View(deck);
+            dealer.Deal(deck);
+            user.Deal(deck);
+            players.Add(dealer);
+            players.Add(user);
+            return View(players);
         }
     }
 }

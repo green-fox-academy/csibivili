@@ -4,7 +4,7 @@
 }
 
 .frame {   
-    width: 50%;
+    width: 80%;
     height: 80%;
     border: 3px solid green;
 }
@@ -19,4 +19,33 @@
 .cards {
     height: 35%;
     border-bottom: 3px solid green;
+}
+
+#card {
+    height: 160px;
+    margin: auto;
+    width: 10%;
+    float: left;
+    text-align: center;
+    font-size: 150%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: darkorchid;
+    font-weight: 800;
+}
+
+.spades {
+    background-image: url("/images/spades.png");
+}
+
+.diamonds {
+    background-image: url("/images/diamonds.png");
+}
+
+.hearts {
+    background-image: url("/images/hearts.png");
+}
+
+.clubs {
+    background-image: url("/images/clubs.png");
 }

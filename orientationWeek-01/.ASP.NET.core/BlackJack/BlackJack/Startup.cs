@@ -17,6 +17,9 @@ namespace BlackJack
         {
             services.AddMvc();
             services.AddScoped<Deck>();
+            services.AddScoped<User>();
+            services.AddScoped<Opponent>();
+            services.AddScoped<List<Player>>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

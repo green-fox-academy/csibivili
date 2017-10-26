@@ -47,7 +47,7 @@ namespace BlackJack.Model
 
         public string GetInfo()
         {
-            return String.Format("{0} of {1}", CardRank, CardSuit);
+            return String.Format("{0}", CardRank);
         }
 
         public enum Suit

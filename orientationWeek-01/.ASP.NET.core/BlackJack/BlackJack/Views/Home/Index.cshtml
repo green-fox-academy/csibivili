@@ -1,4 +1,4 @@
-﻿@model BlackJack.Model.Deck
+﻿@model List<BlackJack.Model.Player>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Black Jack</title>
@@ -7,9 +7,21 @@
 <body>
     <div class="frame">
         <div class="notcard">Dealer</div>
-        <div class="cards"></div>
+        <div class="cards">
+            @{foreach (var item in Model[0].Hand)
+                {
+                    <div id="card" class="@item.CardSuit.ToString()">@item.GetInfo()</div>
+                }
+            }
+        </div>
         <div class="notcard">YOU</div>
-        <div class="cards"></div>
+        <div class="cards">
+            @{foreach (var item in Model[1].Hand)
+                {
+                    <div id="card" class="@item.CardSuit.ToString()">@item.GetInfo()</div>
+                }
+            }
+        </div>
         <div class="notcard">BUTTON1 BUTTON2</div>
     </div>
 </body>
