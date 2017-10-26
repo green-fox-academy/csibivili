@@ -22,7 +22,7 @@
 }
 
 #card {
-    height: 160px;
+    height: 150px;
     margin: auto;
     width: 10%;
     float: left;
@@ -48,4 +48,8 @@
 
 .clubs {
     background-image: url("/images/clubs.png");
+}
+
+.row {
+    float:left;
 }
