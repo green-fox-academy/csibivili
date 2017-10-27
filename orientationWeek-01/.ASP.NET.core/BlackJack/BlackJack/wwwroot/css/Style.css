@@ -4,34 +4,41 @@
 }
 
 .frame {   
-    width: 80%;
-    height: 80%;
-    border: 3px solid green;
+    width: 85%;
+    height: 85%;
+    border: 3px solid gold;
+    background-color: green;
 }
 
 .notcard {  
     height: 5%;
-    border-bottom: 3px solid green;
+    border-bottom: 3px solid gold;
     text-align: center;
     font-size: 150%;
+    color: white;
+    font-weight: 800;
 }
 
 .cards {
     height: 35%;
-    border-bottom: 3px solid green;
+    border-bottom: 3px solid gold;
 }
 
 #card {
     height: 150px;
-    margin: auto;
     width: 10%;
     float: left;
-    text-align: center;
-    font-size: 150%;
+    text-align: left;
+    font-size: 200%;
+    font-family: Times New Roman, Times, serif;
     background-size: cover;
     background-repeat: no-repeat;
     color: darkorchid;
     font-weight: 800;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 2px;
+    background-color: white;
 }
 
 .spades {
@@ -50,6 +57,64 @@
     background-image: url("/images/clubs.png");
 }
 
-.row {
-    float:left;
+.button {
+    text-align: center
+}
+
+#rank {
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.two {
+    background-image: url("/images/Two.png");
+}
+
+.three {
+    background-image: url("/images/Three.png");
+}
+
+.four {
+    background-image: url("/images/Four.png");
+}
+
+.five {
+    background-image: url("/images/Five.png");
+}
+
+.six {
+    background-image: url("/images/Six.png");
+}
+
+.seven {
+    background-image: url("/images/Seven.png");
+}
+
+.eight {
+    background-image: url("/images/Eight.png");
+}
+
+.nine {
+    background-image: url("/images/Nine.png");
+}
+
+.ten {
+    background-image: url("/images/Ten.png");
+}
+
+.jack {
+    background-image: url("/images/Jack.png");
+}
+
+.queen {
+    background-image: url("/images/Queen.png");
+}
+
+.king {
+    background-image: url("/images/King.png");
+}
+
+.ace {
+    background-image: url("/images/Ace.png");
 }
