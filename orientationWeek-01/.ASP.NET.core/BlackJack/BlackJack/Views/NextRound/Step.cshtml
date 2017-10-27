@@ -1,8 +1,39 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model List<BlackJack.Model.Player>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Black Jack</title>
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    @ViewData["peti"]
+    <div class="frame">
+        <div class="notcard">Dealer</div>
+        <div class="cards">
+            @{foreach (var item in Model[0].Hand)
+                {
+                    <div id="card" class="@item.CardSuit.ToString()">
+                        <img src="~/images/@(item.CardRank.ToString()).png" height="30" />
+                    </div>
+                }
+            }
+        </div>
+        <div class="notcard">YOU</div>
+        <div class="cards">
+            @{foreach (var item in Model[1].Hand)
+                {
+                    <div id="card" class="@item.CardSuit.ToString()">
+                        <img src="~/images/@(item.CardRank.ToString()).png" height="30" />
+                    </div>
+                }
+            }
+        </div>
+        <form action="/NextRound" method="post">
+            <label for="WhichStep">Your step: </label>
+            <input type="text" id="WhichStep" name="WhichStep" />
+            <div>
+                <button type="submit">Step</button>
+            </div>
+        </form>
+        <p> - Dealer Point: @Model[0].ValueOfHand(Model[0].Hand) - Your Point: @Model[1].ValueOfHand(Model[1].Hand)</p>
+    </div>
 </body>
 </html>

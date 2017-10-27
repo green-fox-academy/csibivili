@@ -16,11 +16,10 @@ namespace BlackJack
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<Deck>();
-            services.AddScoped<User>();
-            services.AddScoped<Opponent>();
-            services.AddScoped<List<Player>>();
-            services.AddScoped<Step>();
+            services.AddSingleton<Deck>();
+            services.AddSingleton<User>();
+            services.AddSingleton<Opponent>();
+            services.AddSingleton<List<Player>>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

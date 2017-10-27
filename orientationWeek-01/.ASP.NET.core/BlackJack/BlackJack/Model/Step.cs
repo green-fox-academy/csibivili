@@ -7,6 +7,6 @@ namespace BlackJack.Model
 {
     public class Step
     {
-        public bool WhichStep { get; set; }
+        public string WhichStep { get; set; }
     }
 }

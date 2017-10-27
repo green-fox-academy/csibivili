@@ -8,13 +8,9 @@
     <div class="frame">
         <div class="notcard">Dealer</div>
         <div class="cards">
-            @{foreach (var item in Model[0].Hand)
-                {
-                    <div id="card" class="@item.CardSuit.ToString()">
-                        <img src="~/images/@(item.CardRank.ToString()).png" height="30" />
-                    </div>
-                }
-            }
+            <div id="card" class="@Model[0].Hand[0].CardSuit.ToString()">
+                <img src="~/images/@(Model[0].Hand[0].CardRank.ToString()).png" height="30" />
+            </div>
         </div>
         <div class="notcard">YOU</div>
         <div class="cards">
@@ -27,15 +23,13 @@
             }
         </div>
         <form action="/NextRound" method="post">
-            <label>Your step: </label>
-            <select id="NextStep">
-                <option value="pull">Pull</option>
-                <option value="stop">Stop</option>
-            </select>
+            <label for="WhichStep">Your step: </label>
+            <input type="text" id="WhichStep" name="WhichStep" />
             <div>
                 <button type="submit">Step</button>
             </div>
         </form>
+        <p>Your Point: @Model[1].ValueOfHand(Model[1].Hand)</p>
 </div>
 </body>
 </html>

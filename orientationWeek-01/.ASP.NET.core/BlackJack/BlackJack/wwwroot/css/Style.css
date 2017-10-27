@@ -3,6 +3,9 @@
     margin: auto;
 }
 
+form, p {
+    float:left;
+}
 .frame {   
     width: 85%;
     height: 85%;
