@@ -11,7 +11,7 @@
             @{foreach (var item in Model[0].Hand)
                 {
                     <div id="card" class="@item.CardSuit.ToString()">
-                        <div id="rank" class="@item.CardRank.ToString()"></div>
+                        <img src="~/images/@(item.CardRank.ToString()).png" height="30" />
                     </div>
                 }
             }
@@ -21,17 +21,21 @@
             @{foreach (var item in Model[1].Hand)
                 {
                     <div id="card" class="@item.CardSuit.ToString()">
-                        <div id="rank" class="@item.CardRank.ToString()"></div>
+                        <img src="~/images/@(item.CardRank.ToString()).png" height="30" />
                     </div>
                 }
             }
         </div>
-        <form class="button" action="/" method="post">
-            <button type="submit" value="submit">Pull</button>
+        <form action="/NextRound" method="post">
+            <label>Your step: </label>
+            <select id="NextStep">
+                <option value="pull">Pull</option>
+                <option value="stop">Stop</option>
+            </select>
+            <div>
+                <button type="submit">Step</button>
+            </div>
         </form>
-        <form class="button" action="/" method="post">
-            <button type="submit" value="submit">Stop</button>
-        </form>
-    </div>
+</div>
 </body>
 </html>

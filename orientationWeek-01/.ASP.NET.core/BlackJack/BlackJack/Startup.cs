@@ -20,6 +20,7 @@ namespace BlackJack
             services.AddScoped<User>();
             services.AddScoped<Opponent>();
             services.AddScoped<List<Player>>();
+            services.AddScoped<Step>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

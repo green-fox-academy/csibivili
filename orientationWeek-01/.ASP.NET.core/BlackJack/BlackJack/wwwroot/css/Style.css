@@ -29,9 +29,8 @@
     width: 10%;
     float: left;
     text-align: left;
-    font-size: 200%;
-    font-family: Times New Roman, Times, serif;
-    background-size: cover;
+    background-size: contain;
+    background-position:bottom right;
     background-repeat: no-repeat;
     color: darkorchid;
     font-weight: 800;
@@ -59,62 +58,4 @@
 
 .button {
     text-align: center
-}
-
-#rank {
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.two {
-    background-image: url("/images/Two.png");
-}
-
-.three {
-    background-image: url("/images/Three.png");
-}
-
-.four {
-    background-image: url("/images/Four.png");
-}
-
-.five {
-    background-image: url("/images/Five.png");
-}
-
-.six {
-    background-image: url("/images/Six.png");
-}
-
-.seven {
-    background-image: url("/images/Seven.png");
-}
-
-.eight {
-    background-image: url("/images/Eight.png");
-}
-
-.nine {
-    background-image: url("/images/Nine.png");
-}
-
-.ten {
-    background-image: url("/images/Ten.png");
-}
-
-.jack {
-    background-image: url("/images/Jack.png");
-}
-
-.queen {
-    background-image: url("/images/Queen.png");
-}
-
-.king {
-    background-image: url("/images/King.png");
-}
-
-.ace {
-    background-image: url("/images/Ace.png");
 }
