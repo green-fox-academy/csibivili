@@ -32,6 +32,7 @@ namespace ToDoWebApp
             }
 
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }
