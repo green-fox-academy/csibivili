@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
+using ToDoWebApp.Entities;
 
 namespace ToDoWebApp.Migrations
 {

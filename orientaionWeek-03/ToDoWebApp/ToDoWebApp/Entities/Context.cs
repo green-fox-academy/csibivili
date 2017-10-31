@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ToDoWebApp.Models;
 
-namespace ToDoWebApp.Repository
+namespace ToDoWebApp.Entities
 {
     public class Context : DbContext
     {

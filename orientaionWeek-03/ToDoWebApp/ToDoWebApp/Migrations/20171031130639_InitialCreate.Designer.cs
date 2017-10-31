@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using ToDoWebApp.Repository;
+using ToDoWebApp.Entities;
 
 namespace ToDoWebApp.Migrations
 {

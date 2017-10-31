@@ -20,9 +20,8 @@ namespace ToDoWebApp.Controllers
         [Route("")]
         [HttpGet]
         public IActionResult List()
-        {
-            string tmp = "This is my first todo";
-            return View((object)tmp);
+        {           
+            return View(TodoRepository.GetList());
         }
     }
 }
