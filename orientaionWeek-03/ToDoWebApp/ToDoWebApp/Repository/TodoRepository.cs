@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ToDoWebApp.Models;
 
 namespace ToDoWebApp.Repository
 {
@@ -12,6 +13,12 @@ namespace ToDoWebApp.Repository
         public TodoRepository(Context context)
         {
             Context = context;
+        }
+
+        public void AddTodo(Todo todo)
+        {
+            Context.Todos.Add(todo);
+            Context.SaveChanges();
         }
     }
 }

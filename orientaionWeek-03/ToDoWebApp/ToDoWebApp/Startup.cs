@@ -18,7 +18,7 @@ namespace ToDoWebApp
         {
             services.AddMvc();
             services.AddScoped<TodoRepository>();
-            services.AddDbContext<Context>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;"));
+            services.AddDbContext<Context>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EFCoreIntro;Integrated Security=True;Connect Timeout=30;"));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
