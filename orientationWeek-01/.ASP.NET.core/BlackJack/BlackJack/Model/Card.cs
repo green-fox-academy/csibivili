@@ -10,8 +10,7 @@ namespace BlackJack.Model
         public Suit CardSuit;
         public Rank CardRank;
 
-        public Card(Suit suit, Rank rank)
-        {
+        public Card(Suit suit, Rank rank)        {
             CardSuit = suit;
             CardRank = rank;
         }
