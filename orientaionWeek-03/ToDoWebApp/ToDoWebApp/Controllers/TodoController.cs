@@ -20,7 +20,9 @@ namespace ToDoWebApp.Controllers
         [Route("")]
         [HttpGet]
         public IActionResult List()
-        {           
+        {
+            TodoRepository.AddTodo(new Models.Todo() { Title = "move forward", IsDone = false, IsUrgent = true });
+            TodoRepository.AddTodo(new Models.Todo() { Title = "add more elements", IsDone = true, IsUrgent = false });
             return View(TodoRepository.GetList());
         }
     }
