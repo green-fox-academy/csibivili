@@ -21,6 +21,11 @@ namespace ToDoWebApp.Repository
             return Context.Todos.ToList();
         }
 
+        public List<Todo> NotDoneList()
+        {
+            return Context.Todos.Where(a => a.IsDone==false).ToList();
+        }
+
         public void AddTodo(Todo todo)
         {
             Context.Todos.Add(todo);

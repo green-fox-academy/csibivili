@@ -19,8 +19,12 @@ namespace ToDoWebApp.Controllers
 
         [Route("")]
         [HttpGet]
-        public IActionResult List()
+        public IActionResult List(bool IsActive)
         {
+            if (IsActive)
+            {
+                return View(TodoRepository.NotDoneList());
+            }
             return View(TodoRepository.GetList());
         }
     }
