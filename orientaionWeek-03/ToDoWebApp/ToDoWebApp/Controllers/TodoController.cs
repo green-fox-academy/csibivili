@@ -60,11 +60,12 @@ namespace ToDoWebApp.Controllers
             return View(todo);
         }
 
-        //[Route("/{id}/update")]
-        //[HttpPost]
-        //public IActionResult Edit(Todo todo)
-        //{
-        //    return RedirectToAction("List");
-        //}
+        [Route("/{id}/edit")]
+        [HttpPost]
+        public IActionResult Edit(Todo todo)
+        {
+            TodoRepository.UpdateTodo(todo);
+            return RedirectToAction("List");
+        }
     }
 }

@@ -43,5 +43,11 @@ namespace ToDoWebApp.Repository
         {
             return Context.Todos.FirstOrDefault(t => t.Id == id);
         }
+
+        public void UpdateTodo(Todo todo)
+        {
+            Context.Todos.Update(todo);
+            Context.SaveChanges();
+        }
     }
 }

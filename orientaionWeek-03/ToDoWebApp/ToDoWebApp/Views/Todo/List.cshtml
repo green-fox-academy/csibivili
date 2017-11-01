@@ -28,12 +28,8 @@
                             <input  type="hidden" name="Id" value="@item.Id"/>
                             <button id="table" class="number" type="submit">Delete</button>
                         </form>
-                        @*<a href="/Todo/(@item.Id)/Update">Update</a>*@
                         <form action="/Todo/(@item.Id)/Update" method="post">
                             <input type="hidden" name="Id" value="@item.Id" />
-                            @*<input type="hidden" name="Title" value="@item.Title" />
-                            <input type="hidden" name="IsDone" value="@item.IsDone" />
-                            <input type="hidden" name="IsUrgent" value="@item.IsUrgent" />*@
                             <button id="table" class="number" type="submit">Update</button>
                         </form>
                     </div>

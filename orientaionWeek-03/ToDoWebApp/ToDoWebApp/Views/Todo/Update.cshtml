@@ -9,11 +9,12 @@
         string urgent = Model.IsUrgent ? "checked" : "";
     }
     <h2>Edit Todo</h2>
-    <form action="/todo/add" method="post">
+    <form action="/todo/edit" method="post">
         <label for="Title">Todo desc.: </label>
+        <input type="hidden" name="Id" value="@Model.Id" />
         <input type="text" name="Title" value="@Model.Title" /><br>
-        <input type="checkbox" name="IsDone" @done /> Done<br>
-        <input type="checkbox" name="IsUrgent" @urgent /> Urgent<br>
+        <input type="checkbox" name="IsDone" @done value="@Model.IsDone"/> Done<br>
+        <input type="checkbox" name="IsUrgent" @urgent value="@Model.IsUrgent"/> Urgent<br>
         <div>
             <button type="submit">Edit</button>
         </div>
