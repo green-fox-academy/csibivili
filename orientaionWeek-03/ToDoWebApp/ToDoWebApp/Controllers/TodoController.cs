@@ -38,9 +38,9 @@ namespace ToDoWebApp.Controllers
 
         [Route("/todo/add")]
         [HttpPost]
-        public IActionResult Add(string title)
+        public IActionResult Add(Todo todo)
         {
-            TodoRepository.AddTodo(title);
+            TodoRepository.AddTodo(todo);
             return RedirectToAction("List");
         }
 
