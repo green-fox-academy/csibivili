@@ -37,7 +37,11 @@ namespace ToDoWebApp.Repository
             var todo = Context.Todos.FirstOrDefault(t => t.Id == id);
             Context.Todos.Remove(todo);
             Context.SaveChanges();
+        }
 
+        public Todo AllProperty(int id)
+        {
+            return Context.Todos.FirstOrDefault(t => t.Id == id);
         }
     }
 }

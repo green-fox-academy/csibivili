@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDoWebApp.Repository;
+using ToDoWebApp.Models;
 
 namespace ToDoWebApp.Controllers
 {
@@ -52,15 +53,16 @@ namespace ToDoWebApp.Controllers
         }
 
         [Route("/todo/{id}/update")]
-        [HttpGet]
-        public IActionResult Update()
+        [HttpPost]
+        public IActionResult Update(int id)
         {
-            return View();
+            var todo = TodoRepository.AllProperty(id);
+            return View(todo);
         }
 
         //[Route("/{id}/update")]
         //[HttpPost]
-        //public IActionResult Update(int id)
+        //public IActionResult Edit(Todo todo)
         //{
         //    return RedirectToAction("List");
         //}
