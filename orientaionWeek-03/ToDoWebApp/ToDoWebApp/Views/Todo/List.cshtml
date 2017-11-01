@@ -24,8 +24,8 @@
                     <div id="table" class="number">@item.IsDone</div>
                     <div id="table" class="number">@item.IsUrgent</div>
                     <div>
-                        <form action="/todo/delete" method="post">
-                            <input  type="hidden" name="Title" value="@item.Title"/>
+                        <form action="/(@item.Id)/delete" method="post">
+                            <input  type="hidden" name="Id" value="@item.Id"/>
                             <button id="table" class="number" type="submit">Delete</button>
                         </form>
                     </div>

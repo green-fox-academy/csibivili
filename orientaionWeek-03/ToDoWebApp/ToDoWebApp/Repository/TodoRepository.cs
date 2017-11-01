@@ -32,9 +32,9 @@ namespace ToDoWebApp.Repository
             Context.SaveChanges();
         }
 
-        public void DeleteTodo(string title)
+        public void DeleteTodo(int id)
         {
-            var todo = Context.Todos.FirstOrDefault(s => s.Title.Equals(title));
+            var todo = Context.Todos.FirstOrDefault(t => t.Id == id);
             Context.Todos.Remove(todo);
             Context.SaveChanges();
 

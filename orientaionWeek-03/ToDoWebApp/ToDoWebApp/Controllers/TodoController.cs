@@ -43,11 +43,11 @@ namespace ToDoWebApp.Controllers
             return RedirectToAction("List");
         }
 
-        [Route("/todo/delete")]
+        [Route("/{id}/delete")]
         [HttpPost]
-        public IActionResult Delete(string title)
+        public IActionResult Delete(int id)
         {
-            TodoRepository.DeleteTodo(title);
+            TodoRepository.DeleteTodo(id);
             return RedirectToAction("List");
         }
     }
