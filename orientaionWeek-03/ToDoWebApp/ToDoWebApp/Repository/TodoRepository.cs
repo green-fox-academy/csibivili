@@ -31,5 +31,13 @@ namespace ToDoWebApp.Repository
             Context.Todos.Add(new Todo() { Title=title});
             Context.SaveChanges();
         }
+
+        public void DeleteTodo(string title)
+        {
+            var todo = Context.Todos.FirstOrDefault(s => s.Title.Equals(title));
+            Context.Todos.Remove(todo);
+            Context.SaveChanges();
+
+        }
     }
 }
