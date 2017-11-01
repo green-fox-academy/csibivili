@@ -28,6 +28,11 @@
                             <input  type="hidden" name="Id" value="@item.Id"/>
                             <button id="table" class="number" type="submit">Delete</button>
                         </form>
+                        <a href="/Todo/(@item.Id)/Update">Update</a>
+                        @*<form action="/Todo/(@item.Id)/Update" method="get">
+                            <input type="hidden" name="Id" value="@item.Id" />
+                            <button id="table" class="number" type="submit">Update</button>
+                        </form>*@
                     </div>
                 </div>
             }

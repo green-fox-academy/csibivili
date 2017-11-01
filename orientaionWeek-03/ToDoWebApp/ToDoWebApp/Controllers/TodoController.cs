@@ -50,5 +50,19 @@ namespace ToDoWebApp.Controllers
             TodoRepository.DeleteTodo(id);
             return RedirectToAction("List");
         }
+
+        [Route("/todo/{id}/update")]
+        [HttpGet]
+        public IActionResult Update()
+        {
+            return View();
+        }
+
+        //[Route("/{id}/update")]
+        //[HttpPost]
+        //public IActionResult Update(int id)
+        //{
+        //    return RedirectToAction("List");
+        //}
     }
 }
