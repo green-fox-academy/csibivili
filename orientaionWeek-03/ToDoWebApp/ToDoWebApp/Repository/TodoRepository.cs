@@ -26,9 +26,9 @@ namespace ToDoWebApp.Repository
             return Context.Todos.Where(a => a.IsDone==false).ToList();
         }
 
-        public void AddTodo(Todo todo)
+        public void AddTodo(string title)
         {
-            Context.Todos.Add(todo);
+            Context.Todos.Add(new Todo() { Title=title});
             Context.SaveChanges();
         }
     }
