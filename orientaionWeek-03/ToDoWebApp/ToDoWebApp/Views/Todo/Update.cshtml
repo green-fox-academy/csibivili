@@ -13,11 +13,12 @@
         <label for="Title">Todo desc.: </label>
         <input type="hidden" name="Id" value="@Model.Id" />
         <input type="text" name="Title" value="@Model.Title" /><br>
-        <input type="checkbox" name="IsDone" @done value="@Model.IsDone"/> Done<br>
-        <input type="checkbox" name="IsUrgent" @urgent value="@Model.IsUrgent"/> Urgent<br>
+        <input type="checkbox" name="IsDone" value="@Model.IsDone" @done/> Done<br>
+        <input type="checkbox" name="IsUrgent" value="@Model.IsUrgent" @urgent /> Urgent<br>
         <div>
             <button type="submit">Edit</button>
         </div>
     </form>
+    <p><a href="/todo/back">Cancel</a></p>
 </body>
 </html>

@@ -67,5 +67,12 @@ namespace ToDoWebApp.Controllers
             TodoRepository.UpdateTodo(todo);
             return RedirectToAction("List");
         }
+
+        [Route("/{id}/back")]
+        [HttpGet]
+        public IActionResult Back()
+        {
+            return RedirectToAction("List");
+        }
     }
 }
