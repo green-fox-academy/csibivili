@@ -20,21 +20,24 @@ namespace ToDoWebApp.Controllers
 
         [Route("")]
         [HttpGet]
-        public IActionResult List(bool IsDone, bool IsUrgent)
+        public IActionResult List(bool IsActive, bool IsUrgent)
         {
-            if (!IsDone && IsUrgent)
+            if (IsActive && IsUrgent)
             {
                 return View(TodoRepository.UrgentAndActiveList());
             }
-            if (!IsDone)
+            else if (IsActive)
             {
                 return View(TodoRepository.NotDoneList());
             }
-            if (IsUrgent)
+            else if (IsUrgent)
             {
                 return View(TodoRepository.UrgentList());
             }
-            return View(TodoRepository.GetList());
+            else 
+            {
+                return View(TodoRepository.GetList());
+            }           
         }
 
         [Route("/todo/form")]
