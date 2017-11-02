@@ -8,18 +8,15 @@ namespace ToDoWebApp.Controllers
     public class TodoController : Controller
     {
         TodoRepository TodoRepository;
-        User user;
 
-        public TodoController(User user, TodoRepository todoRepository)
+        public TodoController(TodoRepository todoRepository)
         {
             TodoRepository = todoRepository;
-            this.user = user;
         }
 
         [HttpPost]
         public IActionResult LoginHandler(User userFromForm)
         {
-            user = userFromForm;
             TodoRepository.LogIn(userFromForm);
             return RedirectToAction("List");
         }
@@ -42,7 +39,7 @@ namespace ToDoWebApp.Controllers
             }
             else 
             {
-                return View(TodoRepository.GetList(user.UserId));
+                return View(TodoRepository.GetList());
             }           
         }
 
@@ -55,9 +52,9 @@ namespace ToDoWebApp.Controllers
 
         [Route("/todo/add")]
         [HttpPost]
-        public IActionResult Add(string title)
+        public IActionResult Add(string todo) //, User user)
         {
-            TodoRepository.AddTodo(title, user.UserId);
+            TodoRepository.AddTodo(todo);
             return RedirectToAction("List");
         }
 

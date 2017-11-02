@@ -8,22 +8,24 @@ namespace ToDoWebApp.Repository
     public class TodoRepository
     {
         Context Context;
+        public User User;
         
         public TodoRepository(Context context)
         {
             Context = context;
+            User = new User();
         }
 
         public void LogIn(User user)
         {
+            User = user;
             Context.Users.Add(user);
             Context.SaveChanges();
-            //return Context.Users.FirstOrDefault(a => a.Name == user.Name).UserId;
         }
 
-        public List<Todo> GetList(int id)
+        public List<Todo> GetList()
         {
-            return Context.Todos.Where(a => id == a.UserId).OrderBy(a => a.Id).ToList();
+            return Context.Todos.OrderBy(a => a.Id).ToList();
         }
 
         public List<Todo> NotDoneList()
@@ -41,9 +43,9 @@ namespace ToDoWebApp.Repository
             return Context.Todos.Where(a => a.IsUrgent == true && a.IsDone == false).ToList();
         }
 
-        public void AddTodo(string title, int id)
+        public void AddTodo(string todo)
         {
-            Context.Todos.Add(new Todo() { Title = title, UserId = id });
+            User.AddTodo(todo);
             Context.SaveChanges();
         }
 
