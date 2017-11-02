@@ -18,17 +18,17 @@ namespace ToDoWebApp.Repository
 
         public List<Todo> GetList()
         {
-            return Context.Todos.ToList();
+            return Context.Todos.OrderBy(a => a.Id).ToList();
         }
 
         public List<Todo> NotDoneList()
         {
-            return Context.Todos.Where(a => a.IsDone==false).ToList();
+            return Context.Todos.Where(a => a.IsDone==false).OrderBy(a => a.Id).ToList();
         }
 
         public List<Todo> UrgentList()
         {
-            return Context.Todos.Where(a => a.IsUrgent == true).ToList();
+            return Context.Todos.Where(a => a.IsUrgent == true).OrderBy(a => a.Id).ToList();
         }
 
         public List<Todo> UrgentAndActiveList()
