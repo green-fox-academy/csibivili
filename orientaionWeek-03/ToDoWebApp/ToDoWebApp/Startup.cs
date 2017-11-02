@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ToDoWebApp.Repository;
-using Microsoft.EntityFrameworkCore;
-using ToDoWebApp.Entities;
-using Microsoft.Extensions.Configuration;
 using System.IO;
+using ToDoWebApp.Entities;
+using ToDoWebApp.Models;
+using ToDoWebApp.Repository;
 
 namespace ToDoWebApp
 {

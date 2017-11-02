@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ToDoWebApp.Entities;
 using ToDoWebApp.Models;
 
@@ -16,9 +14,16 @@ namespace ToDoWebApp.Repository
             Context = context;
         }
 
-        public List<Todo> GetList()
+        public int LogIn(User user)
         {
-            return Context.Todos.OrderBy(a => a.Id).ToList();
+            Context.Users.Add(user);
+            Context.SaveChanges();
+            return user.UserId;
+        }
+
+        public List<Todo> GetList(int id)
+        {
+            return Context.Todos.Where(a => id == a.UserId).OrderBy(a => a.Id).ToList();
         }
 
         public List<Todo> NotDoneList()

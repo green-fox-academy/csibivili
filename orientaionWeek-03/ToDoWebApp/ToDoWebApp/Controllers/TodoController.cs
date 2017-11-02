@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using ToDoWebApp.Repository;
+﻿using Microsoft.AspNetCore.Mvc;
 using ToDoWebApp.Models;
+using ToDoWebApp.Repository;
 
 namespace ToDoWebApp.Controllers
 {
@@ -18,9 +14,16 @@ namespace ToDoWebApp.Controllers
             TodoRepository = todoRepository;
         }
 
-        [Route("")]
+        [HttpPost]
+        public IActionResult LoginHandler(User userFromForm)
+        {
+            int id = TodoRepository.LogIn(userFromForm);
+            return RedirectToAction("List", id);
+        }
+
+        [Route("/todo/list")]
         [HttpGet]
-        public IActionResult List(bool IsActive, bool IsUrgent)
+        public IActionResult List(bool IsActive, bool IsUrgent, int id)
         {
             if (IsActive && IsUrgent)
             {
@@ -36,7 +39,7 @@ namespace ToDoWebApp.Controllers
             }
             else 
             {
-                return View(TodoRepository.GetList());
+                return View(TodoRepository.GetList(id));
             }           
         }
 

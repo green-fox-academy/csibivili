@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ToDoWebApp.Models;
 
 namespace ToDoWebApp.Entities
@@ -15,5 +11,6 @@ namespace ToDoWebApp.Entities
         }
 
         public DbSet<Todo> Todos { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
