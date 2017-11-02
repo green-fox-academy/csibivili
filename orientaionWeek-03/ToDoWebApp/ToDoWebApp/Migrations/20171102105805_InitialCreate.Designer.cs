@@ -8,14 +8,14 @@ using ToDoWebApp.Entities;
 namespace ToDoWebApp.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20171031130639_InitialCreate")]
+    [Migration("20171102105805_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.3")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
+                .HasAnnotation("ProductVersion", "1.1.3");
 
             modelBuilder.Entity("ToDoWebApp.Models.Todo", b =>
                 {

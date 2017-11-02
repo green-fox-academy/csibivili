@@ -26,6 +26,16 @@ namespace ToDoWebApp.Repository
             return Context.Todos.Where(a => a.IsDone==false).ToList();
         }
 
+        public List<Todo> UrgentList()
+        {
+            return Context.Todos.Where(a => a.IsUrgent == true).ToList();
+        }
+
+        public List<Todo> UrgentAndActiveList()
+        {
+            return Context.Todos.Where(a => a.IsUrgent == true && a.IsDone == false).ToList();
+        }
+
         public void AddTodo(Todo todo)
         {
             Context.Todos.Add(todo);
