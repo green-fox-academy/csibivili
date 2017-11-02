@@ -8,17 +8,14 @@ namespace ToDoWebApp.Repository
     public class TodoRepository
     {
         Context Context;
-        public User User;
         
         public TodoRepository(Context context)
         {
             Context = context;
-            User = new User();
         }
 
         public void LogIn(User user)
         {
-            User = user;
             Context.Users.Add(user);
             Context.SaveChanges();
         }
@@ -43,9 +40,9 @@ namespace ToDoWebApp.Repository
             return Context.Todos.Where(a => a.IsUrgent == true && a.IsDone == false).ToList();
         }
 
-        public void AddTodo(string todo)
+        public void AddTodo(Todo todo)
         {
-            User.AddTodo(todo);
+            LatestUser().AddTodo(todo);
             Context.SaveChanges();
         }
 
@@ -60,11 +57,16 @@ namespace ToDoWebApp.Repository
         {
             return Context.Todos.FirstOrDefault(t => t.Id == id);
         }
-
+        
         public void UpdateTodo(Todo todo)
         {
             Context.Todos.Update(todo);
             Context.SaveChanges();
+        }
+
+        public User LatestUser()
+        {
+            return Context.Users.Last();
         }
     }
 }

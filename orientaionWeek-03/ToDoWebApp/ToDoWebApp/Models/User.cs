@@ -9,9 +9,9 @@ namespace ToDoWebApp.Models
 
         public ICollection<Todo> Todos { get; set; }
 
-        public void AddTodo(string todo)
+        public void AddTodo(Todo todo)
         {
-            this.Todos.Add(new Todo() { Title=todo});
+            this.Todos.Add(todo);
         }
     }
 }

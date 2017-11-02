@@ -52,7 +52,7 @@ namespace ToDoWebApp.Controllers
 
         [Route("/todo/add")]
         [HttpPost]
-        public IActionResult Add(string todo) //, User user)
+        public IActionResult Add(Todo todo) //, User user)
         {
             TodoRepository.AddTodo(todo);
             return RedirectToAction("List");
