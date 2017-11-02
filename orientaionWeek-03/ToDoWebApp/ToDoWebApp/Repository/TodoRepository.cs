@@ -14,11 +14,11 @@ namespace ToDoWebApp.Repository
             Context = context;
         }
 
-        public int LogIn(User user)
+        public void LogIn(User user)
         {
             Context.Users.Add(user);
             Context.SaveChanges();
-            return user.UserId;
+            //return Context.Users.FirstOrDefault(a => a.Name == user.Name).UserId;
         }
 
         public List<Todo> GetList(int id)
@@ -41,9 +41,9 @@ namespace ToDoWebApp.Repository
             return Context.Todos.Where(a => a.IsUrgent == true && a.IsDone == false).ToList();
         }
 
-        public void AddTodo(Todo todo)
+        public void AddTodo(string title, int id)
         {
-            Context.Todos.Add(todo);
+            Context.Todos.Add(new Todo() { Title = title, UserId = id });
             Context.SaveChanges();
         }
 

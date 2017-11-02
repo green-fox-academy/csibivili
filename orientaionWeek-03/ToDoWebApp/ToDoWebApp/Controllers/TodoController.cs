@@ -8,22 +8,25 @@ namespace ToDoWebApp.Controllers
     public class TodoController : Controller
     {
         TodoRepository TodoRepository;
+        User user;
 
-        public TodoController(TodoRepository todoRepository)
+        public TodoController(User user, TodoRepository todoRepository)
         {
             TodoRepository = todoRepository;
+            this.user = user;
         }
 
         [HttpPost]
         public IActionResult LoginHandler(User userFromForm)
         {
-            int id = TodoRepository.LogIn(userFromForm);
-            return RedirectToAction("List", id);
+            user = userFromForm;
+            TodoRepository.LogIn(userFromForm);
+            return RedirectToAction("List");
         }
 
         [Route("/todo/list")]
         [HttpGet]
-        public IActionResult List(bool IsActive, bool IsUrgent, int id)
+        public IActionResult List(bool IsActive, bool IsUrgent)
         {
             if (IsActive && IsUrgent)
             {
@@ -39,7 +42,7 @@ namespace ToDoWebApp.Controllers
             }
             else 
             {
-                return View(TodoRepository.GetList(id));
+                return View(TodoRepository.GetList(user.UserId));
             }           
         }
 
@@ -52,9 +55,9 @@ namespace ToDoWebApp.Controllers
 
         [Route("/todo/add")]
         [HttpPost]
-        public IActionResult Add(Todo todo)
+        public IActionResult Add(string title)
         {
-            TodoRepository.AddTodo(todo);
+            TodoRepository.AddTodo(title, user.UserId);
             return RedirectToAction("List");
         }
 

@@ -8,5 +8,10 @@ namespace ToDoWebApp.Models
         public string Name { get; set; }
 
         public ICollection<Todo> Todos { get; set; }
+
+        public void AddTodo()
+        {
+
+        }
     }
 }

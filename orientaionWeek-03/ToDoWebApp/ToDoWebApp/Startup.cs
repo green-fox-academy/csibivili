@@ -25,6 +25,7 @@ namespace ToDoWebApp
 
             services.AddMvc();
             services.AddScoped<TodoRepository>();
+            services.AddSingleton<User>();
             services.AddDbContext<Context>(options => options.UseNpgsql(Configuration["ConnectionStrings:TodoConnection"]));
         }
 
