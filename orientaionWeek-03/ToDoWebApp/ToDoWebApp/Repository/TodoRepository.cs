@@ -42,7 +42,6 @@ namespace ToDoWebApp.Repository
 
         public void AddTodo(Todo todo)
         {
-            LatestUser().AddTodo(todo);
             Context.SaveChanges();
         }
 

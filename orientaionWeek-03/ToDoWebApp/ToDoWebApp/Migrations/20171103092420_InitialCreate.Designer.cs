@@ -8,7 +8,7 @@ using ToDoWebApp.Entities;
 namespace ToDoWebApp.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20171102141038_InitialCreate")]
+    [Migration("20171103092420_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,7 @@ namespace ToDoWebApp.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<int>("UserId");
+                    b.Property<int?>("UserId");
 
                     b.HasKey("Id");
 
@@ -53,8 +53,7 @@ namespace ToDoWebApp.Migrations
                 {
                     b.HasOne("ToDoWebApp.Models.User", "User")
                         .WithMany("Todos")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UserId");
                 });
         }
     }

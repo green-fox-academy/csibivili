@@ -27,7 +27,7 @@ namespace ToDoWebApp.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<int>("UserId");
+                    b.Property<int?>("UserId");
 
                     b.HasKey("Id");
 
@@ -52,8 +52,7 @@ namespace ToDoWebApp.Migrations
                 {
                     b.HasOne("ToDoWebApp.Models.User", "User")
                         .WithMany("Todos")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UserId");
                 });
         }
     }

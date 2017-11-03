@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+
 namespace ToDoWebApp.Models
 {
     public class User
@@ -8,10 +9,6 @@ namespace ToDoWebApp.Models
         public string Name { get; set; }
 
         public ICollection<Todo> Todos { get; set; }
-
-        public void AddTodo(Todo todo)
-        {
-            this.Todos.Add(todo);
-        }
     }
+
 }
