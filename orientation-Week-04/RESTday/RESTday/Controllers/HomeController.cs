@@ -50,5 +50,23 @@ namespace RESTday.Controllers
             }
             return Json(new Append() { Appended=appendable});
         }
+
+        [HttpPost]
+        [Route("/dountil/{what}")]
+        public IActionResult DoUntil(string what, [FromBody]UntilWhat until)
+        {
+            if (what.Equals("sum"))
+            {
+                return Json(new { result = UntilWhat.Sum(until.Until) });
+            }
+            else if (what.Equals("factor"))
+            {
+                return Json(new { result = UntilWhat.Factorial(until.Until) });
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
