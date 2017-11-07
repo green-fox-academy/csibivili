@@ -1,4 +1,9 @@
-﻿namespace RESTday.Excercises
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace RESTday.Excercises
 {
     public interface IOperation
     {
