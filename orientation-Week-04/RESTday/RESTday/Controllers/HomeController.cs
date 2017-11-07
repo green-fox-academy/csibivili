@@ -14,9 +14,16 @@ namespace RESTday.Controllers
 
         [HttpGet]
         [Route("/doubling")]
-        public IActionResult Doubling(int input)
+        public IActionResult Doubling(int? input)
         {
-            return Json(new Doubling() { received = input, result = input * 2 });
+            if (input == null)
+            {
+                return Json(new {error= "Please provide an input!" });
+            }
+            else
+            {
+                return Json(new Doubling() { received = (int)input, result = (int)input * 2 });
+            }
         }
     }
 }
