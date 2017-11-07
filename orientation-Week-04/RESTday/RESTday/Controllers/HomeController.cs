@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RESTday.Excercises;
+using RESTday.Collections;
 
 namespace RESTday.Controllers
 {
@@ -55,13 +56,18 @@ namespace RESTday.Controllers
         [Route("/dountil/{what}")]
         public IActionResult DoUntil(string what, [FromBody]UntilWhat until)
         {
-            if (what.Equals("sum"))
+            if (Operations.OperationTypes.Exists(operation => operation.WhatKindOfEvent == what))
             {
-                return Json(new { result = UntilWhat.Sum(until.Until) });
-            }
-            else if (what.Equals("factor"))
-            {
-                return Json(new { result = UntilWhat.Factorial(until.Until) });
+                if (until != null)
+                {
+                    Operations.OperationTypes.Find(operation => operation.WhatKindOfEvent == what).Result = until.Until;
+                    int result = Operations.OperationTypes.Find(operation => operation.WhatKindOfEvent == what).Result;
+                    return Json(new { result = result });
+                }
+                else
+                {
+                    return Json(new { error = "Please provide a number!" });
+                }
             }
             else
             {
