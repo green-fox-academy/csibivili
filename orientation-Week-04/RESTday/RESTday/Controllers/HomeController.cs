@@ -39,5 +39,16 @@ namespace RESTday.Controllers
                 return Json(new Greeter() { Name=name, Title=title}.Greeting());
             }
         }
+
+        [HttpGet]
+        [Route("/appenda/{appendable}")]
+        public IActionResult AppendA(string appendable)
+        {
+            if (appendable == null)
+            {
+                return NotFound();
+            }
+            return Json(new Append() { Appended=appendable});
+        }
     }
 }
