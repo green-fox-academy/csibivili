@@ -16,10 +16,7 @@ namespace RESTday.Controllers
         [Route("/doubling")]
         public IActionResult Doubling(int input)
         {
-            var result = new Doubling();
-            result.received = input;
-            result.result = input * 2;
-            return Json(result);
+            return Json(new Doubling() { received = input, result = input * 2 });
         }
     }
 }
