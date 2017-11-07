@@ -25,5 +25,19 @@ namespace RESTday.Controllers
                 return Json(new Doubling() { received = (int)input, result = (int)input * 2 });
             }
         }
+
+        [HttpGet]
+        [Route("/greeter")]
+        public IActionResult Greeter(string name, string title)
+        {
+            if (name == null || title == null)
+            {
+                return Json(new { error = "Please provide an input!" });
+            }
+            else
+            {
+                return Json(new Greeter() { Name=name, Title=title}.Greeting());
+            }
+        }
     }
 }
