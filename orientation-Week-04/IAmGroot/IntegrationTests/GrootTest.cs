@@ -43,5 +43,13 @@ namespace IntegrationTests
 
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
+
+        [Fact]
+        public async Task ExpectedErrorIAmGroot()
+        {
+            string test = await Client.GetStringAsync("/groot");
+
+            Assert.Equal("{\"error\":\"I am Groot!\"}", test);
+        }
     }
 }
