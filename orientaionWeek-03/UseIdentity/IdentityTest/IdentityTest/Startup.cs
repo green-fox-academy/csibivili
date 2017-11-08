@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using IdentityTest.Entities;
+using IdentityTest.Models;
 
 namespace IdentityTest
 {
@@ -32,12 +34,12 @@ namespace IdentityTest
         {
             services.AddMvc();
 
-            services.AddDbContext<IdentityDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), optionsBuilder => optionsBuilder.MigrationsAssembly("IdentityTest")));
+            services.AddDbContext<TodoContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));//, optionsBuilder => optionsBuilder.MigrationsAssembly("IdentityTest")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<IdentityDbContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<MyUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<TodoContext>()
+            //    .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
