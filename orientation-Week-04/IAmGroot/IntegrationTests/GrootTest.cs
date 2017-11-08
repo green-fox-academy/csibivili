@@ -23,7 +23,7 @@ namespace IntegrationTests
         [Fact]
         public async Task ReturnOkStatus()
         {
-            var response = await Client.GetAsync("/groot");
+            var response = await Client.GetAsync("/groot?message=shouldbeok");
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
@@ -34,6 +34,14 @@ namespace IntegrationTests
             string test = await Client.GetStringAsync("/groot?message=test");
 
             Assert.Equal("{\"received\":\"test\",\"translated\":\"I am Groot!\"}", test);
+        }
+
+        [Fact]
+        public async Task ReturnNotOkStatus()
+        {
+            var response = await Client.GetAsync("/groot");
+
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }
