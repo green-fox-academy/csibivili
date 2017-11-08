@@ -1,5 +1,7 @@
 using IAmGroot;
+using IAmGroot.Controllers.Home;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.TestHost;
 using System.IO;
 using System.Net;
@@ -47,9 +49,11 @@ namespace IntegrationTests
         [Fact]
         public async Task ExpectedErrorIAmGroot()
         {
-            string test = await Client.GetStringAsync("/groot");
+            var controller = new HomeController();
 
-            Assert.Equal("{\"error\":\"I am Groot!\"}", test);
+            var result = controller.Groot(message: null);
+
+            Assert.IsType<NotFoundObjectResult>(result);
         }
     }
 }

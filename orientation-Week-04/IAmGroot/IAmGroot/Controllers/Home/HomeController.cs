@@ -15,7 +15,8 @@ namespace IAmGroot.Controllers.Home
         {
             if (message == null)
             {
-                return NotFound();
+                var notfound = new NotFoundObjectResult(new { message = "404 Not Found", error = "I am Groot!" });
+                return notfound;
             }
             else
             {
