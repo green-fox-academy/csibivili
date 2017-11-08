@@ -13,7 +13,14 @@ namespace IAmGroot.Controllers.Home
         [Route("/groot")]
         public IActionResult Groot(string message)
         {
-            return Json(new { received = message, translated = "I am Groot!" });
+            if (message == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Json(new { received = message, translated = "I am Groot!" });
+            }
         }
     }
 }
