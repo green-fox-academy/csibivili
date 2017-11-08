@@ -12,8 +12,7 @@ namespace ArrayHandler.Controllers
         public IActionResult Arrays([FromBody]OperationOnNumbers operationOnNumbers)
         {
             Operations.OperationTypes
-                .Find(operation => operation.WhatOperation == operationOnNumbers.What)
-                .Result = operationOnNumbers.Numbers;
+                .ForEach(operations => operations.Result = operationOnNumbers.Numbers);
 
             object result = Operations.OperationTypes
                 .Find(operation => operation.WhatOperation == operationOnNumbers.What)

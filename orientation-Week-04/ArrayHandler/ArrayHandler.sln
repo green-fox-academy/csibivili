@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayHandler", "ArrayHandler\ArrayHandler.csproj", "{C6652F26-D4CF-48A1-BB19-E20C7FF4E4BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayHandler", "ArrayHandler\ArrayHandler.csproj", "{C6652F26-D4CF-48A1-BB19-E20C7FF4E4BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{2C8A1CDB-1A13-4454-BF3B-6C9445806B66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C6652F26-D4CF-48A1-BB19-E20C7FF4E4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6652F26-D4CF-48A1-BB19-E20C7FF4E4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6652F26-D4CF-48A1-BB19-E20C7FF4E4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8A1CDB-1A13-4454-BF3B-6C9445806B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8A1CDB-1A13-4454-BF3B-6C9445806B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8A1CDB-1A13-4454-BF3B-6C9445806B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8A1CDB-1A13-4454-BF3B-6C9445806B66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
