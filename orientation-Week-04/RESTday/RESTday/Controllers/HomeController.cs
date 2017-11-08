@@ -60,7 +60,7 @@ namespace RESTday.Controllers
             {
                 if (until != null)
                 {
-                    Operations.OperationTypes.Find(operation => operation.WhatKindOfEvent == what).Result = until.Until;
+                    Operations.OperationTypes.ForEach(operation => operation.Result = until.Until);
                     int result = Operations.OperationTypes.Find(operation => operation.WhatKindOfEvent == what).Result;
                     return Json(new { result = result });
                 }
