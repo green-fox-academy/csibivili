@@ -1,0 +1,40 @@
+﻿@model ToDoWebApp.Models.User
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Your tasks</h1>
+<h2><a href="/Todo/@Model.UserId/Form">add new Task</a></h2>
+<table>
+    <thead>
+        <tr>
+            <th>
+                <p>ID</p>
+            </th>
+            <th>
+                <p>Title</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.Todos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TodoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    <form action="/Todo/(@item.TodoId)/Update" method="post">
+                        <input type="hidden" name="Id" value="@item.TodoId" />
+                        <button type="submit">Measure</button>
+                    </form>
+                </td>
+            </tr>
+        }
+</tbody>
+</table>

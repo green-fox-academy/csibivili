@@ -1,0 +1,7 @@
+﻿@model ToDoWebApp.Models.Todo
+
+@using (Html.BeginForm("add", "todo"))
+{
+    @Html.LabelFor(t => t.Title) @Html.TextBoxFor(t => t.Title)
+    <button type="submit">Add</button>
+}
