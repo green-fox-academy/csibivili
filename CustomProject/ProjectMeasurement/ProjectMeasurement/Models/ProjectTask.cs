@@ -9,7 +9,7 @@ namespace ProjectMeasurement.Models
         [MaxLength(100), Required]
         public string TaskName { get; set; }
 
-        public Project Project { get; set; }
-        public ProjectMember ProjectMember { get; set; }
+        public virtual Project Project { get; set; }
+        public virtual ProjectMember ProjectMember { get; set; }
     }
 }
