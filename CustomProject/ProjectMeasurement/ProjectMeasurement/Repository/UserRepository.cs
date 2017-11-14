@@ -1,4 +1,5 @@
-﻿using ProjectMeasurement.Entities;
+﻿using System;
+using ProjectMeasurement.Entities;
 using ProjectMeasurement.Models;
 
 namespace ProjectMeasurement.Repository
@@ -16,6 +17,11 @@ namespace ProjectMeasurement.Repository
         {
             MeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = emailAddress, Project = MeasurementContext.Projects.Find(ProjectRepository.No_Assigned_Project)});
             MeasurementContext.SaveChanges();
+        }
+
+        public bool AuthenticateUser(string emailAddress)
+        {
+            return MeasurementContext.ProjectMembers.Find(emailAddress) != null;
         }
 
         public void DeleteUser(string emailAddress)

@@ -1,4 +1,5 @@
-﻿using ProjectMeasurement.Models;
+﻿using System;
+using ProjectMeasurement.Models;
 using ProjectMeasurement.Repository;
 
 namespace ProjectMeasurement.Services
@@ -15,6 +16,11 @@ namespace ProjectMeasurement.Services
         public void AddNewUser(string emailAddress)
         {
             UserRepository.AddNewUser(emailAddress);
+        }
+
+        public bool AuthenticateUser(string emailAddress)
+        {
+            return UserRepository.AuthenticateUser(emailAddress);
         }
 
         public void DeleteUser(string emailAddress)

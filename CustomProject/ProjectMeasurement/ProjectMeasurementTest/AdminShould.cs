@@ -34,7 +34,7 @@ namespace ProjectMeasurementTest
         }
 
         [Fact]
-        public async Task AddProject()
+        public async Task AddProjectAndDeleteProject()
         {
             using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
             {
@@ -60,6 +60,27 @@ namespace ProjectMeasurementTest
                 Assert.Equal("You do not have assigned project", userService.UserInfo("test@email.com").Project.ProjectName);
                 adminController.AssignUser("test@email.com", "Test Project(do not delete)");
                 Assert.Equal("Test Project(do not delete)", userService.UserInfo("test@email.com").Project.ProjectName);
+            }
+        }
+    }
+
+    public class UserShould
+    {
+        private readonly DbContextOptionsBuilder<MeasurementContext> optionsBuilder;
+
+        public UserShould()
+        {
+            optionsBuilder = new DbContextOptionsBuilder<MeasurementContext>();
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CustomProject3;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+        }
+
+        [Fact]
+        public async Task Login()
+        {
+            using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
+            {
+                var userRepository = new UserRepository(projectMeasurementContext);
+                Assert.Equal(true, userRepository.AuthenticateUser("test@email.com"));
             }
         }
     }
