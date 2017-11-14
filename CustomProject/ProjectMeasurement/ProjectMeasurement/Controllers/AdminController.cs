@@ -17,51 +17,57 @@ namespace ProjectMeasurement.Controllers
         }
 
         [HttpGet]
-        [Route("/adduser")]      
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/admin/adduser")]      
         public IActionResult AddUser(string emailAddress)
         {
             UserService.AddNewUser(emailAddress);
-            return Ok();
+            return LocalRedirect("/admin");
         }
 
-        [HttpDelete]
-        [Route("/deleteuser")]
+        [HttpPost]
+        [Route("/admin/deleteuser")]
         public IActionResult DeleteUser(string emailAddress)
         {
             UserService.DeleteUser(emailAddress);
-            return Ok();
+            return LocalRedirect("/admin");
         }
         
         [HttpPost]
-        [Route("/addproject")]
+        [Route("/admin/addproject")]
         public IActionResult AddProject(string projectName)
         {
             ProjectService.AddProject(projectName);
-            return Ok();
+            return LocalRedirect("/admin");
         }
-        
+
         [HttpPost]
-        [Route("/deleteproject")]
+        [Route("/admin/deleteproject")]
         public IActionResult DeleteProject(string projectName)
         {
             ProjectService.DeleteProject(projectName);
-            return Ok();
+            return LocalRedirect("/admin");
         }
-        
-        [HttpPut]
-        [Route("/assignuser")]
+
+        [HttpPost]
+        [Route("/admin/assignuser")]
         public IActionResult AssignUser(string emailAddress, string projectName)
         {
             UserService.AssignUser(emailAddress, projectName);
-            return Ok();
+            return LocalRedirect("/admin");
         }
 
-        [HttpPut]
-        [Route("/removeuserfromproject")]
+        [HttpPost]
+        [Route("/admin/removeuserfromproject")]
         public IActionResult RemoveUserFromProject(string emailAddress, string projectName)
         {
             UserService.RemoveUserFromProject(emailAddress, projectName);
-            return Ok();
+            return LocalRedirect("/admin");
         }
     }
 }

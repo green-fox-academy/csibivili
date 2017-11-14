@@ -1,5 +1,41 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<table>
+    <thead>    
+         <tr>
+            <th>
+                <form method="post">
+                    <label for="emailAddress">Email: </label>
+                    <input type="text" name="emailAddress" />
+                    <button formaction="/admin/adduser">Add User</button>
+                    <button formaction="/admin/deleteuser">Delete User</button>
+                </form>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <form method="post">
+                    <label for="projectName">Project Name: </label>
+                    <input type="text" name="projectName" />
+                    <button formaction="/admin/addproject">Add Project</button>
+                    <button formaction="/admin/deleteproject">Delete Project</button>
+                </form>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <form method="post">
+                    <label for="emailAddress">Email: </label>
+                    <input type="text" name="emailAddress" />
+                    <label for="projectName">Project Name: </label>
+                    <input type="text" name="projectName" />
+                    <button formaction="/admin/assignuser">Assign Person</button>
+                    <button formaction="/admin/removeuserfromproject">Remove Person From Project</button>
+                </form>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a href="/">Back</a>
+            </th>
+        </tr>
+    </thead>
+</table>
