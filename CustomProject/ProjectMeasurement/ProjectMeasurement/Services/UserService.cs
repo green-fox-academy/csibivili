@@ -27,6 +27,11 @@ namespace ProjectMeasurement.Services
             UserRepository.AssignUser(emailAddress, projectName);
         }
 
+        public void RemoveUserFromProject(string emailAddress, string projectName)
+        {
+            UserRepository.RemoveUserFromProject(emailAddress, projectName);
+        }
+
         public ProjectMember UserInfo(string emailAddress)
         {
             return UserRepository.UserInfo(emailAddress);

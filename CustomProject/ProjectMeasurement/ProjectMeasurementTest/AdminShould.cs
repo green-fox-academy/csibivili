@@ -41,21 +41,23 @@ namespace ProjectMeasurementTest
                 projectMeasurementContext.Database.EnsureCreated();
                 var adminController = new AdminController(new UserService(new UserRepository(projectMeasurementContext)),
                         new ProjectService(new ProjectRepository(projectMeasurementContext)));
-                adminController.AddProject("Test Project");
+                adminController.AddProject("TestProject");
+                Assert.Equal(3, await projectMeasurementContext.Projects.CountAsync());
+                adminController.DeleteProject("TestProject");
                 Assert.Equal(2, await projectMeasurementContext.Projects.CountAsync());
-                adminController.DeleteProject("Test Project");
-                Assert.Equal(1, await projectMeasurementContext.Projects.CountAsync());
             };
         }
 
         [Fact]
-        public void AssignUser()
+        public void AssignUserToProjectAndRemoveFromProject()
         {
             using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
             {
                 projectMeasurementContext.Database.EnsureCreated();
                 var userService = new UserService(new UserRepository(projectMeasurementContext));
                 var adminController = new AdminController(userService,new ProjectService(new ProjectRepository(projectMeasurementContext)));
+                adminController.RemoveUserFromProject("test@email.com", "Test Project(do not delete)");
+                Assert.Equal("no assigned project", userService.UserInfo("test@email.com").Project.ProjectName);
                 adminController.AssignUser("test@email.com", "Test Project(do not delete)");
                 Assert.Equal("Test Project(do not delete)", userService.UserInfo("test@email.com").Project.ProjectName);
             }

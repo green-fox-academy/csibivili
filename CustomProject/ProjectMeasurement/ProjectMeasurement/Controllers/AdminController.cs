@@ -16,43 +16,51 @@ namespace ProjectMeasurement.Controllers
             ProjectService = projectService;
         }
 
-        [Route("/adduser")]
         [HttpGet]
+        [Route("/adduser")]      
         public IActionResult AddUser(string emailAddress)
         {
             UserService.AddNewUser(emailAddress);
             return Ok();
         }
 
-        [Route("/deleteuser")]
         [HttpDelete]
+        [Route("/deleteuser")]
         public IActionResult DeleteUser(string emailAddress)
         {
             UserService.DeleteUser(emailAddress);
             return Ok();
         }
-
-        [Route("/addproject")]
+        
         [HttpPost]
+        [Route("/addproject")]
         public IActionResult AddProject(string projectName)
         {
             ProjectService.AddProject(projectName);
             return Ok();
         }
-
-        [Route("/deleteproject")]
+        
         [HttpPost]
+        [Route("/deleteproject")]
         public IActionResult DeleteProject(string projectName)
         {
             ProjectService.DeleteProject(projectName);
             return Ok();
         }
-
-        [Route("/assignuser")]
+        
         [HttpPut]
+        [Route("/assignuser")]
         public IActionResult AssignUser(string emailAddress, string projectName)
         {
             UserService.AssignUser(emailAddress, projectName);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("/removeuserfromproject")]
+        public IActionResult RemoveUserFromProject(string emailAddress, string projectName)
+        {
+            UserService.RemoveUserFromProject(emailAddress, projectName);
             return Ok();
         }
     }
