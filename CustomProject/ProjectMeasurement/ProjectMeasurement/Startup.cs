@@ -14,7 +14,7 @@ namespace ProjectMeasurement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<ProjectMeasurementContext>(options =>
+            services.AddDbContext<MeasurementContext>(options =>
                 options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CustomProjectTestAgain;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             services.AddScoped<UserRepository>();
             services.AddScoped<UserService>();

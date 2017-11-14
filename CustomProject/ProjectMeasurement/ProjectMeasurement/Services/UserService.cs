@@ -19,5 +19,10 @@ namespace ProjectMeasurement.Services
         {
             UserRepository.AddNewUser(emailAddress);
         }
+
+        public void DeleteUser(string emailAddress)
+        {
+            UserRepository.DeleteUser(emailAddress);
+        }
     }
 }

@@ -3,11 +3,11 @@ using ProjectMeasurement.Services;
 
 namespace ProjectMeasurement.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
         private UserService UserService;
 
-        public HomeController(UserService userService)
+        public AdminController(UserService userService)
         {
             UserService = userService;
         }
@@ -21,6 +21,13 @@ namespace ProjectMeasurement.Controllers
         public IActionResult AddUser(string emailAddress)
         {
             UserService.AddNewUser(emailAddress);
+            return LocalRedirect("/");
+        }
+
+        [Route("/deleteuser")]
+        public IActionResult DeleteUser(string emailAddress)
+        {
+            UserService.DeleteUser(emailAddress);
             return LocalRedirect("/");
         }
     }

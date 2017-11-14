@@ -5,9 +5,9 @@ namespace ProjectMeasurement.Repository
 {
     public class UserRepository
     {
-        private ProjectMeasurementContext ProjectMeasurementContext;
+        private MeasurementContext ProjectMeasurementContext;
 
-        public UserRepository(ProjectMeasurementContext projectMeasurementContext)
+        public UserRepository(MeasurementContext projectMeasurementContext)
         {
             ProjectMeasurementContext = projectMeasurementContext;
         }
@@ -18,8 +18,12 @@ namespace ProjectMeasurement.Repository
             ProjectMeasurementContext.SaveChanges();
         }
 
-        public void DeleteUser(long id)
+        public void DeleteUser(string emailAddress)
         {
+            ProjectMeasurementContext.ProjectMembers
+                .Remove(ProjectMeasurementContext.ProjectMembers
+                .Find(emailAddress));
+            ProjectMeasurementContext.SaveChanges();
         }
     }
 }
