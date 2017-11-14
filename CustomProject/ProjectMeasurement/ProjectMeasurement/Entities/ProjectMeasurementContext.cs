@@ -16,13 +16,13 @@ namespace ProjectMeasurement.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProjectMember>()
-                .HasKey(m => m.MemberId);
+                .HasKey(m => m.EmailAddress);
 
             modelBuilder.Entity<ProjectTask>()
                  .HasKey(t => t.TaskId);
 
             modelBuilder.Entity<Project>()
-                .HasKey(p => p.ProjectId);
+                .HasKey(p => p.ProjectName);
         }
     }
 }

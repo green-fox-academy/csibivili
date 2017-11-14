@@ -5,8 +5,7 @@ namespace ProjectMeasurement.Models
 {
     public class Project
     {
-        public long? ProjectId { get; set; }
-
+        [Key]
         [MaxLength(100), Required]
         public string ProjectName { get; set; }
 

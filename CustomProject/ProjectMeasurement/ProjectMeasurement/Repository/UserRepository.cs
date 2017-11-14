@@ -17,5 +17,9 @@ namespace ProjectMeasurement.Repository
             ProjectMeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = emailAddress });
             ProjectMeasurementContext.SaveChanges();
         }
+
+        public void DeleteUser(long id)
+        {
+        }
     }
 }
