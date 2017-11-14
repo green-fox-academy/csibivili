@@ -6,29 +6,40 @@ namespace ProjectMeasurement.Controllers
     public class AdminController : Controller
     {
         private UserService UserService;
+        private ProjectService ProjectService;
 
         public AdminController(UserService userService)
         {
             UserService = userService;
         }
 
-        public IActionResult Index()
+        public AdminController(ProjectService projectService)
         {
-            return View();
+            ProjectService = projectService;
         }
 
         [Route("/adduser")]
+        [HttpPost]
         public IActionResult AddUser(string emailAddress)
         {
             UserService.AddNewUser(emailAddress);
-            return LocalRedirect("/");
+            return Ok();
         }
 
         [Route("/deleteuser")]
+        [HttpDelete]
         public IActionResult DeleteUser(string emailAddress)
         {
             UserService.DeleteUser(emailAddress);
-            return LocalRedirect("/");
+            return Ok();
+        }
+
+        [Route("/addproject")]
+        [HttpPost]
+        public IActionResult AddProject(string projectName)
+        {
+            ProjectService.AddProject(projectName);
+            return Ok();
         }
     }
 }
