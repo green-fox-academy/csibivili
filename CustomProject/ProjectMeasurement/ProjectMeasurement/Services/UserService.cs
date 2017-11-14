@@ -1,8 +1,5 @@
-﻿using ProjectMeasurement.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ProjectMeasurement.Models;
+using ProjectMeasurement.Repository;
 
 namespace ProjectMeasurement.Services
 {
@@ -23,6 +20,16 @@ namespace ProjectMeasurement.Services
         public void DeleteUser(string emailAddress)
         {
             UserRepository.DeleteUser(emailAddress);
+        }
+
+        public void AssignUser(string emailAddress, string projectName)
+        {
+            UserRepository.AssignUser(emailAddress, projectName);
+        }
+
+        public ProjectMember UserInfo(string emailAddress)
+        {
+            return UserRepository.UserInfo(emailAddress);
         }
     }
 }

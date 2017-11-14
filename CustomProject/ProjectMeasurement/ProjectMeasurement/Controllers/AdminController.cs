@@ -1,25 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectMeasurement.Services;
+using Newtonsoft.Json;
 
 namespace ProjectMeasurement.Controllers
 {
+    [Route("/admin")]
     public class AdminController : Controller
     {
         private UserService UserService;
         private ProjectService ProjectService;
 
-        public AdminController(UserService userService)
+        public AdminController(UserService userService, ProjectService projectService)
         {
             UserService = userService;
-        }
-
-        public AdminController(ProjectService projectService)
-        {
             ProjectService = projectService;
         }
 
         [Route("/adduser")]
-        [HttpPost]
+        [HttpGet]
         public IActionResult AddUser(string emailAddress)
         {
             UserService.AddNewUser(emailAddress);
@@ -47,6 +45,14 @@ namespace ProjectMeasurement.Controllers
         public IActionResult DeleteProject(string projectName)
         {
             ProjectService.DeleteProject(projectName);
+            return Ok();
+        }
+
+        [Route("/assignuser")]
+        [HttpPut]
+        public IActionResult AssignUser(string emailAddress, string projectName)
+        {
+            UserService.AssignUser(emailAddress, projectName);
             return Ok();
         }
     }

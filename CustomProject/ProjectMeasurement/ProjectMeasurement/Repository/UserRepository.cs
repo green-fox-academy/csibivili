@@ -25,6 +25,11 @@ namespace ProjectMeasurement.Repository
             MeasurementContext.SaveChanges();
         }
 
+        public ProjectMember UserInfo(string emailAddress)
+        {
+            return MeasurementContext.ProjectMembers.Find(emailAddress);
+        }
+
         public void AssignUser(string emailAddress, string projectName)
         {
             if (MeasurementContext.Projects.Find(projectName) != null 
