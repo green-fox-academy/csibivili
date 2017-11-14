@@ -27,7 +27,22 @@ namespace ProjectMeasurement.Controllers
         [HttpGet]
         public IActionResult UserPage(string emailAddress)
         {
+            return View(UserService.UserInfo(emailAddress));
+        }
+
+        [Route("/user/{emailAddress}/newtask")]
+        [HttpGet]
+        public IActionResult NewTask(string emailAddress)
+        {
             return View();
+        }
+
+        [Route("/user/{emailAddress}/addnewtask")]
+        [HttpGet]
+        public IActionResult AddNewTask(string taskName, string emailAddress)
+        {
+            UserService.AddNewTask(taskName, UserService.UserInfo(emailAddress).Project.ProjectName);
+            return RedirectToAction("UserPage");
         }
     }
 }

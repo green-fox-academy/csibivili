@@ -6,11 +6,22 @@ namespace ProjectMeasurement.Repository
 {
     public class UserRepository
     {
+        public static readonly string Default_User = "DefaultUser@email.com";
+
         private MeasurementContext MeasurementContext;
 
         public UserRepository(MeasurementContext measurementContext)
         {
             MeasurementContext = measurementContext;
+            CreateDefaultUser();
+        }
+
+        public void CreateDefaultUser()
+        {
+            if (MeasurementContext.ProjectMembers.Find(Default_User) == null)
+            {
+                MeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = Default_User });
+            }
         }
 
         public void AddNewUser(string emailAddress)
@@ -58,6 +69,17 @@ namespace ProjectMeasurement.Repository
                     = MeasurementContext.Projects.Find(ProjectRepository.No_Assigned_Project));
                 MeasurementContext.SaveChanges();
             }
+        }
+
+        public void AddNewTask(string taskName, string projectName)
+        {
+            MeasurementContext.ProjectTasks.Add(new ProjectTask()
+            {
+                TaskName = taskName,
+                ProjectMember = MeasurementContext.ProjectMembers.Find(Default_User),
+                Project = MeasurementContext.Projects.Find(projectName)
+            });
+            MeasurementContext.SaveChanges();
         }
     }
 }

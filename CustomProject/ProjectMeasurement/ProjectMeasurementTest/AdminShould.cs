@@ -75,12 +75,24 @@ namespace ProjectMeasurementTest
         }
 
         [Fact]
-        public async Task Login()
+        public void Login()
         {
             using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
             {
                 var userRepository = new UserRepository(projectMeasurementContext);
                 Assert.Equal(true, userRepository.AuthenticateUser("test@email.com"));
+            }
+        }
+
+        [Fact]
+        public async Task AddNewTask()
+        {
+            using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
+            {
+                var userService = new UserService(new UserRepository(projectMeasurementContext));
+                var userController = new UserController(userService);
+                userController.AddNewTask("first task", userService.UserInfo("test@email.com").Project.ProjectName);
+                Assert.Equal(1, await projectMeasurementContext.ProjectTasks.CountAsync());
             }
         }
     }

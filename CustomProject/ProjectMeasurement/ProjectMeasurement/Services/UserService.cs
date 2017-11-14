@@ -42,5 +42,11 @@ namespace ProjectMeasurement.Services
         {
             return UserRepository.UserInfo(emailAddress);
         }
+
+        public void AddNewTask(string taskName, string emailAddress)
+        {
+            string projectName = UserInfo(emailAddress).Project.ProjectName;
+            UserRepository.AddNewTask(taskName, projectName);
+        }
     }
 }
