@@ -26,9 +26,9 @@ namespace ProjectMeasurementTest
                 projectMeasurementContext.Database.EnsureCreated();
                 var adminController = new AdminController(new UserService(new UserRepository(projectMeasurementContext)));
                 adminController.AddUser("user@email.com");
-                Assert.Equal(1, await projectMeasurementContext.ProjectMembers.CountAsync());
+                Assert.Equal(2, await projectMeasurementContext.ProjectMembers.CountAsync());
                 adminController.DeleteUser("user@email.com");
-                Assert.Equal(0, await projectMeasurementContext.ProjectMembers.CountAsync());
+                Assert.Equal(1, await projectMeasurementContext.ProjectMembers.CountAsync());
             };
         }
 
@@ -40,8 +40,11 @@ namespace ProjectMeasurementTest
                 projectMeasurementContext.Database.EnsureCreated();
                 var adminController = new AdminController(new ProjectService(new ProjectRepository(projectMeasurementContext)));
                 adminController.AddProject("Test Project");
+                Assert.Equal(2, await projectMeasurementContext.Projects.CountAsync());
+                adminController.DeleteProject("Test Project");
                 Assert.Equal(1, await projectMeasurementContext.Projects.CountAsync());
             };
         }
     }
 }
+

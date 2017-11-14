@@ -15,5 +15,10 @@ namespace ProjectMeasurement.Services
         {
             ProjectRepository.AddProject(projectName);
         }
+
+        public void DeleteProject(string projectName)
+        {
+            ProjectRepository.DeleteProject(projectName);
+        }
     }
 }

@@ -5,25 +5,36 @@ namespace ProjectMeasurement.Repository
 {
     public class UserRepository
     {
-        private MeasurementContext ProjectMeasurementContext;
+        private MeasurementContext MeasurementContext;
 
-        public UserRepository(MeasurementContext projectMeasurementContext)
+        public UserRepository(MeasurementContext measurementContext)
         {
-            ProjectMeasurementContext = projectMeasurementContext;
+            MeasurementContext = measurementContext;
         }
 
         public void AddNewUser(string emailAddress)
         {
-            ProjectMeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = emailAddress });
-            ProjectMeasurementContext.SaveChanges();
+            MeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = emailAddress });
+            MeasurementContext.SaveChanges();
         }
 
         public void DeleteUser(string emailAddress)
         {
-            ProjectMeasurementContext.ProjectMembers
-                .Remove(ProjectMeasurementContext.ProjectMembers
-                .Find(emailAddress));
-            ProjectMeasurementContext.SaveChanges();
+            //later when people will be assigned to projects I might have change this code
+            MeasurementContext.ProjectMembers.Remove(MeasurementContext.ProjectMembers.Find(emailAddress));
+            MeasurementContext.SaveChanges();
+        }
+
+        public void AssignUser(string emailAddress, string projectName)
+        {
+            if (MeasurementContext.Projects.Find(projectName) != null 
+                    && MeasurementContext.ProjectMembers.Find(emailAddress) != null)
+            {
+                MeasurementContext.Update(
+                MeasurementContext.ProjectMembers.Find(emailAddress).Project
+                    = MeasurementContext.Projects.Find(projectName));
+                MeasurementContext.SaveChanges();
+            }
         }
     }
 }

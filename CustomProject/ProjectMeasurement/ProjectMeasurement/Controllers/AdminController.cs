@@ -41,5 +41,13 @@ namespace ProjectMeasurement.Controllers
             ProjectService.AddProject(projectName);
             return Ok();
         }
+
+        [Route("/deleteproject")]
+        [HttpPost]
+        public IActionResult DeleteProject(string projectName)
+        {
+            ProjectService.DeleteProject(projectName);
+            return Ok();
+        }
     }
 }
