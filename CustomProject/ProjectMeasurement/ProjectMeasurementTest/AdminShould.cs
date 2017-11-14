@@ -57,7 +57,7 @@ namespace ProjectMeasurementTest
                 var userService = new UserService(new UserRepository(projectMeasurementContext));
                 var adminController = new AdminController(userService,new ProjectService(new ProjectRepository(projectMeasurementContext)));
                 adminController.RemoveUserFromProject("test@email.com", "Test Project(do not delete)");
-                Assert.Equal("no assigned project", userService.UserInfo("test@email.com").Project.ProjectName);
+                Assert.Equal("You do not have assigned project", userService.UserInfo("test@email.com").Project.ProjectName);
                 adminController.AssignUser("test@email.com", "Test Project(do not delete)");
                 Assert.Equal("Test Project(do not delete)", userService.UserInfo("test@email.com").Project.ProjectName);
             }

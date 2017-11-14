@@ -14,7 +14,7 @@ namespace ProjectMeasurement.Repository
 
         public void AddNewUser(string emailAddress)
         {
-            MeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = emailAddress, Project = MeasurementContext.Projects.Find("no assigned project") });
+            MeasurementContext.ProjectMembers.Add(new ProjectMember() { EmailAddress = emailAddress, Project = MeasurementContext.Projects.Find(ProjectRepository.No_Assigned_Project)});
             MeasurementContext.SaveChanges();
         }
 
@@ -49,7 +49,7 @@ namespace ProjectMeasurement.Repository
             {
                 MeasurementContext.Update(
                 MeasurementContext.ProjectMembers.Find(emailAddress).Project
-                    = MeasurementContext.Projects.Find("no assigned project"));
+                    = MeasurementContext.Projects.Find(ProjectRepository.No_Assigned_Project));
                 MeasurementContext.SaveChanges();
             }
         }
