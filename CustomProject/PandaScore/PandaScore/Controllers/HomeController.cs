@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PandaScore.Models;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace PandaScore.Controllers
 {
@@ -68,15 +64,6 @@ namespace PandaScore.Controllers
             string result = await Client.GetStringAsync(url + "matches");
             var matches = JsonConvert.DeserializeObject<List<Match>>(result);
             return Json(matches);
-        }
-
-        [HttpGet]
-        [Route("/games")]
-        public async Task<IActionResult> Games()
-        {
-            string result = await Client.GetStringAsync(url + "games");
-            //var teams = JsonConvert.DeserializeObject<List<Team>>(result);
-            return Content(result);
         }
     }
 }
