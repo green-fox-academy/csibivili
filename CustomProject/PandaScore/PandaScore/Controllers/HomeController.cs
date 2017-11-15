@@ -48,14 +48,34 @@ namespace PandaScore.Controllers
         public async Task<IActionResult> Teams()
         {
             string result = await Client.GetStringAsync(url + "teams");
-            return Content(result);
+            var teams = JsonConvert.DeserializeObject<List<Team>>(result);
+            return Json(teams);
         }
-
+        
         [HttpGet]
         [Route("/tournaments")]
         public async Task<IActionResult> Tournaments()
         {
             string result = await Client.GetStringAsync(url + "tournaments");
+            var tournaments = JsonConvert.DeserializeObject<List<Tournament>>(result);
+            return Json(tournaments);
+        }
+
+        [HttpGet]
+        [Route("/matches")]
+        public async Task<IActionResult> Matches()
+        {
+            string result = await Client.GetStringAsync(url + "matches");
+            var matches = JsonConvert.DeserializeObject<List<Match>>(result);
+            return Json(matches);
+        }
+
+        [HttpGet]
+        [Route("/games")]
+        public async Task<IActionResult> Games()
+        {
+            string result = await Client.GetStringAsync(url + "games");
+            //var teams = JsonConvert.DeserializeObject<List<Team>>(result);
             return Content(result);
         }
     }
