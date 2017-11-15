@@ -10,7 +10,7 @@ namespace ProjectMeasurement.Models
         [EmailAddress(ErrorMessage = "I think it is not an email address.")]
         public string EmailAddress { get; set; }
 
-        public virtual Project Project { get; set; }
-        public virtual ICollection<ProjectTask> ProjectTasks { get; set; }
+        public Project Project { get; set; }
+        public ICollection<ProjectTask> ProjectTasks { get; set; }
     }
 }

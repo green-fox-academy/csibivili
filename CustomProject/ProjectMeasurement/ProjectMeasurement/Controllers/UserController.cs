@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectMeasurement.Services;
+using System.Net;
 
 namespace ProjectMeasurement.Controllers
 {
@@ -14,20 +15,21 @@ namespace ProjectMeasurement.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string emailAddress)
+        public IActionResult Login(string emailAddress, string projectName)
         {
             if (UserService.AuthenticateUser(emailAddress))
             {
-                return LocalRedirect("/user/" + emailAddress);
+                return LocalRedirect("/user/" + emailAddress + "/" + projectName);
             }
             return LocalRedirect("/user/login");
         }
 
-        [Route("/user/{emailAddress}")]
+        [Route("/user/{emailAddress}/{projectName}")]
         [HttpGet]
-        public IActionResult UserPage(string emailAddress)
+        public IActionResult UserPage(string emailAddress, string projectName)
         {
-            return View(UserService.UserInfo(emailAddress));
+            string[] info = new string[2] { emailAddress, projectName };
+            return View(info);
         }
 
         [Route("/user/{emailAddress}/newtask")]
@@ -39,9 +41,9 @@ namespace ProjectMeasurement.Controllers
 
         [Route("/user/{emailAddress}/addnewtask")]
         [HttpGet]
-        public IActionResult AddNewTask(string taskName, string emailAddress)
+        public IActionResult AddNewTask(string taskName, string projectName)
         {
-            UserService.AddNewTask(taskName, UserService.UserInfo(emailAddress).Project.ProjectName);
+            UserService.AddNewTask(taskName, projectName);
             return RedirectToAction("UserPage");
         }
     }

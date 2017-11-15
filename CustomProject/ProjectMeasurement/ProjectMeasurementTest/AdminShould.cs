@@ -79,6 +79,7 @@ namespace ProjectMeasurementTest
         {
             using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
             {
+                projectMeasurementContext.Database.EnsureCreated();
                 var userRepository = new UserRepository(projectMeasurementContext);
                 Assert.Equal(true, userRepository.AuthenticateUser("test@email.com"));
             }
@@ -89,9 +90,10 @@ namespace ProjectMeasurementTest
         {
             using (var projectMeasurementContext = new MeasurementContext(optionsBuilder.Options))
             {
+                projectMeasurementContext.Database.EnsureCreated();
                 var userService = new UserService(new UserRepository(projectMeasurementContext));
                 var userController = new UserController(userService);
-                userController.AddNewTask("first task", userService.UserInfo("test@email.com").Project.ProjectName);
+                userController.AddNewTask("first task", "Test Project(do not delete)");
                 Assert.Equal(1, await projectMeasurementContext.ProjectTasks.CountAsync());
             }
         }

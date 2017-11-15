@@ -9,7 +9,7 @@ namespace ProjectMeasurement.Models
         [MaxLength(100), Required]
         public string ProjectName { get; set; }
 
-        public virtual ICollection<ProjectMember> ProjectMembers { get; set; }
-        public virtual ICollection<ProjectTask> ProjectTasks { get; set; }
+        public ICollection<ProjectMember> ProjectMembers { get; set; }
+        public ICollection<ProjectTask> ProjectTasks { get; set; }
     }
 }

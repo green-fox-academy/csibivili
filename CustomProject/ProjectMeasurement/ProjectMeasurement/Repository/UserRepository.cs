@@ -77,7 +77,7 @@ namespace ProjectMeasurement.Repository
             {
                 TaskName = taskName,
                 ProjectMember = MeasurementContext.ProjectMembers.Find(Default_User),
-                Project = MeasurementContext.Projects.Find(projectName)
+                Project = MeasurementContext.Projects.Find(projectName)          
             });
             MeasurementContext.SaveChanges();
         }

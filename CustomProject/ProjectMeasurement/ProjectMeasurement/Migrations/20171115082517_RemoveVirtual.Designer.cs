@@ -8,9 +8,10 @@ using ProjectMeasurement.Entities;
 namespace ProjectMeasurement.Migrations
 {
     [DbContext(typeof(MeasurementContext))]
-    partial class MeasurementContextModelSnapshot : ModelSnapshot
+    [Migration("20171115082517_RemoveVirtual")]
+    partial class RemoveVirtual
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)

@@ -11,7 +11,7 @@ namespace ProjectMeasurement.Models
         public DateTime? Start { get; set; }
         public DateTime? End { get; set; }
 
-        public virtual ProjectMember ProjectMember { get; set; }
-        public virtual ProjectTask ProjectTask { get; set; }
+        public ProjectMember ProjectMember { get; set; }
+        public ProjectTask ProjectTask { get; set; }
     }
 }

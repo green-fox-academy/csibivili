@@ -8,9 +8,10 @@ using ProjectMeasurement.Entities;
 namespace ProjectMeasurement.Migrations
 {
     [DbContext(typeof(MeasurementContext))]
-    partial class MeasurementContextModelSnapshot : ModelSnapshot
+    [Migration("20171115090628_ChangeFKs3")]
+    partial class ChangeFKs3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
