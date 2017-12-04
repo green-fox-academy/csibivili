@@ -60,3 +60,7 @@
     - You need to run `dotnet publish -o foldername` again (same foldername as earlier)
     - Zip it again just like first time
     - `eb deploy`
+
+#### Additional resource
+
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/dotnet-core-tutorial.html
