@@ -1,13 +1,12 @@
 # Deploy C# Web Application to Amazon Web Services (AWS)
 
 
-Must need
---------------
+### Must need
+
 - DotNetCore CLI
 - Elastic Beanstalk CLI
 
-How to deploy 
-----------------
+## How to deploy 
 
  - Open <strong>Bash</strong> (if you have Mac or Linux) or <strong>PowerShell</strong> (if you have Windows)
  - Go to your project folder (where the Program.cs is)
@@ -50,9 +49,11 @@ How to deploy
 
  - `eb init -p IIS10.0`
      - or just `eb init` & choose <strong>IIS</strong> & choose <strong>10.0</strong>
- - Choose a region
+ - Choose Frankfurt as region
+ - Create a new application or choose yours
  - `eb create environmentname`
-    - Choose something meaningful environment name i.e. <strong>"dev-env"</strong>
+    - You must have two environments: <strong>"stage" & "production"</strong>
+    - You only need to create an environment once
  - Wait! "It may take a while"
  - ![what you should see](https://lh3.googleusercontent.com/-yF8RZGHFQDQ/WiUlhjMQWMI/AAAAAAAAFLE/V5502hH5JgEDnJbMc459y5BIwXAITIVEwCLcBGAs/s0/successfull_deploy.PNG "successfull_deploy.PNG")
  - If you want to deploy a new version
