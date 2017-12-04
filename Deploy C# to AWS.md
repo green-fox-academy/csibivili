@@ -15,7 +15,7 @@ How to deploy
     - Choose something meaningful
     - Same in PowerShell & Bash
  - Zip the published app
-	- Worth to give the same name as the folder has
+    - Worth to give the same name as the folder has
     - From File Explorer
 	    - Go to the recently created folder
 	    - Choose all files
@@ -30,12 +30,12 @@ How to deploy
 	    - `zip -r name.zip ./foldername/*`
 
  - Create an aws-windows-deployment-manifest.json
-	 - In Bash: `vim aws-windows-deployment-manifest.json`
-	 - In PowerShell: `code aws-windows-deployment-manifest.json`
-	    - It requires to have Visual Studio Code installed
+- In Bash: `vim aws-windows-deployment-manifest.json`
+- In PowerShell: `code aws-windows-deployment-manifest.json`
+    - It requires to have Visual Studio Code installed
 - Copy the below code snippet in the JSON file
-        - "name": could be anything
-        - "appBundle": must be the same as you named your zip earlier
+    - "name": could be anything
+    - "appBundle": must be the same as you named your zip earlier
 
 ```json
 {
@@ -55,10 +55,10 @@ How to deploy
 }
 ```
 
- - `eb init -p IIS10.0`
-	 - or just `eb init`
-	 - choose IIS
-	 - choose 10.0![enter image description here]
+ - `eb init -p IIS10.0
+     - or just `eb init`
+- choose IIS
+- choose 10.0![enter image description here]
  - Choose a region
  - `eb create environmentname`
     - Choose something meaningful environment name i.e. "dev-env"
