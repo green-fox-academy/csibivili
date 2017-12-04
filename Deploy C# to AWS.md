@@ -9,7 +9,8 @@ Must need
 How to deploy 
 ----------------
 
- - Open Bash (if you have Mac or Linux) or PowerShell (if you have Windows). Go to your project folder (where the Program.cs is)
+ - Open Bash (if you have Mac or Linux) or PowerShell (if you have Windows)
+ - Go to your project folder (where the Program.cs is)
  - `dotnet publish -o foldername`
     - Choose something meaningful
  - Zip the published app
