@@ -23,7 +23,7 @@ How to deploy
  - Create an aws-windows-deployment-manifest.json
     - PowerShell:
 	    - `code aws-windows-deployment-manifest.json`
-        	    - It requires to have Visual Studio Code installed
+- It requires to have Visual Studio Code installed
     - Bash:
 	    - `vim aws-windows-deployment-manifest.json`
 - Copy the below code snippet in the recently created file
