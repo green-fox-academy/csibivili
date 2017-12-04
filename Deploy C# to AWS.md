@@ -49,8 +49,7 @@ How to deploy
         }
         ]
     }
-}
-`
+}```
 		- "name": could be anything
 		- "appBundle": must be the same as you named your zip earlier
  - `eb init -p IIS10.0`
