@@ -25,7 +25,7 @@ How to deploy
     - In PowerShell
 	    - Do not go anywhere
 	    - `Compress-Archive ./foldername/* name.zip`
-    - In Linux Bash:
+    - In Mac / Linux Bash:
 	    - Do not go anywhere 
 	    - `zip -r name.zip ./foldername/*`
 
