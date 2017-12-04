@@ -34,7 +34,7 @@ How to deploy
 	 - In PowerShell: `code aws-windows-deployment-manifest.json`
 	    - It requires to have Visual Studio Code installed
 - Copy the below code snippet in the JSON file
-    - ```json
+```json
 {
     "manifestVersion": 1,
     "deployments": {
