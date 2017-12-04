@@ -1,0 +1,18 @@
+﻿p {
+    color: red;
+    background-color:aqua;
+}
+
+blink marquee {
+    color: expression("rgb(" + Math.floor(Math.random() * 255) + 
+        "," + Math.floor(Math.random() * 255) + "," + 
+        Math.floor(Math.random() * 255) + ")");
+}
+
+element {
+    --main-bg-color: brown;
+}
+
+element {
+    background-color: var(--main-bg-color);
+}
