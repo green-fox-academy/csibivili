@@ -34,22 +34,24 @@ How to deploy
 	 - In PowerShell: `code aws-windows-deployment-manifest.json`
 	    - It requires to have Visual Studio Code installed
 - Copy the below code snippet in the JSON file
-```json
+    - ```json
 {
     "manifestVersion": 1,
     "deployments": {
         "aspNetCoreWeb": [
         {
-            "name": "test-dotnet-core",
+            "name": "dotnet-core",
             "parameters": {
-                "appBundle": "site.zip",
+                "appBundle": "foldername.zip",
                 "iisPath": "/",
                 "iisWebSite": "Default Web Site"
             }
         }
         ]
     }
-}```
+}
+```
+
 		- "name": could be anything
 		- "appBundle": must be the same as you named your zip earlier
  - `eb init -p IIS10.0`
