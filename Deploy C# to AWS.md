@@ -63,6 +63,7 @@ How to deploy
  - `eb create environmentname`
     - Choose something meaningful environment name i.e. "dev-env"
  - Wait! "It may take a while"
+ - ![what you should see](https://lh3.googleusercontent.com/-yF8RZGHFQDQ/WiUlhjMQWMI/AAAAAAAAFLE/V5502hH5JgEDnJbMc459y5BIwXAITIVEwCLcBGAs/s0/successfull_deploy.PNG "successfull_deploy.PNG")
  - If you want to deploy a new version
     - You need to run `dotnet publish -o foldername` again (same foldername as earlier)
     - Zip it again just like first time
