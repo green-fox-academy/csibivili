@@ -1,13 +1,12 @@
 # Deploy C# Web Application to Amazon Web Services (AWS)
 
 
-Must need
---------------
+### Must need
+
 - DotNetCore CLI
 - Elastic Beanstalk CLI
 
-How to deploy 
-----------------
+## How to deploy 
 
  - Open <strong>Bash</strong> (if you have Mac or Linux) or <strong>PowerShell</strong> (if you have Windows)
  - Go to your project folder (where the Program.cs is)
