@@ -1,4 +1,4 @@
-﻿# Deploy C# Web Application to Amazon Web Services (AWS)
+# Deploy C# Web Application to Amazon Web Services (AWS)
 
 
 Must need
@@ -35,7 +35,22 @@ How to deploy
 	    - It requires to have Visual Studio Code installed
 - Copy the below code snippet in the JSON file
 ```json
-{"manifestVersion": 1,"deployments": {"aspNetCoreWeb": [{"name": "dotnet-core","parameters": {"appBundle": "foldername.zip","iisPath": "/","iisWebSite": "Default Web Site"}]}}```
+{
+    "manifestVersion": 1,
+    "deployments": {
+        "aspNetCoreWeb": [
+        {
+            "name": "test-dotnet-core",
+            "parameters": {
+                "appBundle": "site.zip",
+                "iisPath": "/",
+                "iisWebSite": "Default Web Site"
+            }
+        }
+        ]
+    }
+}
+```
 		- "name": could be anything
 		- "appBundle": must be the same as you named your zip earlier
  - `eb init -p IIS10.0`
