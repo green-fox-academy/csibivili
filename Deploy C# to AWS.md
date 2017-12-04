@@ -9,21 +9,23 @@ Must need
 How to deploy 
 ----------------
 
- - Open Bash (if you have Mac or Linux) or PowerShell (if you have Windows)
+ - Open <strong>Bash</strong> (if you have Mac or Linux) or <strong>PowerShell</strong> (if you have Windows)
  - Go to your project folder (where the Program.cs is)
  - `dotnet publish -o foldername`
     - Choose something meaningful
  - Zip the published app
     - Worth to give the same name as the folder has
-    - In PowerShell
+    - PowerShell:
 	    - `Compress-Archive ./foldername/* name.zip`
-    - In Mac / Linux Bash:
+    - Bash:
 	    - `zip -r name.zip ./foldername/*`
 
  - Create an aws-windows-deployment-manifest.json
-    - In Bash: `vim aws-windows-deployment-manifest.json`
-    - In PowerShell: `code aws-windows-deployment-manifest.json`
-        - It requires to have Visual Studio Code installed
+    - PowerShell:
+	    - `code aws-windows-deployment-manifest.json`
+        	    - It requires to have Visual Studio Code installed
+    - Bash:
+	    - `vim aws-windows-deployment-manifest.json`
 - Copy the below code snippet in the recently created file
     - "name": could be anything
     - "appBundle": <strong>must be the same as you named your zip earlier</strong>
