@@ -34,6 +34,9 @@ How to deploy
 	 - In PowerShell: `code aws-windows-deployment-manifest.json`
 	    - It requires to have Visual Studio Code installed
 - Copy the below code snippet in the JSON file
+        - "name": could be anything
+        - "appBundle": must be the same as you named your zip earlier
+
 ```json
 {
     "manifestVersion": 1,
@@ -52,8 +55,6 @@ How to deploy
 }
 ```
 
-		- "name": could be anything
-		- "appBundle": must be the same as you named your zip earlier
  - `eb init -p IIS10.0`
 	 - or just `eb init`
 	 - choose IIS
