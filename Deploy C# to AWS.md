@@ -57,8 +57,8 @@ How to deploy
 
  - `eb init -p IIS10.0
      - or just `eb init`
-- choose IIS
-- choose 10.0![enter image description here]
+     - choose IIS
+     - choose 10.0
  - Choose a region
  - `eb create environmentname`
     - Choose something meaningful environment name i.e. "dev-env"
