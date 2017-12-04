@@ -24,9 +24,9 @@ How to deploy
     - In Bash: `vim aws-windows-deployment-manifest.json`
     - In PowerShell: `code aws-windows-deployment-manifest.json`
         - It requires to have Visual Studio Code installed
-- Copy the below code snippet in the JSON file
+- Copy the below code snippet in the recently created file
     - "name": could be anything
-    - "appBundle": must be the same as you named your zip earlier
+    - "appBundle": <strong>must be the same as you named your zip earlier</strong>
 
 ```json
 {
@@ -47,10 +47,10 @@ How to deploy
 ```
 
  - `eb init -p IIS10.0`
-     - or just `eb init` & choose IIS & choose 10.0
+     - or just `eb init` & choose <strong>IIS</strong> & choose <strong>10.0</strong>
  - Choose a region
  - `eb create environmentname`
-    - Choose something meaningful environment name i.e. "dev-env"
+    - Choose something meaningful environment name i.e. <strong>"dev-env"</strong>
  - Wait! "It may take a while"
  - ![what you should see](https://lh3.googleusercontent.com/-yF8RZGHFQDQ/WiUlhjMQWMI/AAAAAAAAFLE/V5502hH5JgEDnJbMc459y5BIwXAITIVEwCLcBGAs/s0/successfull_deploy.PNG "successfull_deploy.PNG")
  - If you want to deploy a new version
