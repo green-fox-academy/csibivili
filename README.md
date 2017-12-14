@@ -1,3 +1,3 @@
 # csibivili
-greenfox student
-alpaga class / pallida cohort
+ - greenfox student
+ - alpaga class / pallida cohort
